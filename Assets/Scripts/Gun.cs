@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
 	public Rigidbody2D rocket;				// Prefab of the rocket.
 	public float speed = 20f;				// The speed the rocket will fire at.
 
+	public Rigidbody2D meleeSwipe;				// Prefab of the melee swipe.
 
 	private PlayerControl playerCtrl;		// Reference to the PlayerControl script.
 	private Animator anim;					// Reference to the Animator component.
@@ -42,5 +43,22 @@ public class Gun : MonoBehaviour
 				bulletInstance.velocity = new Vector2(-speed, 0);
 			}
 		}
+		if (Input.GetMouseButtonDown(1))
+		{
+			anim.SetTrigger("Shoot");
+			if(playerCtrl.facingRight)
+			{
+				// ... instantiate the rocket facing right and set it's velocity to the right. 
+				Rigidbody2D bulletInstance = Instantiate(meleeSwipe, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
+				bulletInstance.velocity = new Vector2(5f, 0);
+			}
+			else
+			{
+				// Otherwise instantiate the rocket facing left and set it's velocity to the left.
+				Rigidbody2D bulletInstance = Instantiate(meleeSwipe, transform.position, Quaternion.Euler(new Vector3(0,0,180f))) as Rigidbody2D;
+				bulletInstance.velocity = new Vector2(-5f, 0);
+			}
+		}
 	}
+
 }
