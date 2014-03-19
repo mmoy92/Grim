@@ -1,0 +1,17 @@
+Advanced 2.5D Platformer kit
+By: Roel Ezendam
+Contact: Roel@Roelezendam.com
+
+How to setup:
+The easiest way to setup the platformer kit is to duplicate the Player object in the demo scene.
+
+Instructions to setup from scratch:
+- Create a cube that resembles the size of the player (I usually go with 1 width and 1.5-2 height)
+- Add a rigidbody component to the cube.
+- Turn 'Use gravity' OFF
+- Turn ON freeze position for the Z axis (since we are doing a 2.5D game)
+- Turn ON freeze rotations for all 3 axes
+- Apply the 'nofriction' physic material to the box collider of the object
+- Apply the PlatformerPhysics.cs script (The cube will now have platformer physics)
+- Apply the PlatformerController.cs script if you want to control the player with the keyboard
+- Apply the PlatformerAnimation.cs script if you want the player to have animations triggered (Please note you need to link a model that will be animated, and the model needs a couple of specific animations to function properly)
