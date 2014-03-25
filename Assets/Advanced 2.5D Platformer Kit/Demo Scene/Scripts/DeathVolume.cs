@@ -6,7 +6,8 @@ public class DeathVolume : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		PlatformerController controller = other.gameObject.GetComponent<PlatformerController>();
-		if (controller && controller.HasControl())
+		PlayerCombat combat = other.GetComponent<PlayerCombat>();
+		if (controller && controller.HasControl() && combat.IsVulnerable())
 		{
 			//let player die
 			StartCoroutine(PlayerDeath(other.gameObject));

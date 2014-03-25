@@ -6,6 +6,7 @@ public class PlatformerAnimation : MonoBehaviour
 	public Transform animatedPlayerModel; //Animated model that will have all the animations in it
 	bool mPlayerDead = false;
     bool mIdle = false;
+	bool mGround = true;
 	bool mAttack = false;
 
 	void Start () 
@@ -60,7 +61,7 @@ public class PlatformerAnimation : MonoBehaviour
 			mAttack = false;
 			
 		}
-		if (!mAttack) //Do not animate walk during an attack animation
+		if (!mAttack && mGround) //Do not animate walk during an attack animation or while in mid-air
 		{
 			animatedPlayerModel.animation["walk"].speed = walkingSpeed;
 
@@ -121,6 +122,7 @@ public class PlatformerAnimation : MonoBehaviour
 	void StartedJump()
 	{
         PlayAnim("jump");
+		mGround = false;
 	}
 
 	void StartedWallJump()
@@ -149,6 +151,7 @@ public class PlatformerAnimation : MonoBehaviour
 		{
             PlayAnim("walk");
 		}
+		mGround = true;
 	}
 
 	void LandedOnWall()
@@ -172,11 +175,17 @@ public class PlatformerAnimation : MonoBehaviour
 
 	void ReleasedWall()
 	{
-		print("released");
 		if (!animatedPlayerModel.animation["jump"].enabled && !GetComponent<PlatformerPhysics>().IsCrouching())
             PlayAnim("walk");
 	}
-
+	void FinishedAttack()
+	{
+		if (mGround) {
+			PlayAnim("walk");
+		} else {
+			PlayAnim("jump");
+		}
+	}
 	void StartedSprinting()
 	{
 		//print("Start Sprint");

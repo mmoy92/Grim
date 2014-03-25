@@ -6,6 +6,7 @@ var lookAtDistance = 15.0;
 var attackRange = 10.0;
 var moveSpeed = 5.0;
 var damping = 6.0;
+var health = 10;
 private var isItAttacking = false;
 
 function Update () 
@@ -31,7 +32,11 @@ function Update ()
 		renderer.material.color = Color.red;
 	}
 }
- 
+function getHurt(amt:int)
+{
+	health -= amt;
+	//rigidbody.AddForce(Vector3(10.0f,0,0));
+}
  
 function lookAt ()
 {
