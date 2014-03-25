@@ -59,6 +59,19 @@ public class PlatformerPhysics : MonoBehaviour
 	float origColliderCenterY;						//Original sizes of collision box
 	float origColliderSizeY;
 
+	bool mAttacking						= false;	//Are we currently attacking
+	bool mCanAttack						= true;		//Can the player click the button to do the next attack?
+	float mAttackTimer					= 0;		//Current time until the current attack is done
+	public int mCurrentAttack			= 0;		//Current attack type being performed (0,1, or 2)
+	public float AttackALength		 	= 0.23f;	//The duration of attack A
+	public float AttackA_velY			= 5;		//The vertical thrust of attack A
+
+	public float AttackBLength 			= 0.29f;	//The duration of attack B
+	public float AttackB_velY			= 5;		//The vertical thrust of attack B
+
+	public float AttackCLength 			= 0.21f;	//The duration of attack C
+	public float AttackC_velY			= 5;		//The vertical thrust of attack C
+
 	public void Start () 
 	{
 		//do some checks to make sure we have the required components
@@ -99,6 +112,7 @@ public class PlatformerPhysics : MonoBehaviour
 		transform.position = mStartPosition;
 		rigidbody.velocity = Vector3.zero;
 		mGoingRight = true;
+		mAttacking = false;
 	}
 
 
@@ -113,6 +127,7 @@ public class PlatformerPhysics : MonoBehaviour
 		UpdateCrouching();
 		ApplyGravity();
 		ApplyMovementFriction();
+		UpdateAttacking ();
 	}
 
 
@@ -138,27 +153,28 @@ public class PlatformerPhysics : MonoBehaviour
 			return;
 		}
 
-		//get an acceleration amount
-		float accel = accelerationWalking;
-		if (mSprinting)
-			accel = accelerationSprinting;
-		if (mCrouching && mOnGround)
-			accel = accelerationWalking * crouchedAccelMultiplier;
-
-        //apply actual force 
-		rigidbody.AddForce(mGroundDirection * direction * accel, ForceMode.Acceleration);
-
-		mStoppingForce = 1 - Mathf.Abs(direction);
-
-		if (direction < 0 && mGoingRight)
+		if (!mAttacking)  //Do not allow horizontal walking movement during attacks
 		{
-			mGoingRight = false;
-			SendAnimMessage("GoLeft");
-		}
-		if (direction > 0 && !mGoingRight)
-		{
-			mGoingRight = true;
-			SendAnimMessage("GoRight");
+			//get an acceleration amount
+			float accel = accelerationWalking;
+			if (mSprinting)
+					accel = accelerationSprinting;
+			if (mCrouching && mOnGround)
+					accel = accelerationWalking * crouchedAccelMultiplier;
+
+			//apply actual force 
+			rigidbody.AddForce (mGroundDirection * direction * accel, ForceMode.Acceleration);
+
+			mStoppingForce = 1 - Mathf.Abs (direction);
+
+			if (direction < 0 && mGoingRight) {
+					mGoingRight = false;
+					SendAnimMessage ("GoLeft");
+			}
+			if (direction > 0 && !mGoingRight) {
+					mGoingRight = true;
+					SendAnimMessage ("GoRight");
+			}
 		}
 	}
 
@@ -212,7 +228,79 @@ public class PlatformerPhysics : MonoBehaviour
 			rigidbody.velocity = vel;
 		}
 	}
+	//Update the current attack animation
+	public void UpdateAttacking(){
+		if (mAttacking) 
+		{
+			mAttackTimer -= Time.deltaTime;
 
+
+			if(mAttackTimer <= 0.15) //Allows the player to click near the end of an attack animation to do the next attack
+			{
+				mCanAttack = true;
+
+				if(mAttackTimer<= 0) //Attack animation is done, time to revert back to normal state
+				{
+					mAttacking = false;
+					if(mCurrentAttack == 1) //Reset the attack combo
+					{
+						mCurrentAttack = 0;
+					}
+					if(IsOnGround())
+					{
+						SendAnimMessage("LandedOnGround");
+					} else {
+						SendAnimMessage("StartedJump");
+					}
+				}
+			}
+		}
+	}
+	//Called when the player presses the attack button
+	public void Attack() 
+	{
+		if (mCanAttack)
+		{
+			mCanAttack = false;
+			mAttacking = true;
+			
+			//CrouchCollider();
+			//RecalcBounds();
+
+			mCurrentAttack += 1;
+			Vector3 vel = rigidbody.velocity;
+
+			if(mCurrentAttack == 1)
+			{
+				mAttackTimer = AttackALength + 0.2f;
+				SendAnimMessage("StartAttackA");
+				vel.y = AttackA_velY;
+			} else if(mCurrentAttack == 2)
+			{
+				mAttackTimer = AttackBLength + 0.2f;
+				SendAnimMessage("StartAttackB");
+				vel.y = AttackB_velY;
+			} else if(mCurrentAttack == 3)
+			{
+				mAttackTimer = AttackCLength + 0.2f;
+				SendAnimMessage("StartAttackC");
+				vel.y = AttackC_velY;
+
+				mCurrentAttack = 0;
+			} 
+			rigidbody.velocity = vel; //Set the vertical thrust
+
+			if(mGoingRight)			//Set the horizontal thrust
+			{
+				rigidbody.velocity += 10 * Vector3.right;
+			} else {
+				rigidbody.velocity += 10 * Vector3.left;
+			}
+
+
+
+		}
+	}
 
     //Called when the player presses the crouch button
 	public void Crouch() 
@@ -409,6 +497,8 @@ public class PlatformerPhysics : MonoBehaviour
 		{
 			Debug.DrawLine(hit.point, hit.point + mGroundDirection, Color.grey);
 		}
+
+
 	
 		return;
 	}

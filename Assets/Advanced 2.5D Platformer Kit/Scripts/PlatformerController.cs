@@ -30,6 +30,9 @@ public class PlatformerController : MonoBehaviour
 
 			if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
 				mPlayer.UnCrouch();
+			if(Input.GetMouseButtonDown(0))
+				mPlayer.Attack();
+
 		}
 	}
 

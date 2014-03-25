@@ -6,6 +6,7 @@ public class PlatformerAnimation : MonoBehaviour
 	public Transform animatedPlayerModel; //Animated model that will have all the animations in it
 	bool mPlayerDead = false;
     bool mIdle = false;
+	bool mAttack = false;
 
 	void Start () 
 	{
@@ -38,7 +39,12 @@ public class PlatformerAnimation : MonoBehaviour
 			animatedPlayerModel.animation["slideout"] == null ||
 			animatedPlayerModel.animation["death"] == null ||
 			animatedPlayerModel.animation["onwall"] == null ||
-			animatedPlayerModel.animation["idle"] == null) return false;
+		    animatedPlayerModel.animation["idle"] == null ||
+		    animatedPlayerModel.animation["attackA"] == null||
+		    animatedPlayerModel.animation["attackB"] == null||
+		    animatedPlayerModel.animation["attackC"] == null
+
+		    ) return false;
 
 		return true;
 	}
@@ -47,20 +53,29 @@ public class PlatformerAnimation : MonoBehaviour
 	{
 		//recalculate walking speed
 		float walkingSpeed = Mathf.Abs(rigidbody.velocity.x)*0.075f;
-		animatedPlayerModel.animation["walk"].speed = walkingSpeed;
 
-		//switch to idle animation if needed
-		if (walkingSpeed == 0 && animatedPlayerModel.animation["walk"].enabled)
+		//Set mAttack to false if no attack animation is running
+		if (mAttack && !animatedPlayerModel.animation ["attackA"].enabled && !animatedPlayerModel.animation ["attackB"].enabled && !animatedPlayerModel.animation ["attackC"].enabled) 
 		{
-			animatedPlayerModel.animation.Play("idle");
-            mIdle = true;
+			mAttack = false;
+			
+		}
+		if (!mAttack) //Do not animate walk during an attack animation
+		{
+			animatedPlayerModel.animation["walk"].speed = walkingSpeed;
+
+			//switch to idle animation if needed
+			if (walkingSpeed == 0 && animatedPlayerModel.animation["walk"].enabled)
+			{
+				animatedPlayerModel.animation.Play("idle");
+				mIdle = true;
+			}
+			if (walkingSpeed > 0.01f && mIdle) {
+				mIdle = false;
+				animatedPlayerModel.animation.CrossFade ("walk");
+			}
 		}
 
-        if (walkingSpeed > 0.01f && mIdle)
-		{
-            mIdle = false;
-			animatedPlayerModel.animation.CrossFade("walk");
-		}
 	}
 
 	void PlayAnim(string animName)
@@ -71,7 +86,6 @@ public class PlatformerAnimation : MonoBehaviour
 			animatedPlayerModel.transform.localPosition = Vector3.zero; //reset any position change made by on wall anim
 		}
 	}
-
 	void GoLeft()
 	{
 		Vector3 localScale = animatedPlayerModel.transform.localScale;
@@ -131,7 +145,7 @@ public class PlatformerAnimation : MonoBehaviour
 
 	void LandedOnGround()
 	{
-		if (!GetComponent<PlatformerPhysics>().IsCrouching())
+		if (!GetComponent<PlatformerPhysics>().IsCrouching() &&!mAttack)
 		{
             PlayAnim("walk");
 		}
@@ -171,6 +185,21 @@ public class PlatformerAnimation : MonoBehaviour
 	void StoppedSprinting()
 	{
 		//print("Stop Sprint");
+	}
+	void StartAttackA()
+	{
+		PlayAnim ("attackA");
+		mAttack = true;
+	}
+	void StartAttackB()
+	{
+		PlayAnim ("attackB");
+		mAttack = true;
+	}
+	void StartAttackC()
+	{
+		PlayAnim ("attackC");
+		mAttack = true;
 	}
 }
 
