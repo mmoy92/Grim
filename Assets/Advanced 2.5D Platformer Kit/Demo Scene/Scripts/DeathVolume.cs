@@ -7,23 +7,13 @@ public class DeathVolume : MonoBehaviour
 	{
 		PlatformerController controller = other.gameObject.GetComponent<PlatformerController>();
 		PlayerCombat combat = other.GetComponent<PlayerCombat>();
+		grimInfo info = other.GetComponent<grimInfo> ();
+		int spikeDamage = 1; 
 		if (controller && controller.HasControl() && combat.IsVulnerable())
 		{
-			//let player die
-			StartCoroutine(PlayerDeath(other.gameObject));
+			info.Damage(spikeDamage);
 		}
 	}
 
-	IEnumerator PlayerDeath(GameObject player)
-	{
-		player.GetComponent<PlatformerAnimation>().PlayerDied();
-		player.GetComponent<PlatformerController>().RemoveControl();
-
-		yield return new WaitForSeconds(2.5f);
-
-		player.GetComponent<PlatformerPhysics>().Reset();
-		player.GetComponent<PlatformerAnimation>().PlayerLives();
-		player.GetComponent<PlatformerController>().GiveControl();
-	}
 }
 
