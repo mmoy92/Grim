@@ -22,14 +22,17 @@ public class OpenBossDoor : MonoBehaviour {
 			if (playerInventory.hasKey1 && !playerInventory.usedKey) // Check to see if the player has the key
 			{
 				// Destroy the door
-				gameObject.active = false;
+				gameObject.GetComponent<MeshRenderer>().enabled=false;
+				gameObject.GetComponent<MeshCollider>().enabled=false;
+				playerInventory.usedKey = true;
 			}
 		}
 	}
 
 	void OnTriggerExit (Collider other)
 	{
-		gameObject.active = true;
-		playerInventory.usedKey = true;
+		gameObject.GetComponent<MeshRenderer> ().enabled = true;
+		gameObject.GetComponent<MeshCollider> ().enabled = true;
+
 	}
 }
