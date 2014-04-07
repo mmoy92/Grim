@@ -3,8 +3,10 @@
 var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
+var chargeSpeed : float = 12; //Charge speed for last part of attack
 var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
+var chargeDistance : float = 6;
 var detectRange : float = 20;  // detection distance
 
 private var transf : Transform;
@@ -20,11 +22,8 @@ function Update(){
     if (target){
         var tgtDir = target.position - transf.position;
         var tgtDist = tgtDir.magnitude; // get distance to the target
-        if (!Physics.Raycast(transf.position, tgtDir, detectRange)){
-            // stays in idle mode if can't see target
-            Idle(); 
-        }
-        else {
+        var hit : RaycastHit;
+        if ((Physics.Raycast(transf.position, tgtDir, hit, detectRange))&&hit.collider.tag.Equals("Player")){
             var moveDir = target.position - transf.position;
             moveDir.y = 0;  // prevents enemy tilting
             var rot = Quaternion.FromToRotation(Vector3.forward, moveDir);
@@ -33,10 +32,18 @@ function Update(){
                 // do your attack here
                 print("Attack!");
             }
+            else if((tgtDist <= chargeDistance) && (tgtDist > attackDistance))
+            {
+            	MoveCharacter(moveDir, chargeSpeed);
+            }
             else {  // if attackDistance < dist < detectRange: chase the player
                 // Move towards target
                 MoveCharacter(moveDir, moveSpeed);
             }
+        }
+        else {
+            // stays in idle mode if can't see target
+            Idle(); 
         }
     }
 }
