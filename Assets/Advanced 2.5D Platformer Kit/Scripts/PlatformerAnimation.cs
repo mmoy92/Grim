@@ -8,7 +8,7 @@ public class PlatformerAnimation : MonoBehaviour
     bool mIdle = false;
 	bool mGround = true;
 	bool mAttack = false;
-
+	GameObject weapon;
 	void Start () 
 	{
 		//Do some error checks first
@@ -27,8 +27,28 @@ public class PlatformerAnimation : MonoBehaviour
 			//no errors
 			animatedPlayerModel.animation["idle"].speed = 0;
 		}
-	}
+		swapWeapon ();
 
+	}
+	void swapWeapon()
+	{
+		weapon = GameObject.Find ("ninja_sword");
+		// Create a simple cube object 
+		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		
+		// Re-parent the cube as child of the trackable gameObject
+		cube.transform.parent = weapon.transform;
+		
+		// Adjust the position and scale 
+		// so that it fits nicely on the target
+		cube.transform.localPosition = new Vector3(0,0.8f,0);
+		cube.transform.localRotation = Quaternion.identity;
+		cube.transform.localScale = new Vector3(0.1f, 2.5f, 0.1f);
+		
+		// Make sure it is active
+		cube.active = true;
+
+	}
 	bool CheckAnims()
 	{
 		if (!animatedPlayerModel)
