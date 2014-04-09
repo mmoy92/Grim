@@ -17,14 +17,13 @@ public class KeyPickup : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider other)
 	{
-		// If the colliding gameobject is the player...
+		// If the colliding gameobject is the player
 		if (other.gameObject == player) {
+
+			playerInventory.keys += 1;
 			
-						// ... the player has a key ...
-						playerInventory.hasKey1 = true;
-			
-						// ... and destroy this gameobject.
-						Destroy (gameObject);
-				}
+			// Destroy this gameobject
+			Destroy (gameObject);
+		}
 	}
 }

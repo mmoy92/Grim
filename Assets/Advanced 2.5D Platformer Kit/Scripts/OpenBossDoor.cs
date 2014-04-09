@@ -19,7 +19,7 @@ public class OpenBossDoor : MonoBehaviour {
 	{
 		// If the colliding gameobject is the player...
 		if (other.gameObject == player) {
-			if (playerInventory.hasKey1 && !playerInventory.usedKey) // Check to see if the player has the key
+			if (playerInventory.keys == 2 && !playerInventory.usedKey) // Check to see if the player has the key
 			{
 				// Destroy the door
 				gameObject.GetComponent<MeshRenderer>().enabled=false;
