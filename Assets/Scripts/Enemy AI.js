@@ -33,3 +33,10 @@ function Update()
     	transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 	}
 }
+
+
+function getHurt(amt:int)
+{
+	health -= amt;
+	//rigidbody.AddForce(Vector3(10.0f,0,0));
+}

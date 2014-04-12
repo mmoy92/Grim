@@ -4,9 +4,9 @@ using System.Collections;
 public class grimInfo : MonoBehaviour
 {
 
-	private float grimHP;         // The player's health.
+	public static float grimHP;         // The player's health.
 	public float hurtForce = 20f;      // The force with which the player is pushed when hurt.
-	private float maxHP;                   // The player's mazx health.
+	public static float maxHP;                   // The player's mazx health.
 	private float lastHitTime;           // The time at which the player was last hit.
 	private PlatformerController player;   // Reference to the PlatformerController script.
 
@@ -23,7 +23,6 @@ public class grimInfo : MonoBehaviour
 		maxHP = 3;
 		grimHP = maxHP;
 		player 					= GetComponent<PlatformerController>();
-		grimHP = maxHP;
 		//healthScale = healthBar.transform.localScale;
 		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 
@@ -46,6 +45,7 @@ public class grimInfo : MonoBehaviour
 
 	public void Damage(int dam, Transform enemy)
 	{
+		/*
 		if (enemy.gameObject.tag == "Enemy") {
 			Vector3 hurtVector = (transform.position - enemy.position);
 			Vector3 standHurtVect = new Vector3(hurtVector.x, Mathf.Abs(hurtVector.y), 0.0f);
@@ -56,6 +56,7 @@ public class grimInfo : MonoBehaviour
 			Vector3 hurtVector = new Vector3(6.0f, 0.0f, 0.0f);
 			rigidbody.velocity = hurtVector;
 		}
+		*/
 
 		if (Time.time > lastHitTime + invulPer) 
 		{
@@ -67,7 +68,7 @@ public class grimInfo : MonoBehaviour
 			if (grimHP <= 0) 
 			{
 				StartCoroutine (GrimDeath (player.gameObject));
-				grimHP = maxHP;
+				Invoke("Start", 2.5f);
 			}
 		}
 	}
