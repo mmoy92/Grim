@@ -58,11 +58,13 @@ private var timeToNewDir = 0.0;
 private var turningTime = 0.0;
 private var turn: float;
 var verticalHover = 2;
+private var hoverDir = (Random.value > 0.5)? 1 : -1; // choose new direction
 
 function Idle () { 
     // Walk around and pause in random directions 
     if (Time.time > timeToNewDir) { // time to change direction?
         turn = (Random.value > 0.5)? rndAngle : -rndAngle; // choose new direction
+        hoverDir = (Random.value > 0.5)? 1 : -1; // choose new direction
         turningTime = Time.time + idleTime; // will stop and turn during idleTime...
         timeToNewDir = turningTime + travelTime;  // and travel during travelTime 
     }
@@ -75,7 +77,6 @@ function Idle () {
 
 function MoveCharacter(dir: Vector3, speed: float){ 
     var vel = dir.normalized * speed;  // vel = velocity to move 
-    var hoverDir = (Random.value > 0.5)? 1 : -1; // choose new direction
     vel.y += hoverDir * verticalHover; 
     // clamp the current vertical velocity for gravity purpose
     //vel.y = Mathf.Clamp(character.velocity.y, -2, 2); 
