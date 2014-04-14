@@ -29,7 +29,7 @@ public class MeleeSwipe : MonoBehaviour {
 			didHit = true;
 			Object newInst = Instantiate(slash, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 			other.gameObject.SendMessage("getHurt", 10);
-			StartCoroutine(Pause(0.1f));
+			//StartCoroutine(Pause(0.1f));
 			Destroy(gameObject,0.1f);
 		}
 	}

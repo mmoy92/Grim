@@ -27,7 +27,7 @@ public class PlatformerAnimation : MonoBehaviour
 			//no errors
 			animatedPlayerModel.animation["idle"].speed = 0;
 		}
-		swapWeapon ();
+		//swapWeapon ();
 
 	}
 	void swapWeapon()
@@ -205,6 +205,11 @@ public class PlatformerAnimation : MonoBehaviour
 		} else {
 			PlayAnim("jump");
 		}
+	}
+	void StartedDashing()
+	{
+		PlayAnim("dash");
+		//print("Start Sprint");
 	}
 	void StartedSprinting()
 	{

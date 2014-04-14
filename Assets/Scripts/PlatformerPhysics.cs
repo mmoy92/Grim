@@ -35,9 +35,12 @@ public class PlatformerPhysics : MonoBehaviour
 	//Private variables, no need to configure these
 	bool mOnGround						= false;	//Are we on the ground or not?
 	bool mSprinting						= false;	//Are we sprinting or not?
+	bool mDashing						= false; 	//Are we dashing or not?
 	bool mCrouching						= false;	//Are we crouching or not?
 	bool mTryingToUncrouch				= false;	//Are we trying to get out of crouch at the moment?
 	Vector3 mGroundDirection			= Vector3.right; //The direction of the ground we are standing on
+
+	bool mCanDash						= true;
 
 	bool mInJump						= false;	//Are we in a jump
 	bool mJumpPressed					= false;	//Was the jump button still pressed this frame?
@@ -104,6 +107,8 @@ public class PlatformerPhysics : MonoBehaviour
 		transform.position = mStartPosition;
 		rigidbody.velocity = Vector3.zero;
 		mGoingRight = true;
+		mDashing = false;
+		mCanDash = true;
 	}
 
 
@@ -143,7 +148,7 @@ public class PlatformerPhysics : MonoBehaviour
 			return;
 		}
 
-		if (!combatComponent.IsAttacking())  //Do not allow horizontal walking movement during attacks
+		if (!combatComponent.IsAttacking() && !mDashing)  //Do not allow horizontal walking movement during attacks
 		{
 			//get an acceleration amount
 			float accel = accelerationWalking;
@@ -223,6 +228,10 @@ public class PlatformerPhysics : MonoBehaviour
 	//Called when the player presses the attack button
 	public void Attack() 
 	{
+		if (mDashing) {
+				mDashing = false;
+				mCanDash = false;
+		}
 		combatComponent.Attack(rigidbody.velocity, mGoingRight);
 	}
 
@@ -288,12 +297,36 @@ public class PlatformerPhysics : MonoBehaviour
 		myCollider.size = size;
 		myCollider.center = center;
 	}
+	//Called when the player presses the dash button
+	public void StartDash() 
+	{
+		if (mCanDash) {
+			mCanDash = false;
+			mDashing = true;
+			//rigidbody.AddForce (mGroundDirection * 500, ForceMode.VelocityChange);
+			Vector3 vel = rigidbody.velocity;
+			vel.y = 0;
+			vel.x = mGoingRight ? 100 : -100;
+			rigidbody.velocity = vel;
+			SendAnimMessage ("StartedDashing");
 
+		}
+	}
+	public void EndDash()
+	{
+		mDashing = false;
+
+		Vector3 vel = rigidbody.velocity;
+		vel.x = 0;
+		rigidbody.velocity  = vel;
+
+		SendAnimMessage ("StartedJump");
+	}
     //Called when the player presses the sprint button
 	public void StartSprint() 
 	{
 		mSprinting = true;
-        SendAnimMessage("StartedSprinting");
+		SendAnimMessage("StartedSprinting");
 	}
 
     //Called when the player releases the sprint button
@@ -306,7 +339,7 @@ public class PlatformerPhysics : MonoBehaviour
 
 	void ApplyGravity()
 	{
-		if (!mOnGround) //basic gravity, only applied when we are not on the ground
+		if (!mOnGround && !mDashing) //basic gravity, only applied when we are not on the ground
 		{
 			rigidbody.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
 		}
@@ -341,6 +374,7 @@ public class PlatformerPhysics : MonoBehaviour
 
 	void ApplyMovementFriction()
 	{
+
 		Vector3 velocity = rigidbody.velocity;
 
 		//Apply ground friction
@@ -417,6 +451,8 @@ public class PlatformerPhysics : MonoBehaviour
 			Debug.DrawLine(hit.point, hit.point + mGroundDirection, Color.magenta);
 			mOnGround = true;
 			mOnWall = false;
+			mDashing = false;
+			mCanDash = true;
 		}
 		else
 		{
@@ -492,6 +528,8 @@ public class PlatformerPhysics : MonoBehaviour
 		}
 
 		mOnWall = true;
+		mDashing = false;
+		mCanDash = true;
 	}
 
 	bool CanUnCrouch()

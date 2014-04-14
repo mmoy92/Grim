@@ -20,10 +20,10 @@ public class PlatformerController : MonoBehaviour
 		if (mPlayer && mHasControl)
 		{
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-				mPlayer.StartSprint();
+				mPlayer.StartDash();
 
 			if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
-				mPlayer.StopSprint();
+				//mPlayer.StopSprint();
 
 			if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
 				mPlayer.Crouch();
