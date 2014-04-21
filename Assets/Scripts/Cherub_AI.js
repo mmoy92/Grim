@@ -1,12 +1,12 @@
 ﻿#pragma strict
 
 var target : Transform;
-var gravity : float = 20;
+var gravity : float = 100;
 var moveSpeed : float = 6;  // chase speed
-var chargeSpeed : float = 12; //Charge speed for last part of attack
-var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
-var attackDistance : float = 2;  // attack distance
-var chargeDistance : float = 6;
+var chargeSpeed : float = 7; //Charge speed for last part of attack
+var rotSpeed : float = 180;  // speed to turn to the player (degrees/second)
+var attackDistance : float = 7;  // attack distance
+var chargeDistance : float = 15;
 var detectRange : float = 20;  // detection distance
 
 private var transf : Transform;
@@ -18,6 +18,8 @@ function Start () {
     character = GetComponent(CharacterController);
 }
 
+private var switchRound: int = 60;
+var attackTurnFrames: int = 60; 
 function Update(){
 	transform.position.z = 0;
     if (target){
@@ -27,6 +29,19 @@ function Update(){
         if ((Physics.Raycast(transf.position, tgtDir, hit, detectRange))&&hit.collider.tag.Equals("Player")){
             var moveDir = target.position - transf.position;
             moveDir.y = 0;  // prevents enemy tilting
+            if (switchRound >= 0)//Random.value > .5 &&
+            {
+            	switchRound--; 
+            	moveDir.x = -moveDir.x;
+            }
+            else if (switchRound == (attackTurnFrames-(2*attackTurnFrames)))
+            {
+            	switchRound = attackTurnFrames;
+            }
+            else
+            {
+            	switchRound--;
+            }
             var rot = Quaternion.FromToRotation(Vector3.forward, moveDir);
             transf.rotation = Quaternion.RotateTowards(transf.rotation, rot, rotSpeed * Time.deltaTime);
             if (tgtDist <= attackDistance){  // if dist <= attackDistance: stop and attack
@@ -49,14 +64,19 @@ function Update(){
     }
 }
 
+var dropTime = 3.0;
+var thrustTime = 1.0;
+var upThrust = 200.0; 
 var walkSpeed = 3.0; 
 var travelTime = 2.0; 
-var idleTime = 1.5;
+var idleTime = 0.2;
 var rndAngle = 180;  // enemy will turn +/- rndAngle
 
+private var timeToNewThrust = 0.0;
 private var timeToNewDir = 0.0;
 private var turningTime = 0.0;
 private var turn: float;
+private var thrusting : boolean = false;
 var verticalHover = 2;
 private var hoverDir = (Random.value > 0.5)? 1 : -1; // choose new direction
 
@@ -75,11 +95,34 @@ function Idle () {
     }
 }
 
-function MoveCharacter(dir: Vector3, speed: float){ 
-    var vel = dir.normalized * speed;  // vel = velocity to move 
-    vel.y += hoverDir * verticalHover; 
+var minAltitude : float;
+minAltitude = 2.0f;
+function MoveCharacter(dir: Vector3, speed: float){
+	var vel = dir.normalized * speed;  // vel = velocity to move 
+	if(Time.time > timeToNewThrust) //If due for new thrust, set thrust and reset time
+	{
+		thrusting = true;
+		timeToNewThrust = Time.time + dropTime + thrustTime;
+	} 
+	if (thrusting)//If thrusting, go up, check if into droptime
+	{
+		thrusting = true;
+		vel.y += upThrust/thrustTime * Time.deltaTime;
+		if ((timeToNewThrust - dropTime) < Time.time)
+		{	
+			thrusting = false; 
+		}
+	}
+	else //Not thrusting-> droptime
+	{
+		vel.y -= gravity * Time.deltaTime;
+	}
+    //vel.y += hoverDir * verticalHover; 
     // clamp the current vertical velocity for gravity purpose
     //vel.y = Mathf.Clamp(character.velocity.y, -2, 2); 
-    //vel.y -= gravity * Time.deltaTime;  // apply gravity
+    if (Physics.Raycast(transf.position, -Vector3.up, minAltitude))
+    {
+    	vel.y = upThrust/thrustTime * Time.deltaTime;
+    }
     character.Move(vel * Time.deltaTime);  // move
 }
