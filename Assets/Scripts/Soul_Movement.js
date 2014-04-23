@@ -34,14 +34,14 @@ function Update()
 		
 		if (good){
 			//transform.Translate(moveSpeed * Time.deltaTime, 0, 0, Space.World);
-			if(target.transform.position.x - transform.position.x > 0)
-         		{
+			if(target.transform.position.x - transform.position.x < 0)
+         	{
           			transform.Translate(moveSpeed*Time.deltaTime,0,0, Space.World);
-         		}
-         		else if(target.transform.position.x - transform.position.x < 0)
-         		{
+         	}
+        	else if(target.transform.position.x - transform.position.x > 0)
+         	{
          	 		transform.Translate(-moveSpeed*Time.deltaTime,0,0, Space.World);
-         		}
+         	}
 			/*var targetRelative = transform.InverseTransformPoint(target.transform.position);
 		
 			if (targetRelative.x > 0)
