@@ -72,7 +72,12 @@ public class grimInfo : MonoBehaviour
 			}
 		}
 	}
+	public void setInvulnFor(float t)
+	{
+		invulPer = t;
 
+		lastHitTime = Time.time; 
+	}
 	void OnCollisionEnter (Collision col)
 	{
 		if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Spikes") {
