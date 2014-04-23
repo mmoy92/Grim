@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerCombat : MonoBehaviour {
 	public Transform melee;
-	bool isVulnerable					= true;		//Is the character able to be hurt right now?
 	bool mAttacking						= false;	//Are we currently attacking
 	bool mCanAttack						= true;		//Can the player click the button to do the next attack?
 	float mAttackTimer					= 0;		//Current time until the current attack is done
@@ -37,7 +36,6 @@ public class PlayerCombat : MonoBehaviour {
 				if(mAttackTimer<= 0) //Attack animation is done, time to revert back to normal state
 				{
 					mAttacking = false;
-					isVulnerable = true;
 					if(mCurrentAttack == 1) //Reset the attack combo
 					{
 						mCurrentAttack = 0;
@@ -55,7 +53,6 @@ public class PlayerCombat : MonoBehaviour {
 		{
 			mCanAttack = false;
 			mAttacking = true;
-			isVulnerable = false;
 			
 			mCurrentAttack += 1;
 			
@@ -110,5 +107,4 @@ public class PlayerCombat : MonoBehaviour {
 	}
 	public bool IsAttacking() {return mAttacking;}
 	public bool CanAttack() {return mCanAttack;}
-	public bool IsVulnerable() {return isVulnerable; }
 }

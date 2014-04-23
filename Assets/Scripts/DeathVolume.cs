@@ -9,7 +9,7 @@ public class DeathVolume : MonoBehaviour
 		PlayerCombat combat = other.GetComponent<PlayerCombat>();
 		grimInfo info = other.GetComponent<grimInfo> ();
 		int spikeDamage = 1; 
-		if (controller && controller.HasControl() && combat.IsVulnerable())
+		if (controller && controller.HasControl())
 		{
 			info.Damage(spikeDamage);
 		}

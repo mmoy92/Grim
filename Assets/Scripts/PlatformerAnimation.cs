@@ -4,11 +4,20 @@ using System.Collections;
 public class PlatformerAnimation : MonoBehaviour
 {
 	public Transform animatedPlayerModel; //Animated model that will have all the animations in it
+	public Object necroTrail;
+	public Object necroEffect;
+	public Object holySpark;
+	public Object holySpiral;
 	bool mPlayerDead = false;
     bool mIdle = false;
 	bool mGround = true;
 	bool mAttack = false;
+	bool isRight =  true;
+
 	GameObject weapon;
+	Transform renderedNinja;
+	public bool switchWeapon = false;
+
 	void Start () 
 	{
 		//Do some error checks first
@@ -27,7 +36,11 @@ public class PlatformerAnimation : MonoBehaviour
 			//no errors
 			animatedPlayerModel.animation["idle"].speed = 0;
 		}
-		//swapWeapon ();
+		if (switchWeapon) {
+			swapWeapon ();
+		}
+
+		renderedNinja = animatedPlayerModel.Find("ninja");
 
 	}
 	void swapWeapon()
@@ -45,8 +58,9 @@ public class PlatformerAnimation : MonoBehaviour
 		cube.transform.localRotation = Quaternion.identity;
 		cube.transform.localScale = new Vector3(0.1f, 2.5f, 0.1f);
 		
-		// Make sure it is active
-		cube.active = true;
+		// Disable collision of cube weapon
+		cube.collider.isTrigger = true;
+		//cube.active = true;
 
 	}
 	bool CheckAnims()
@@ -97,6 +111,11 @@ public class PlatformerAnimation : MonoBehaviour
 			}
 		}
 
+		if (!animatedPlayerModel.animation ["dash"].enabled  && !renderedNinja.renderer.enabled) 
+		{
+			EndGoodDash();
+		}
+
 	}
 
 	void PlayAnim(string animName)
@@ -109,6 +128,7 @@ public class PlatformerAnimation : MonoBehaviour
 	}
 	void GoLeft()
 	{
+		isRight = false;
 		Vector3 localScale = animatedPlayerModel.transform.localScale;
 		localScale.z = -Mathf.Abs(localScale.z);
 		animatedPlayerModel.transform.localScale = localScale;
@@ -116,6 +136,7 @@ public class PlatformerAnimation : MonoBehaviour
 
 	void GoRight()
 	{
+		isRight = true;
 		Vector3 localScale = animatedPlayerModel.transform.localScale;
 		localScale.z = Mathf.Abs(localScale.z);
 		animatedPlayerModel.transform.localScale = localScale;
@@ -206,10 +227,48 @@ public class PlatformerAnimation : MonoBehaviour
 			PlayAnim("jump");
 		}
 	}
-	void StartedDashing()
+	void StartedEvilDash()
 	{
 		PlayAnim("dash");
+		Vector3 spawn = transform.position;
+		spawn.y += 1;
+		if(isRight)
+		{
+			Instantiate(necroEffect, spawn, Quaternion.Euler(new Vector3(0,0,0)));
+			Instantiate(necroTrail, spawn, Quaternion.Euler(new Vector3(0,0,0)));
+		}
+		else
+		{
+			Instantiate(necroEffect, spawn, Quaternion.Euler(new Vector3(0,0,180f)));
+			Instantiate(necroTrail, spawn, Quaternion.Euler(new Vector3(0,0,180f)));
+		}
 		//print("Start Sprint");
+	}
+	void EndEvilDash()
+	{
+
+	}
+	void StartedGoodDash()
+	{
+
+		PlayAnim("dash");
+		renderedNinja.renderer.enabled = false;
+
+		HolyEffect ();
+		
+
+	}
+	void EndGoodDash()
+	{
+		HolyEffect ();
+		renderedNinja.renderer.enabled = true;
+	}
+	void HolyEffect()
+	{
+		Vector3 spawn = transform.position;
+		spawn.y += 1;
+		Instantiate(holySpark, spawn, Quaternion.Euler(new Vector3(0,0,0)));
+		Instantiate(holySpiral, spawn, Quaternion.Euler(new Vector3(0,0,0)));
 	}
 	void StartedSprinting()
 	{

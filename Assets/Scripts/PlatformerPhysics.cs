@@ -26,6 +26,10 @@ public class PlatformerPhysics : MonoBehaviour
 	public float crouchDownwardForce	= 20;		//Extra gravity added to the character if the crouch button is pressed
 	public bool canDoubleJump			= false;	//Whether the character can double jump or not
 	public bool canWallJump				= true;		//Whether the character can do a wall jump or not
+
+	public bool hasEvilDash				= true;
+	public bool hasGoodDash 			= false;
+
 	public float wallJumpVelocity		= 15;		//Sideways velocity when doing a walljump
 	public float wallStickyness			= 0.5f;		//Amount of seconds the player has to move away from a wall to let go of it. The idea behind this is that players can press the opposite direction to prepare for a walljump without immediately letting go of the wall
 	public float gravityMultiplier		= 3.5f;		//Amount of gravity applied to the character compared to the rest of the physics world
@@ -63,7 +67,7 @@ public class PlatformerPhysics : MonoBehaviour
 	float origColliderSizeY;
 	
 	PlayerCombat combatComponent;
-
+	grimInfo infoComponent;
 
 	public void Start () 
 	{
@@ -84,6 +88,7 @@ public class PlatformerPhysics : MonoBehaviour
 			Debug.LogWarning("You should turn off 'use gravity' on the platformer rigidbody. This will give strange behaviour.");
 
 		combatComponent = GetComponent<PlayerCombat>();
+		infoComponent = GetComponent<grimInfo> ();
 
 		mStartPosition = transform.position;
 		RecalcBounds();
@@ -182,7 +187,7 @@ public class PlatformerPhysics : MonoBehaviour
 		mJumpPressed = true;
 
 		//See if we can start a jump
-		if (mJumpFramesLeft == 0 && !mInJump && !mCrouching)
+		if (mJumpFramesLeft == 0 && !mInJump && !mCrouching && !mDashing)
 		{
 			if (!mOnGround && mSecondJumpLeft && canDoubleJump) //Second jump
 			{
@@ -303,12 +308,22 @@ public class PlatformerPhysics : MonoBehaviour
 		if (mCanDash) {
 			mCanDash = false;
 			mDashing = true;
-			//rigidbody.AddForce (mGroundDirection * 500, ForceMode.VelocityChange);
-			Vector3 vel = rigidbody.velocity;
-			vel.y = 0;
-			vel.x = mGoingRight ? 100 : -100;
-			rigidbody.velocity = vel;
-			SendAnimMessage ("StartedDashing");
+			if(hasEvilDash){
+				//rigidbody.AddForce (mGroundDirection * 500, ForceMode.VelocityChange);
+				Vector3 vel = rigidbody.velocity;
+				vel.y = 0;
+				vel.x = mGoingRight ? 100 : -100;
+				rigidbody.velocity = vel;
+				SendAnimMessage ("StartedEvilDash");
+			} else if (hasGoodDash){
+				infoComponent.setInvulnFor(1.0f);
+				Vector3 vel = rigidbody.velocity;
+				vel.y = 0;
+				vel.x = mGoingRight ? 200 : -200;
+				rigidbody.velocity = vel;
+				SendAnimMessage ("StartedGoodDash");
+
+			}
 
 		}
 	}
@@ -319,7 +334,11 @@ public class PlatformerPhysics : MonoBehaviour
 		Vector3 vel = rigidbody.velocity;
 		vel.x = 0;
 		rigidbody.velocity  = vel;
-
+		if (hasGoodDash) {
+			SendAnimMessage("EndGoodDash");
+		} else {
+			SendAnimMessage("EndEvilDash");
+		}
 		SendAnimMessage ("StartedJump");
 	}
     //Called when the player presses the sprint button
