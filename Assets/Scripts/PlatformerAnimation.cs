@@ -48,7 +48,6 @@ public class PlatformerAnimation : MonoBehaviour
 		weapon = GameObject.Find ("ninja_sword");
 		// Create a simple cube object 
 		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		
 		// Re-parent the cube as child of the trackable gameObject
 		cube.transform.parent = weapon.transform;
 		

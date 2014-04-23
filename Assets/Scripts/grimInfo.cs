@@ -20,7 +20,7 @@ public class grimInfo : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		maxHP = 3;
+		maxHP = 5;
 		grimHP = maxHP;
 		player 					= GetComponent<PlatformerController>();
 		//healthScale = healthBar.transform.localScale;
