@@ -8,6 +8,8 @@ var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
 var chargeDistance : float = 6;
 var detectRange : float = 20;  // detection distance
+var health = 10;
+public var Soul:GameObject;
 
 private var transf : Transform;
 private var character: CharacterController; 
@@ -79,4 +81,24 @@ function MoveCharacter(dir: Vector3, speed: float){
     vel.y = Mathf.Clamp(character.velocity.y, -30, 2); 
     vel.y -= gravity * Time.deltaTime;  // apply gravity
     character.Move(vel * Time.deltaTime);  // move
+}
+
+function OnCollisionEnter (other : Collision)
+{
+    if(other.gameObject.name == "Player")
+    {
+       health = health - 10;  // Reworked line
+    }
+	if (health < 0){
+       Destroy (gameObject);
+       var new_Soul : GameObject;
+       new_Soul = Instantiate (Soul, Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), 
+       			Quaternion.identity);
+    }
+}
+
+function getHurt(amt:int)
+{
+	health -= amt;
+	//rigidbody.AddForce(Vector3(10.0f,0,0));
 }
