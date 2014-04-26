@@ -239,7 +239,15 @@ public class PlatformerPhysics : MonoBehaviour
 		}
 		combatComponent.Attack(rigidbody.velocity, mGoingRight);
 	}
-
+	//Called when the player presses the sp. attack button
+	public void SpecialAttack() 
+	{
+		if (mDashing) {
+			mDashing = false;
+			mCanDash = false;
+		}
+		combatComponent.SpecialAttack(rigidbody.velocity, mGoingRight);
+	}
 
     //Called when the player presses the crouch button
 	public void Crouch() 

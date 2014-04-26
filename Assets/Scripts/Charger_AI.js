@@ -87,7 +87,7 @@ function OnCollisionEnter (other : Collision)
 {
     if(other.gameObject.name == "Player")
     {
-       health = health - 10;  // Reworked line
+      // health = health - 10;  // Reworked line
     }
 	if (health < 0){
        Destroy (gameObject);
@@ -100,5 +100,11 @@ function OnCollisionEnter (other : Collision)
 function getHurt(amt:int)
 {
 	health -= amt;
-	//rigidbody.AddForce(Vector3(10.0f,0,0));
+	
+	
+}
+function knockBack()
+{
+	transform.Translate(Vector3.back * 0.5f);
+
 }

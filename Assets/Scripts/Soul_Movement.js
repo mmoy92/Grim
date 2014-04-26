@@ -10,7 +10,10 @@ var health = 10;
 var good = true;
 
 private var isItAttacking = false;
-
+function Start()
+{
+	target = GameObject.Find("Player").transform;
+}
 function Update() 
 {
 	transform.LookAt(target);

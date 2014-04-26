@@ -4,7 +4,7 @@
 var target : Transform;    
 var lookAtDistance = 15.0;
 var attackRange = 10.0;
-var moveSpeed = 5.0;
+var moveSpeed = 15.0;
 var damping = 6.0;
 var health = 10;
 
@@ -31,6 +31,7 @@ function Update()
 		isItAttacking = true;
     	renderer.material.color = Color.red;
     	transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+    	//rigidbody.velocity = (target.transform.position - transform.position).normalized    * (moveSpeed );
 	}
 }
 
@@ -38,5 +39,11 @@ function Update()
 function getHurt(amt:int)
 {
 	health -= amt;
-	//rigidbody.AddForce(Vector3(10.0f,0,0));
+	Destroy (gameObject);
+	
+}
+function knockBack()
+{
+	transform.Translate(Vector3.back * 0.5f);
+
 }
