@@ -27,7 +27,7 @@ public class MeleeSwipe : MonoBehaviour {
 			other.gameObject.SendMessage("getHurt",10);
 			other.gameObject.SendMessage("knockBack");
 			//StartCoroutine(Pause(0.1f));
-			Destroy(gameObject,0.1f);
+			//Destroy(gameObject,0.1f);
 		}
 	}
 }

@@ -274,6 +274,11 @@ public class PlatformerAnimation : MonoBehaviour
 		PlayAnim ("goodSpear");
 		mAttack = true;
 	}
+	void StartEvilSplode()
+	{
+		PlayAnim ("goodSpear");
+		mAttack = true;
+	}
 	void StartAttackA()
 	{
 		PlayAnim ("attackA");

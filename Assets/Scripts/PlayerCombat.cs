@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerCombat : MonoBehaviour {
 	public Transform melee;
 	public Transform lightSpear;
+	public Transform evilSplode;
 	bool mAttacking						= false;	//Are we currently attacking
 	bool mCanAttack						= true;		//Can the player click the button to do the next attack?
 	float mAttackTimer					= 0;		//Current time until the current attack is done
@@ -94,7 +95,7 @@ public class PlayerCombat : MonoBehaviour {
 		}
 
 	}
-	public void SpecialAttack(Vector3 vel, bool mGoingRight)
+	public void EvilAttack(Vector3 vel, bool mGoingRight)
 	{
 		if (mCanAttack)
 		{
@@ -102,6 +103,28 @@ public class PlayerCombat : MonoBehaviour {
 			mAttacking = true;
 			
 			mCurrentAttack = 4;
+			
+			mAttackTimer = 0.5f;
+
+			vel.y = -20;
+			rigidbody.velocity = vel; 
+
+			SendAnimMessage("StartEvilSplode");
+			
+			isRight = mGoingRight;
+			
+			
+		}
+		
+	}
+	public void GoodAttack(Vector3 vel, bool mGoingRight)
+	{
+		if (mCanAttack)
+		{
+			mCanAttack = false;
+			mAttacking = true;
+			
+			mCurrentAttack = 5;
 
 			mAttackTimer = 0.5f;
 			SendAnimMessage("StartGoodSpear");
@@ -116,8 +139,14 @@ public class PlayerCombat : MonoBehaviour {
 	{
 		Vector3 swipeSpawn = transform.position;
 
-		if (mCurrentAttack == 4) {//Light spear
-			swipeSpawn.y += 1.5f;
+		if (mCurrentAttack == 4) {//Evil splode
+
+
+			Instantiate (evilSplode, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 0)));
+
+			
+		} else if (mCurrentAttack == 5) {//Light spear
+			swipeSpawn.y += 1.2f;
 			if (isRight) {
 				swipeSpawn.x += 5.0f;
 				Instantiate (lightSpear, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 0)));
