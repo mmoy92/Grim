@@ -33,5 +33,10 @@ public class SoulMovement : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void destroySoul ()
+	{
+		Destroy (gameObject);
+	}
 	
 }

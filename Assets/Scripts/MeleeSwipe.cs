@@ -27,14 +27,15 @@ public class MeleeSwipe : MonoBehaviour {
 			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 			other.gameObject.SendMessage("getHurt",10);
 			other.gameObject.SendMessage("knockBack");
-			StartCoroutine(Pause(0.1f));
+			//StartCoroutine(Pause(0.1f));
 			//Destroy(gameObject,0.1f);
 		}
-		/*else if(other.tag == "Soul" && !didHit)
+		else if(other.tag == "Soul")
 		{
 			didHit = true;
 			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
-			other.gameObject.SendMessage("destroySoul");
-		}*/
+			print ("TEST");
+			//other.gameObject.SendMessage("destroySoul");
+		}
 	}
 }
