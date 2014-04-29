@@ -1,5 +1,6 @@
 ﻿#pragma strict
 
+var deathEffect:Transform;
 var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
@@ -102,11 +103,15 @@ function getHurt(amt:int)
 {
 	health -= amt;	
 	if (health < 0){
+		GameObject.FindGameObjectWithTag("MainCamera").GetComponent("FollowCam2D").SendMessage("SlowMoShake");
+	
        Destroy (gameObject);
        var new_Soul : GameObject;
        deathLocation = GameObject.Find("Player").transform;
        new_Soul = Instantiate (Soul, Vector3(deathLocation.transform.position.x + 5, 
        			deathLocation.transform.position.y + 1, deathLocation.transform.position.z), Quaternion.Euler(new Vector3(0,0,0)));
+       			
+       Instantiate(deathEffect, Vector3(transform.position.x,transform.position.y + 1, transform.position.z), Quaternion.Euler(new Vector3(0,0,0)));
     }
 }
 

@@ -27,8 +27,7 @@ public class SoulMovement : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision other)
 	{
-		if (other.gameObject == player) {
-			
+		if (other.gameObject.tag == player.tag) {
 			info.soulCount += 1;
 			Destroy (gameObject);
 		}

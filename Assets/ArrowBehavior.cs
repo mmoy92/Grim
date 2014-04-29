@@ -43,14 +43,16 @@ public class ArrowBehavior : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collider other)
+	void OnCollisionEnter(Collision collision)
 	{
-		if (other.tag == "level") {
+		//other.tag
+
+		if (collision.gameObject.tag == "level") {
 			impact = 1;
 		} 
-		else if (other.tag == "Player") {
+		else if (collision.gameObject.tag == "Player") {
 			impact = 2; 
-			other.GetComponent<grimInfo>().Damage(arrowDamage);
+			collision.gameObject.GetComponent<grimInfo>().Damage(arrowDamage);
 		}
 	}
 }
