@@ -9,6 +9,7 @@ var attackDistance : float = 2;  // attack distance
 var chargeDistance : float = 6;
 var detectRange : float = 20;  // detection distance
 var health = 10;
+var deathLocation : Transform;
 
 public var Soul:GameObject;
 private var transf : Transform;
@@ -83,7 +84,7 @@ function MoveCharacter(dir: Vector3, speed: float){
     character.Move(vel * Time.deltaTime);  // move
 }
 
-function OnCollisionEnter (other : Collision)
+/*function OnCollisionEnter (other : Collision)
 {
     if(other.gameObject.name == "Player")
     {
@@ -95,14 +96,20 @@ function OnCollisionEnter (other : Collision)
        new_Soul = Instantiate (Soul, Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), 
        			Quaternion.identity);
     }
-}
+}*/
 
 function getHurt(amt:int)
 {
-	health -= amt;
-	
-	
+	health -= amt;	
+	if (health < 0){
+       Destroy (gameObject);
+       var new_Soul : GameObject;
+       deathLocation = GameObject.Find("Player").transform;
+       new_Soul = Instantiate (Soul, Vector3(deathLocation.transform.position.x + 5, 
+       			deathLocation.transform.position.y + 1, deathLocation.transform.position.z), Quaternion.Euler(new Vector3(0,0,0)));
+    }
 }
+
 function knockBack()
 {
 	transform.Translate(Vector3.back * 0.5f);

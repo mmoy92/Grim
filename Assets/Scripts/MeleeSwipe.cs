@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
+	public grimInfo grimInfo;
 	private bool didHit = false;
 	void Update()
 	{
@@ -26,8 +27,14 @@ public class MeleeSwipe : MonoBehaviour {
 			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 			other.gameObject.SendMessage("getHurt",10);
 			other.gameObject.SendMessage("knockBack");
-			//StartCoroutine(Pause(0.1f));
+			StartCoroutine(Pause(0.1f));
 			//Destroy(gameObject,0.1f);
 		}
+		/*else if(other.tag == "Soul" && !didHit)
+		{
+			didHit = true;
+			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
+			other.gameObject.SendMessage("destroySoul");
+		}*/
 	}
 }
