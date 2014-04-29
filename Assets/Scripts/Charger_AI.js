@@ -89,19 +89,19 @@ function OnCollisionEnter (other : Collision)
     {
       // health = health - 10;  // Reworked line
     }
-	if (health < 0){
-       Destroy (gameObject);
-       var new_Soul : GameObject;
-       new_Soul = Instantiate (Soul, Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), 
-       			Quaternion.identity);
-    }
+	
 }
 
 function getHurt(amt:int)
 {
 	health -= amt;
 	
-	
+	if (health < 0){
+       Destroy (gameObject);
+       var new_Soul : GameObject;
+       new_Soul = Instantiate (Soul, Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 
+       			Quaternion.identity);
+    }
 }
 function knockBack()
 {

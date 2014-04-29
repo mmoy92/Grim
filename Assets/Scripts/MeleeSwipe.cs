@@ -4,6 +4,7 @@ using System.Collections;
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
 	private bool didHit = false;
+	public float damage = 10;
 	void Update()
 	{
 		//transform.Translate(Vector3.right * 0.1f);
@@ -24,7 +25,7 @@ public class MeleeSwipe : MonoBehaviour {
 		{
 			didHit = true;
 			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
-			other.gameObject.SendMessage("getHurt",10);
+			other.gameObject.SendMessage("getHurt",damage);
 			other.gameObject.SendMessage("knockBack");
 			//StartCoroutine(Pause(0.1f));
 			//Destroy(gameObject,0.1f);
