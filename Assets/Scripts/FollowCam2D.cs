@@ -7,6 +7,7 @@ public class FollowCam2D : MonoBehaviour
 	public float distance = 10.0f;
 	public float extraHeight = 2.0f;
 
+	public Transform skullyText;
 	private float shake = 0;
 	public float shakeAmount = 0.7f;
 	public float decreaseFactor = 1.0f;
@@ -62,6 +63,9 @@ public class FollowCam2D : MonoBehaviour
 		shake = 0.5f;
 		Time.timeScale = 0.75f;
 		isSlowMo = true;
+
+		Vector3 pos = GameObject.FindGameObjectWithTag("Player").gameObject.transform.position;
+		Instantiate (skullyText, new Vector3(pos.x, pos.y + 5, pos.z), Quaternion.Euler (new Vector3 (0, 0, 0)));
 	}
 }
 
