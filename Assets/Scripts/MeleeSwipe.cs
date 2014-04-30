@@ -5,10 +5,12 @@ public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
 	private bool didHit = false;
 	public float damage = 10;
+
 	void Update()
 	{
-		//transform.Translate(Vector3.right * 0.1f);
+
 	}
+
 	private IEnumerator Pause(float p)
 	{
 		Time.timeScale = 0.0f;
@@ -20,6 +22,7 @@ public class MeleeSwipe : MonoBehaviour {
 		Time.timeScale = 1;
 
 	}
+
 	void OnTriggerStay(Collider other) {
 		if(other.tag == "Enemy" && !didHit)
 		{
@@ -31,8 +34,16 @@ public class MeleeSwipe : MonoBehaviour {
 			FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
 			//camComponent.SendMessage("Shake", 0.1);
 
-			//StartCoroutine(Pause(0.1f));
 			//Destroy(gameObject,0.1f);
+		}
+		else if (other.tag == "Soul" && !didHit)
+		{
+			print ("TEST");
+			didHit = true;
+			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
+			SoulMovement soul = other.GetComponent<SoulMovement>();
+			soul.destroySoul();
+
 		}
 	}
 }

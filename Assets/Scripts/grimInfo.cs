@@ -20,6 +20,7 @@ public class grimInfo : MonoBehaviour
 	public int soulCount;
 	public int keys = 0;	//Whether or not the player has the first key
 	public bool usedKey;
+	public bool good = false;
 	
 	// Use this for initialization
 	void Start ()
