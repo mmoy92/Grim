@@ -30,6 +30,9 @@ public class PlatformerPhysics : MonoBehaviour
 	public bool hasEvilDash				= true;
 	public bool hasGoodDash 			= false;
 
+	public bool hasEvilAttack			= false;
+	public bool hasGoodAttack			= true;
+
 	public float wallJumpVelocity		= 15;		//Sideways velocity when doing a walljump
 	public float wallStickyness			= 0.5f;		//Amount of seconds the player has to move away from a wall to let go of it. The idea behind this is that players can press the opposite direction to prepare for a walljump without immediately letting go of the wall
 	public float gravityMultiplier		= 3.5f;		//Amount of gravity applied to the character compared to the rest of the physics world
@@ -239,7 +242,22 @@ public class PlatformerPhysics : MonoBehaviour
 		}
 		combatComponent.Attack(rigidbody.velocity, mGoingRight);
 	}
-
+	//Called when the player presses the sp. attack button
+	public void SpecialAttack() 
+	{
+		if (hasEvilAttack || hasGoodAttack) {
+			if (mDashing) {
+					mDashing = false;
+					mCanDash = false;
+			}
+			if(hasEvilAttack){
+				combatComponent.EvilAttack (rigidbody.velocity, mGoingRight);
+			}else {
+			
+				combatComponent.GoodAttack (rigidbody.velocity, mGoingRight);
+			}
+		}
+	}
 
     //Called when the player presses the crouch button
 	public void Crouch() 

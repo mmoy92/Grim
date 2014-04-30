@@ -3,15 +3,11 @@ using System.Collections;
 
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
-	public AudioClip slashClip;
 	private bool didHit = false;
-	// Use this for initialization
-	void Start () {
-		Destroy(gameObject,0.3f);
-	}
+	public float damage = 10;
 	void Update()
 	{
-		transform.Translate(Vector3.right * 0.2f);
+		//transform.Translate(Vector3.right * 0.1f);
 	}
 	private IEnumerator Pause(float p)
 	{
@@ -28,11 +24,15 @@ public class MeleeSwipe : MonoBehaviour {
 		if(other.tag == "Enemy" && !didHit)
 		{
 			didHit = true;
-			AudioSource.PlayClipAtPoint(slashClip, transform.position, 1.0f);
-			Object newInst = Instantiate(slash, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
-			other.gameObject.SendMessage("getHurt", 10);
+			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
+			other.gameObject.SendMessage("getHurt",damage);
+			other.gameObject.SendMessage("knockBack");
+
+			FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
+			//camComponent.SendMessage("Shake", 0.1);
+
 			//StartCoroutine(Pause(0.1f));
-			Destroy(gameObject,0.1f);
+			//Destroy(gameObject,0.1f);
 		}
 	}
 }

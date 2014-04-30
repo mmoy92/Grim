@@ -17,13 +17,17 @@ public class grimInfo : MonoBehaviour
 	public float invulPer = 2f; //Invulnerability period to prevent instant re-hit (NOTE: figure out what this timescale is...)
 								//Development quandry -> would it be more efficient to have a bool vuln method that responded to triggering
 								//damage scripts instead of handling it all here?
-
+	public int soulCount;
+	public int keys = 0;	//Whether or not the player has the first key
+	public bool usedKey;
+	
 	// Use this for initialization
 	void Start ()
 	{
 		maxHP = 5;
 		grimHP = maxHP;
 		player 					= GetComponent<PlatformerController>();
+		soulCount = 0;
 		//healthScale = healthBar.transform.localScale;
 		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 
@@ -87,7 +91,6 @@ public class grimInfo : MonoBehaviour
 			Damage (1, col.transform);
 		}
 	}
-
 	/*public void UpdateHealthBar ()
 	{
 		// Set the health bar's colour to proportion of the way between green and red based on the player's health.
@@ -111,5 +114,6 @@ public class grimInfo : MonoBehaviour
 		player.GetComponent<PlatformerAnimation>().PlayerLives();
 		player.GetComponent<PlatformerController>().GiveControl();
 	}
+	
 }
 

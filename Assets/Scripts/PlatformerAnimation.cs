@@ -89,7 +89,7 @@ public class PlatformerAnimation : MonoBehaviour
 		float walkingSpeed = Mathf.Abs(rigidbody.velocity.x)*0.075f;
 
 		//Set mAttack to false if no attack animation is running
-		if (mAttack && !animatedPlayerModel.animation ["attackA"].enabled && !animatedPlayerModel.animation ["attackB"].enabled && !animatedPlayerModel.animation ["attackC"].enabled) 
+		if (mAttack && !animatedPlayerModel.animation ["attackA"].enabled && !animatedPlayerModel.animation ["attackB"].enabled && !animatedPlayerModel.animation ["attackC"].enabled&& !animatedPlayerModel.animation ["goodSpear"].enabled) 
 		{
 			mAttack = false;
 			
@@ -269,14 +269,15 @@ public class PlatformerAnimation : MonoBehaviour
 		Instantiate(holySpark, spawn, Quaternion.Euler(new Vector3(0,0,0)));
 		Instantiate(holySpiral, spawn, Quaternion.Euler(new Vector3(0,0,0)));
 	}
-	void StartedSprinting()
+	void StartGoodSpear()
 	{
-		//print("Start Sprint");
+		PlayAnim ("goodSpear");
+		mAttack = true;
 	}
-
-	void StoppedSprinting()
+	void StartEvilSplode()
 	{
-		//print("Stop Sprint");
+		PlayAnim ("goodSpear");
+		mAttack = true;
 	}
 	void StartAttackA()
 	{
