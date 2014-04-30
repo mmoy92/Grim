@@ -4,7 +4,7 @@ using System.Collections;
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
 	private bool didHit = false;
-	public float damage = 10;
+	public float damage = 10; 
 
 	void Update()
 	{
@@ -36,11 +36,10 @@ public class MeleeSwipe : MonoBehaviour {
 
 			//Destroy(gameObject,0.1f);
 		}
-		else if (other.tag == "Soul" && !didHit)
+
+		if (other.tag == "Soul" && !didHit)
 		{
-			print ("TEST");
 			didHit = true;
-			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 			SoulMovement soul = other.GetComponent<SoulMovement>();
 			soul.destroySoul();
 

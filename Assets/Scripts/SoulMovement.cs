@@ -5,10 +5,11 @@ public class SoulMovement : MonoBehaviour {
 	private GameObject player;                 
 	private grimInfo info;
 	private int lifetime = 10;
-	private Vector3 newPosition;
-	private Vector3 startPosition;
-	public float smooth = 2;
-	public float offset = 2;
+	private Vector3 pos1;
+	private Vector3 pos2;
+	private Vector3 moveTo;
+	private Vector3 offset;
+	private float speed = 0.01f;
 
 	// Use this for initialization
 	void Awake ()
@@ -16,7 +17,9 @@ public class SoulMovement : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		info = player.GetComponent<grimInfo>();
 
-		startPosition = transform.position;
+		offset = Vector3.up;
+		pos1 = transform.position;
+		pos2 = transform.position + offset; 
 
 		if (info.good) {
 			lifetime = 20;
@@ -34,37 +37,28 @@ public class SoulMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		PositionChanging ();
+		if(transform.position == pos1)
+		{
+			moveTo = pos2;	
+		}
+		if(transform.position == pos2)	
+		{
+			moveTo = pos1;	
+		}
+		transform.position = Vector3.MoveTowards(transform.position, moveTo, speed);
 	}
 
-	void PositionChanging()
-	{
-		if(transform.position == startPosition)
-		{
-			transform.position = Vector3.Lerp(transform.position, 
-			                                  new Vector3(transform.position.x, transform.position.y + offset, transform.position.z), 
-			                                  smooth * Time.deltaTime);
-		}
-		else
-		{
-			transform.position = Vector3.Lerp(transform.position, startPosition, smooth * Time.deltaTime);
-		}
-
-	}
 	void OnCollisionEnter (Collision other)
 	{
-		if (other.gameObject.tag == player.tag) {
-			info.soulCount += 1;
-			Destroy (gameObject);
-		}
+
 	}
 
 	public void destroySoul ()
 	{
-		//GameObject player = GameObject.Find ("Player");
-		//grimInfo grim_info = player.GetComponent<grimInfo> ();
-		//grim_info.soulCount += 1;
-		//Destroy (this.gameObject);
+		GameObject player = GameObject.Find ("Player");
+		grimInfo grim_info = player.GetComponent<grimInfo> ();
+		grim_info.soulCount += 1;
+		Destroy (this.gameObject);
 	}
 	
 }
