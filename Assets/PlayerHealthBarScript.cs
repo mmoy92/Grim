@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlayerHealthBarScript : MonoBehaviour
 {
+	private GameObject player;                      // Reference to the player
+	private grimInfo griminfo;
+
 	
 		public GUIStyle health_empty;
 		public GUIStyle health_full;
@@ -36,10 +39,12 @@ public class PlayerHealthBarScript : MonoBehaviour
 		public Texture2D emptyKey;
 		public Texture2D fullKey;
 		//public Texture2D unlockTex;
- 
 
 		void Start ()
 		{
+				player = GameObject.FindGameObjectWithTag("Player");
+				griminfo = player.GetComponent<grimInfo>();
+
 				float sizeScalingX = (455f / 1366f) * Screen.width;
 				float sizeScalingY = (65f / 597f) * Screen.height;
 
@@ -92,19 +97,19 @@ public class PlayerHealthBarScript : MonoBehaviour
 	
 		void Update ()
 		{
-				if (grimInfo.grimHP == 5) {
+				if (griminfo.grimHP == 5) {
 						healthBar = 1;
-				} else if (grimInfo.grimHP == 4) {
+				} else if (griminfo.grimHP == 4) {
 						healthBar = 356f / 455f;
-				} else if (grimInfo.grimHP == 3) {
+				} else if (griminfo.grimHP == 3) {
 						healthBar = 253f / 455f;
-				} else if (grimInfo.grimHP == 2) {
+				} else if (griminfo.grimHP == 2) {
 						healthBar = 151f / 455f;
-				} else if (grimInfo.grimHP == 1) {
+				} else if (griminfo.grimHP == 1) {
 						healthBar = 47f / 455f;
 				} else
 						healthBar = 0;
 
-				keyProgress = grimInfo.keys / grimInfo.maxKeys;
+				keyProgress = griminfo.keys / griminfo.maxKeys;
 		}	
 }

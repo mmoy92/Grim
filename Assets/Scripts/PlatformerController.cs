@@ -21,17 +21,12 @@ public class PlatformerController : MonoBehaviour
 		//here are the actions that are triggered by a press or a release
 		if (mPlayer && mHasControl)
 		{
-<<<<<<< HEAD
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
 				if(dashingTime >= 5f){
 					dashingTime = 0;
 					mPlayer.StartDash();
 				}
 			}
-=======
-			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-				mPlayer.StartDash();
->>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
 
 			if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
 				mPlayer.Crouch();

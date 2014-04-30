@@ -9,14 +9,8 @@ var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
 var chargeDistance : float = 6;
 var detectRange : float = 20;  // detection distance
-<<<<<<< HEAD
 var health = 10;
 var deathLocation : Transform;
-<<<<<<< HEAD
-=======
->>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
-=======
->>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
 
 public var Soul:GameObject;
 private var transf : Transform;
@@ -89,7 +83,6 @@ function MoveCharacter(dir: Vector3, speed: float){
     vel.y = Mathf.Clamp(character.velocity.y, -30, 2); 
     vel.y -= gravity * Time.deltaTime;  // apply gravity
     character.Move(vel * Time.deltaTime);  // move
-<<<<<<< HEAD
 }
 
 /*function OnCollisionEnter (other : Collision)
@@ -125,10 +118,4 @@ function getHurt(amt:int)
 function knockBack()
 {
 	transform.Translate(Vector3.back * 0.5f);
-
-<<<<<<< HEAD
-=======
->>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
-=======
->>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
 }

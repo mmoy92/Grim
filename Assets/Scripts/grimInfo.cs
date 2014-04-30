@@ -5,11 +5,11 @@ public class grimInfo : MonoBehaviour
 {
 	public AudioClip hurtClip;			// clip to play when player gets hurt
 	public AudioClip dieClip;			// clip to play when player dies
-	public static float grimHP;         // The player's health.
+	public float grimHP;         // The player's health.
 	public float hurtForce = 20f;      // The force with which the player is pushed when hurt.
-	public static float maxHP;                   // The player's mazx health.
-	public static float keys;
-	public static float maxKeys;
+	public float maxHP;                   // The player's mazx health.
+	public int keys;
+	public float maxKeys;
 	private float lastHitTime;           // The time at which the player was last hit.
 	private PlatformerController player;   // Reference to the PlatformerController script.
 
@@ -20,7 +20,6 @@ public class grimInfo : MonoBehaviour
 								//Development quandry -> would it be more efficient to have a bool vuln method that responded to triggering
 								//damage scripts instead of handling it all here?
 	public int soulCount;
-	public int keys = 0;	//Whether or not the player has the first key
 	public bool usedKey;
 	public bool good = false;
 	
@@ -95,10 +94,7 @@ public class grimInfo : MonoBehaviour
 			Damage (1, col.transform);
 		}
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
+
 	/*public void UpdateHealthBar ()
 	{
 		// Set the health bar's colour to proportion of the way between green and red based on the player's health.
@@ -107,8 +103,7 @@ public class grimInfo : MonoBehaviour
 		// Set the scale of the health bar to be proportional to the player's health.
 		healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
 	}*/
-=======
->>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
+
 
 	//heuheuheu puns
 	//Stolen from DeathVolume, moved here for centralized HP tracking/updating
