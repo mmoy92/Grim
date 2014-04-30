@@ -4,14 +4,14 @@ using System.Collections;
 public class OpenBossDoor : MonoBehaviour {
 
 	private GameObject player;                      // Reference to the player.
-	private PlayerInventory playerInventory;        // Reference to the player's inventory.
+	private grimInfo griminfo;        // Reference to the player's inventory.
 	
 	
 	void Awake ()
 	{
 		// Setting up the references.
 		player = GameObject.FindGameObjectWithTag("Player");
-		playerInventory = player.GetComponent<PlayerInventory>();
+		griminfo = player.GetComponent<grimInfo>();
 	}
 	
 	
@@ -19,12 +19,12 @@ public class OpenBossDoor : MonoBehaviour {
 	{
 		// If the colliding gameobject is the player...
 		if (other.gameObject == player) {
-			if (playerInventory.keys == 2 && !playerInventory.usedKey) // Check to see if the player has the key
+			if (griminfo.keys == 2 && !griminfo.usedKey) // Check to see if the player has the key
 			{
 				// Destroy the door
 				gameObject.GetComponent<MeshRenderer>().enabled=false;
 				gameObject.GetComponent<MeshCollider>().enabled=false;
-				playerInventory.usedKey = true;
+				griminfo.usedKey = true;
 			}
 		}
 	}

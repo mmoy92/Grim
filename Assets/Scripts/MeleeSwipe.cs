@@ -4,14 +4,13 @@ using System.Collections;
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
 	private bool didHit = false;
-	// Use this for initialization
-	void Start () {
-		Destroy(gameObject,0.3f);
-	}
+	public float damage = 10; 
+
 	void Update()
 	{
-		transform.Translate(Vector3.right * 0.2f);
+
 	}
+
 	private IEnumerator Pause(float p)
 	{
 		Time.timeScale = 0.0f;
@@ -23,14 +22,27 @@ public class MeleeSwipe : MonoBehaviour {
 		Time.timeScale = 1;
 
 	}
+
 	void OnTriggerStay(Collider other) {
 		if(other.tag == "Enemy" && !didHit)
 		{
 			didHit = true;
-			Object newInst = Instantiate(slash, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
-			other.gameObject.SendMessage("getHurt", 10);
-			//StartCoroutine(Pause(0.1f));
-			Destroy(gameObject,0.1f);
+			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
+			other.gameObject.SendMessage("getHurt",damage);
+			other.gameObject.SendMessage("knockBack");
+
+			FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
+			//camComponent.SendMessage("Shake", 0.1);
+
+			//Destroy(gameObject,0.1f);
+		}
+
+		if (other.tag == "Soul" && !didHit)
+		{
+			didHit = true;
+			SoulMovement soul = other.GetComponent<SoulMovement>();
+			soul.destroySoul();
+
 		}
 	}
 }

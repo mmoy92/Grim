@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerCombat : MonoBehaviour {
 	public Transform melee;
+	public Transform lightSpear;
+	public Transform evilSplode;
 	bool mAttacking						= false;	//Are we currently attacking
 	bool mCanAttack						= true;		//Can the player click the button to do the next attack?
 	float mAttackTimer					= 0;		//Current time until the current attack is done
@@ -15,6 +17,8 @@ public class PlayerCombat : MonoBehaviour {
 	
 	public float AttackCLength 			= 0.21f;	//The duration of attack C
 	public float AttackC_velY			= 5;		//The vertical thrust of attack C
+
+	public AudioClip slashClip;						// Audio clip to play when player attacks
 
 	private bool isRight;
 	// Use this for initialization
@@ -53,7 +57,11 @@ public class PlayerCombat : MonoBehaviour {
 		{
 			mCanAttack = false;
 			mAttacking = true;
-			
+
+			if(mCurrentAttack > 3){
+				mCurrentAttack = 0;
+			}
+
 			mCurrentAttack += 1;
 			
 			if(mCurrentAttack == 1)
@@ -78,9 +86,9 @@ public class PlayerCombat : MonoBehaviour {
 			
 			if(mGoingRight)			//Set the horizontal thrust
 			{
-				rigidbody.velocity += 8 * Vector3.right;
+				rigidbody.velocity += 4 * Vector3.right;
 			} else {
-				rigidbody.velocity += 8 * Vector3.left;
+				rigidbody.velocity += 4 * Vector3.left;
 			}
 
 			isRight = mGoingRight;
@@ -89,15 +97,73 @@ public class PlayerCombat : MonoBehaviour {
 		}
 
 	}
+	public void EvilAttack(Vector3 vel, bool mGoingRight)
+	{
+		if (mCanAttack)
+		{
+			mCanAttack = false;
+			mAttacking = true;
+			
+			mCurrentAttack = 4;
+			
+			mAttackTimer = 0.5f;
+
+			vel.y = -20;
+			rigidbody.velocity = vel; 
+
+			SendAnimMessage("StartEvilSplode");
+			
+			isRight = mGoingRight;
+			
+		}
+		
+	}
+	public void GoodAttack(Vector3 vel, bool mGoingRight)
+	{
+		if (mCanAttack)
+		{
+			mCanAttack = false;
+			mAttacking = true;
+			
+			mCurrentAttack = 5;
+
+			mAttackTimer = 0.5f;
+			SendAnimMessage("StartGoodSpear");
+			
+			isRight = mGoingRight;
+			
+		}
+		
+	}
 	public void DealAttack()
 	{
-		if(isRight)
-		{
-			MeleeSwipe swipeInstance = Instantiate(melee, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as MeleeSwipe;
-		}
-		else
-		{
-			MeleeSwipe swipeInstance = Instantiate(melee, transform.position, Quaternion.Euler(new Vector3(0,0,180f))) as MeleeSwipe;
+		Vector3 swipeSpawn = transform.position;
+
+		if (mCurrentAttack == 4) {//Evil splode
+
+
+			Instantiate (evilSplode, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 0)));
+
+			
+		} else if (mCurrentAttack == 5) {//Light spear
+			swipeSpawn.y += 1.2f;
+			if (isRight) {
+				swipeSpawn.x += 5.0f;
+				Instantiate (lightSpear, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			} else {
+				swipeSpawn.x -= 5.0f;
+				Instantiate (lightSpear, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 180f)));
+			}
+
+		} else {//Other attacks
+			swipeSpawn.y += 1.0f;
+				if (isRight) {
+						swipeSpawn.x += 2.5f;
+						MeleeSwipe swipeInstance = Instantiate (melee, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 0))) as MeleeSwipe;
+				} else {
+						swipeSpawn.x -= 2.5f;
+						MeleeSwipe swipeInstance = Instantiate (melee, swipeSpawn, Quaternion.Euler (new Vector3 (0, 0, 180f))) as MeleeSwipe;
+				}
 		}
 	}
 	//send a message to all other scripts to trigger for example the animations
