@@ -16,6 +16,8 @@ public class PlayerCombat : MonoBehaviour {
 	public float AttackCLength 			= 0.21f;	//The duration of attack C
 	public float AttackC_velY			= 5;		//The vertical thrust of attack C
 
+	public AudioClip slashClip;						// Audio clip to play when player attacks
+
 	private bool isRight;
 	// Use this for initialization
 	void Start () {
@@ -94,10 +96,12 @@ public class PlayerCombat : MonoBehaviour {
 		if(isRight)
 		{
 			MeleeSwipe swipeInstance = Instantiate(melee, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as MeleeSwipe;
+			swipeInstance.slashClip = slashClip;
 		}
 		else
 		{
 			MeleeSwipe swipeInstance = Instantiate(melee, transform.position, Quaternion.Euler(new Vector3(0,0,180f))) as MeleeSwipe;
+			swipeInstance.slashClip = slashClip;
 		}
 	}
 	//send a message to all other scripts to trigger for example the animations

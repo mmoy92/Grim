@@ -3,7 +3,8 @@ using System.Collections;
 
 public class grimInfo : MonoBehaviour
 {
-
+	public AudioClip hurtClip;			// clip to play when player gets hurt
+	public AudioClip dieClip;			// clip to play when player dies
 	public static float grimHP;         // The player's health.
 	public float hurtForce = 20f;      // The force with which the player is pushed when hurt.
 	public static float maxHP;                   // The player's mazx health.
@@ -35,6 +36,7 @@ public class grimInfo : MonoBehaviour
 			lastHitTime = Time.time; 
 			print ("Taking damage");
 			grimHP -= dam;
+			AudioSource.PlayClipAtPoint(hurtClip, transform.position, 1f);
 			if (grimHP <= 0) 
 			{
 				StartCoroutine (GrimDeath (player.gameObject));
@@ -63,6 +65,7 @@ public class grimInfo : MonoBehaviour
 			lastHitTime = Time.time; 
 			print ("Taking damage");
 			grimHP -= dam;
+			AudioSource.PlayClipAtPoint(hurtClip, transform.position, 1f);
 			//UpdateHealthBar ()
 
 			if (grimHP <= 0) 
@@ -98,6 +101,7 @@ public class grimInfo : MonoBehaviour
 	//Stolen from DeathVolume, moved here for centralized HP tracking/updating
 	IEnumerator GrimDeath(GameObject player)
 	{
+		AudioSource.PlayClipAtPoint(dieClip, transform.position, 1f);
 		player.GetComponent<PlatformerAnimation> ().PlayerDied ();
 		player.GetComponent<PlatformerController> ().RemoveControl ();
 		

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
+	public AudioClip slashClip;
 	private bool didHit = false;
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class MeleeSwipe : MonoBehaviour {
 		if(other.tag == "Enemy" && !didHit)
 		{
 			didHit = true;
+			AudioSource.PlayClipAtPoint(slashClip, transform.position, 1.0f);
 			Object newInst = Instantiate(slash, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 			other.gameObject.SendMessage("getHurt", 10);
 			//StartCoroutine(Pause(0.1f));
