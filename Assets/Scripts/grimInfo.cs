@@ -96,6 +96,9 @@ public class grimInfo : MonoBehaviour
 		}
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
 	/*public void UpdateHealthBar ()
 	{
 		// Set the health bar's colour to proportion of the way between green and red based on the player's health.

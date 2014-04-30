@@ -12,8 +12,11 @@ var detectRange : float = 20;  // detection distance
 <<<<<<< HEAD
 var health = 10;
 var deathLocation : Transform;
+<<<<<<< HEAD
 =======
 >>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
+=======
+>>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
 
 public var Soul:GameObject;
 private var transf : Transform;
@@ -123,6 +126,9 @@ function knockBack()
 {
 	transform.Translate(Vector3.back * 0.5f);
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
+=======
+>>>>>>> 550af5a2f0a18856dc892149928ef60a65151888
 }
