@@ -1,5 +1,6 @@
 ﻿#pragma strict
 
+var deathEffect:Transform;
 var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
@@ -8,9 +9,13 @@ var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
 var chargeDistance : float = 6;
 var detectRange : float = 20;  // detection distance
+<<<<<<< HEAD
 var health = 10;
-public var Soul:GameObject;
+var deathLocation : Transform;
+=======
+>>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
 
+public var Soul:GameObject;
 private var transf : Transform;
 private var character: CharacterController; 
 
@@ -81,13 +86,14 @@ function MoveCharacter(dir: Vector3, speed: float){
     vel.y = Mathf.Clamp(character.velocity.y, -30, 2); 
     vel.y -= gravity * Time.deltaTime;  // apply gravity
     character.Move(vel * Time.deltaTime);  // move
+<<<<<<< HEAD
 }
 
-function OnCollisionEnter (other : Collision)
+/*function OnCollisionEnter (other : Collision)
 {
     if(other.gameObject.name == "Player")
     {
-       health = health - 10;  // Reworked line
+      // health = health - 10;  // Reworked line
     }
 	if (health < 0){
        Destroy (gameObject);
@@ -95,10 +101,28 @@ function OnCollisionEnter (other : Collision)
        new_Soul = Instantiate (Soul, Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), 
        			Quaternion.identity);
     }
-}
+}*/
 
 function getHurt(amt:int)
 {
-	health -= amt;
-	//rigidbody.AddForce(Vector3(10.0f,0,0));
+	health -= amt;	
+	if (health < 0){
+		GameObject.FindGameObjectWithTag("MainCamera").GetComponent("FollowCam2D").SendMessage("SlowMoShake");
+	
+       Destroy (gameObject);
+       var new_Soul : GameObject;
+       deathLocation = GameObject.Find("Player").transform;
+       new_Soul = Instantiate (Soul, Vector3(deathLocation.transform.position.x + 5, 
+       			deathLocation.transform.position.y + 1, deathLocation.transform.position.z), Quaternion.Euler(new Vector3(0,0,0)));
+       			
+       Instantiate(deathEffect, Vector3(transform.position.x,transform.position.y + 1, transform.position.z), Quaternion.Euler(new Vector3(0,0,0)));
+    }
+}
+
+function knockBack()
+{
+	transform.Translate(Vector3.back * 0.5f);
+
+=======
+>>>>>>> parent of f9397d4... Revert "GUI Elements + Dash Cooldowns"
 }

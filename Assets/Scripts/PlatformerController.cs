@@ -5,6 +5,7 @@ public class PlatformerController : MonoBehaviour
 {
 	PlatformerPhysics mPlayer;
 	bool mHasControl;
+	float dashingTime = 5f;
 
 	void Start () 
 	{
@@ -16,14 +17,16 @@ public class PlatformerController : MonoBehaviour
 
 	void Update () 
 	{
+		dashingTime += Time.deltaTime;
 		//here are the actions that are triggered by a press or a release
 		if (mPlayer && mHasControl)
 		{
-			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-				mPlayer.StartDash();
-
-			if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
-				//mPlayer.StopSprint();
+			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
+				if(dashingTime >= 5f){
+					dashingTime = 0;
+					mPlayer.StartDash();
+				}
+			}
 
 			if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
 				mPlayer.Crouch();
@@ -32,6 +35,8 @@ public class PlatformerController : MonoBehaviour
 				mPlayer.UnCrouch();
 			if(Input.GetMouseButtonDown(0))
 				mPlayer.Attack();
+			if(Input.GetMouseButtonDown(1))
+				mPlayer.SpecialAttack();
 
 		}
 	}
