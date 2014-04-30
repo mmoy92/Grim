@@ -7,8 +7,6 @@ public class grimInfo : MonoBehaviour
 	public static float grimHP;         // The player's health.
 	public float hurtForce = 20f;      // The force with which the player is pushed when hurt.
 	public static float maxHP;                   // The player's mazx health.
-	public static float keys;
-	public static float maxKeys;
 	private float lastHitTime;           // The time at which the player was last hit.
 	private PlatformerController player;   // Reference to the PlatformerController script.
 
@@ -24,7 +22,6 @@ public class grimInfo : MonoBehaviour
 	{
 		maxHP = 5;
 		grimHP = maxHP;
-		maxKeys = 4;
 		player 					= GetComponent<PlatformerController>();
 		//healthScale = healthBar.transform.localScale;
 		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
@@ -87,6 +84,15 @@ public class grimInfo : MonoBehaviour
 			Damage (1, col.transform);
 		}
 	}
+
+	/*public void UpdateHealthBar ()
+	{
+		// Set the health bar's colour to proportion of the way between green and red based on the player's health.
+		healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - health * 0.01f);
+
+		// Set the scale of the health bar to be proportional to the player's health.
+		healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
+	}*/
 
 	//heuheuheu puns
 	//Stolen from DeathVolume, moved here for centralized HP tracking/updating

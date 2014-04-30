@@ -4,14 +4,14 @@ using System.Collections;
 public class KeyPickup : MonoBehaviour {
 
 	private GameObject player;                      // Reference to the player.
-	private grimInfo grim;        // Reference to the player's inventory.
+	private PlayerInventory playerInventory;        // Reference to the player's inventory.
 	
 	
 	void Awake ()
 	{
 		// Setting up the references.
 		player = GameObject.FindGameObjectWithTag("Player");
-		grim = player.GetComponent<grimInfo>();
+		playerInventory = player.GetComponent<PlayerInventory>();
 	}
 	
 	
@@ -20,7 +20,7 @@ public class KeyPickup : MonoBehaviour {
 		// If the colliding gameobject is the player
 		if (other.gameObject == player) {
 
-			grimInfo.keys += 1;
+			playerInventory.keys += 1;
 			
 			// Destroy this gameobject
 			Destroy (gameObject);
