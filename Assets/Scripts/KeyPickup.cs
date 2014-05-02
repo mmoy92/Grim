@@ -21,7 +21,7 @@ public class KeyPickup : MonoBehaviour {
 		// If the colliding gameobject is the player
 		if (other.gameObject == player) {
 			griminfo.keys += 1;
-			sounds.pickupKey(griminfo.keys);
+			//sounds.pickupKey(griminfo.keys);
 			// Destroy this gameobject
 			Destroy (gameObject);
 		}

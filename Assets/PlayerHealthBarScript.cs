@@ -87,7 +87,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 				GUI.EndGroup ();
 
 				GUI.BeginGroup (new Rect (moralityPosition.x + 0.1219f * moralitySize.x, moralityPosition.y, (0.7582f * moralitySize.x) + iconSize.x , moralitySize.y));
-		GUI.Box (new Rect ((0.7582f * moralitySize.x) * moralityBar, 0, iconSize.x, iconSize.y), iconTex, morality_icon);
+					GUI.Box (new Rect ((0.7582f * moralitySize.x) * moralityBar, 0, iconSize.x, iconSize.y), iconTex, morality_icon);
 				GUI.EndGroup ();
 
 				//DASH STUFF
@@ -111,5 +111,12 @@ public class PlayerHealthBarScript : MonoBehaviour
 						healthBar = 0;
 
 				keyProgress = griminfo.keys / griminfo.maxKeys;
+				
+				if (moralityBar <= 0.0f)
+						moralityBar = 0.0f;
+				else if (moralityBar >= 1.0f)
+						moralityBar = 1.0f;
+				else
+					moralityBar = 0.5f - griminfo.soulCount / 20f;
 		}	
 }
