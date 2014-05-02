@@ -89,7 +89,7 @@ public class PlatformerAnimation : MonoBehaviour
 		float walkingSpeed = Mathf.Abs(rigidbody.velocity.x)*0.075f;
 
 		//Set mAttack to false if no attack animation is running
-		if (mAttack && !animatedPlayerModel.animation ["attackA"].enabled && !animatedPlayerModel.animation ["attackB"].enabled && !animatedPlayerModel.animation ["attackC"].enabled&& !animatedPlayerModel.animation ["goodSpear"].enabled) 
+		if (mAttack && !animatedPlayerModel.animation ["attackA"].enabled && !animatedPlayerModel.animation ["attackB"].enabled && !animatedPlayerModel.animation ["attackC"].enabled)//&& !animatedPlayerModel.animation ["goodSpear"].enabled) 
 		{
 			mAttack = false;
 			

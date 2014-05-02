@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 64a06c489247d3640af39d4c8904efe8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: curve1
+    100002: group1
+    100004: ikHandle1_left
+    100006: ikHandle2_right
+    100008: ikHandle3_tail
+    100010: joint1
+    100012: joint10
+    100014: joint11
+    100016: joint12
+    100018: joint13
+    100020: joint14
+    100022: joint15
+    100024: joint16
+    100026: joint17
+    100028: joint18
+    100030: joint2
+    100032: joint20
+    100034: joint22
+    100036: joint23
+    100038: joint24
+    100040: joint25
+    100042: joint26
+    100044: joint27
+    100046: joint28
+    100048: joint3
+    100050: joint4
+    100052: joint5
+    100054: joint7
+    100056: joint8
+    100058: joint9
+    100060: l_wrist_CTRL
+    100062: lowJaw_JNT
+    100064: nurbsCircle1
+    100066: nurbsCircle2
+    100068: nurbsCircle3
+    100070: pCone1
+    100072: pCone10
+    100074: pCone11
+    100076: pCone12
+    100078: pCone13
+    100080: pCone14
+    100082: pCone15
+    100084: pCone16
+    100086: pCone17
+    100088: pCone18
+    100090: pCone19
+    100092: pCone2
+    100094: pCone20
+    100096: pCone21
+    100098: pCone22
+    100100: pCone23
+    100102: pCone24
+    100104: pCone25
+    100106: pCone26
+    100108: pCone27
+    100110: pCone28
+    100112: pCone29
+    100114: pCone3
+    100116: pCone30
+    100118: pCone31
+    100120: pCone32
+    100122: pCone33
+    100124: pCone34
+    100126: pCone35
+    100128: pCone36
+    100130: pCone37
+    100132: pCone38
+    100134: pCone39
+    100136: pCone4
+    100138: pCone40
+    100140: pCone41
+    100142: pCone42
+    100144: pCone43
+    100146: pCone44
+    100148: pCone45
+    100150: pCone46
+    100152: pCone47
+    100154: pCone48
+    100156: pCone49
+    100158: pCone5
+    100160: pCone50
+    100162: pCone51
+    100164: pCone52
+    100166: pCone53
+    100168: pCone54
+    100170: pCone6
+    100172: pCone7
+    100174: pCone8
+    100176: pCone9
+    100178: pCube1
+    100180: pSphere1
+    100182: pSphere2
+    100184: r_wrist_CTRL
+    100186: root_CTRL
+    100188: root_Jnt
+    100190: //RootNode
+    100192: tailBase_Cluster1
+    100194: tailBase_Cluster2
+    100196: tailBase_Cluster3
+    100198: upperJaw_JNT
+    400000: curve1
+    400002: group1
+    400004: ikHandle1_left
+    400006: ikHandle2_right
+    400008: ikHandle3_tail
+    400010: joint1
+    400012: joint10
+    400014: joint11
+    400016: joint12
+    400018: joint13
+    400020: joint14
+    400022: joint15
+    400024: joint16
+    400026: joint17
+    400028: joint18
+    400030: joint2
+    400032: joint20
+    400034: joint22
+    400036: joint23
+    400038: joint24
+    400040: joint25
+    400042: joint26
+    400044: joint27
+    400046: joint28
+    400048: joint3
+    400050: joint4
+    400052: joint5
+    400054: joint7
+    400056: joint8
+    400058: joint9
+    400060: l_wrist_CTRL
+    400062: lowJaw_JNT
+    400064: nurbsCircle1
+    400066: nurbsCircle2
+    400068: nurbsCircle3
+    400070: pCone1
+    400072: pCone10
+    400074: pCone11
+    400076: pCone12
+    400078: pCone13
+    400080: pCone14
+    400082: pCone15
+    400084: pCone16
+    400086: pCone17
+    400088: pCone18
+    400090: pCone19
+    400092: pCone2
+    400094: pCone20
+    400096: pCone21
+    400098: pCone22
+    400100: pCone23
+    400102: pCone24
+    400104: pCone25
+    400106: pCone26
+    400108: pCone27
+    400110: pCone28
+    400112: pCone29
+    400114: pCone3
+    400116: pCone30
+    400118: pCone31
+    400120: pCone32
+    400122: pCone33
+    400124: pCone34
+    400126: pCone35
+    400128: pCone36
+    400130: pCone37
+    400132: pCone38
+    400134: pCone39
+    400136: pCone4
+    400138: pCone40
+    400140: pCone41
+    400142: pCone42
+    400144: pCone43
+    400146: pCone44
+    400148: pCone45
+    400150: pCone46
+    400152: pCone47
+    400154: pCone48
+    400156: pCone49
+    400158: pCone5
+    400160: pCone50
+    400162: pCone51
+    400164: pCone52
+    400166: pCone53
+    400168: pCone54
+    400170: pCone6
+    400172: pCone7
+    400174: pCone8
+    400176: pCone9
+    400178: pCube1
+    400180: pSphere1
+    400182: pSphere2
+    400184: r_wrist_CTRL
+    400186: root_CTRL
+    400188: root_Jnt
+    400190: //RootNode
+    400192: tailBase_Cluster1
+    400194: tailBase_Cluster2
+    400196: tailBase_Cluster3
+    400198: upperJaw_JNT
+    4300000: pCube1
+    4300002: pSphere1
+    4300004: pSphere2
+    4300006: pCone1
+    4300008: pCone2
+    4300010: pCone3
+    4300012: pCone4
+    4300014: pCone5
+    4300016: pCone6
+    4300018: pCone7
+    4300020: pCone8
+    4300022: pCone9
+    4300024: pCone10
+    4300026: pCone11
+    4300028: pCone12
+    4300030: pCone13
+    4300032: pCone14
+    4300034: pCone15
+    4300036: pCone16
+    4300038: pCone17
+    4300040: pCone18
+    4300042: pCone19
+    4300044: pCone20
+    4300046: pCone21
+    4300048: pCone22
+    4300050: pCone23
+    4300052: pCone24
+    4300054: pCone25
+    4300056: pCone26
+    4300058: pCone27
+    4300060: pCone28
+    4300062: pCone29
+    4300064: pCone30
+    4300066: pCone31
+    4300068: pCone32
+    4300070: pCone33
+    4300072: pCone34
+    4300074: pCone35
+    4300076: pCone36
+    4300078: pCone37
+    4300080: pCone38
+    4300082: pCone39
+    4300084: pCone40
+    4300086: pCone41
+    4300088: pCone42
+    4300090: pCone43
+    4300092: pCone44
+    4300094: pCone45
+    4300096: pCone46
+    4300098: pCone47
+    4300100: pCone48
+    4300102: pCone49
+    4300104: pCone50
+    4300106: pCone51
+    4300108: pCone52
+    4300110: pCone53
+    4300112: pCone54
+    7400000: dying
+    9500000: //RootNode
+    13700000: pCone1
+    13700002: pCone10
+    13700004: pCone11
+    13700006: pCone12
+    13700008: pCone13
+    13700010: pCone14
+    13700012: pCone15
+    13700014: pCone16
+    13700016: pCone17
+    13700018: pCone18
+    13700020: pCone19
+    13700022: pCone2
+    13700024: pCone20
+    13700026: pCone21
+    13700028: pCone22
+    13700030: pCone23
+    13700032: pCone24
+    13700034: pCone25
+    13700036: pCone26
+    13700038: pCone27
+    13700040: pCone28
+    13700042: pCone29
+    13700044: pCone3
+    13700046: pCone30
+    13700048: pCone31
+    13700050: pCone32
+    13700052: pCone33
+    13700054: pCone34
+    13700056: pCone35
+    13700058: pCone36
+    13700060: pCone37
+    13700062: pCone38
+    13700064: pCone39
+    13700066: pCone4
+    13700068: pCone40
+    13700070: pCone41
+    13700072: pCone42
+    13700074: pCone43
+    13700076: pCone44
+    13700078: pCone45
+    13700080: pCone46
+    13700082: pCone47
+    13700084: pCone48
+    13700086: pCone49
+    13700088: pCone5
+    13700090: pCone50
+    13700092: pCone51
+    13700094: pCone52
+    13700096: pCone53
+    13700098: pCone54
+    13700100: pCone6
+    13700102: pCone7
+    13700104: pCone8
+    13700106: pCone9
+    13700108: pCube1
+    13700110: pSphere1
+    13700112: pSphere2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: dying
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: group1/pCone1
+        weight: 1
+      - path: group1/pCone2
+        weight: 1
+      - path: group1/pCone3
+        weight: 1
+      - path: group1/pCone4
+        weight: 1
+      - path: group1/pCone5
+        weight: 1
+      - path: group1/pCone6
+        weight: 1
+      - path: group1/pCone7
+        weight: 1
+      - path: group1/pCone8
+        weight: 1
+      - path: group1/pCone9
+        weight: 1
+      - path: group1/pCone10
+        weight: 1
+      - path: group1/pCone11
+        weight: 1
+      - path: group1/pCone12
+        weight: 1
+      - path: group1/pCone13
+        weight: 1
+      - path: group1/pCone14
+        weight: 1
+      - path: group1/pCone15
+        weight: 1
+      - path: group1/pCone16
+        weight: 1
+      - path: group1/pCone17
+        weight: 1
+      - path: group1/pCone18
+        weight: 1
+      - path: group1/pCone19
+        weight: 1
+      - path: group1/pCone20
+        weight: 1
+      - path: group1/pCone21
+        weight: 1
+      - path: group1/pCone22
+        weight: 1
+      - path: group1/pCone23
+        weight: 1
+      - path: group1/pCone24
+        weight: 1
+      - path: group1/pCone25
+        weight: 1
+      - path: group1/pCone26
+        weight: 1
+      - path: group1/pCone27
+        weight: 1
+      - path: group1/pCone28
+        weight: 1
+      - path: group1/pCone29
+        weight: 1
+      - path: group1/pCone30
+        weight: 1
+      - path: group1/pCone31
+        weight: 1
+      - path: group1/pCone32
+        weight: 1
+      - path: group1/pCone33
+        weight: 1
+      - path: group1/pCone34
+        weight: 1
+      - path: group1/pCone35
+        weight: 1
+      - path: group1/pCone36
+        weight: 1
+      - path: group1/pCone37
+        weight: 1
+      - path: group1/pCone38
+        weight: 1
+      - path: group1/pCone39
+        weight: 1
+      - path: group1/pCone40
+        weight: 1
+      - path: group1/pCone41
+        weight: 1
+      - path: group1/pCone42
+        weight: 1
+      - path: group1/pCone43
+        weight: 1
+      - path: group1/pCone44
+        weight: 1
+      - path: group1/pCone45
+        weight: 1
+      - path: group1/pCone46
+        weight: 1
+      - path: group1/pCone47
+        weight: 1
+      - path: group1/pCone48
+        weight: 1
+      - path: group1/pCone49
+        weight: 1
+      - path: group1/pCone50
+        weight: 1
+      - path: group1/pCone51
+        weight: 1
+      - path: group1/pCone52
+        weight: 1
+      - path: group1/pCone53
+        weight: 1
+      - path: group1/pCone54
+        weight: 1
+      - path: group1/pCube1
+        weight: 1
+      - path: group1/pSphere1
+        weight: 1
+      - path: group1/pSphere2
+        weight: 1
+      - path: ikHandle1_left
+        weight: 1
+      - path: ikHandle2_right
+        weight: 1
+      - path: ikHandle3_tail
+        weight: 1
+      - path: l_wrist_CTRL
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/tailBase_Cluster1
+        weight: 1
+      - path: nurbsCircle2
+        weight: 1
+      - path: nurbsCircle2/tailBase_Cluster2
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/tailBase_Cluster3
+        weight: 1
+      - path: r_wrist_CTRL
+        weight: 1
+      - path: root_CTRL
+        weight: 1
+      - path: root_Jnt
+        weight: 1
+      - path: root_Jnt/curve1
+        weight: 1
+      - path: root_Jnt/joint7
+        weight: 1
+      - path: root_Jnt/joint7/joint8
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11/joint12/joint13
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: root_Jnt/joint15
+        weight: 1
+      - path: root_Jnt/joint15/joint1
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2/joint3
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2/joint3/joint4
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: root_Jnt/joint16
+        weight: 1
+      - path: root_Jnt/joint16/joint17
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/lowJaw_JNT
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/lowJaw_JNT/joint20
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/upperJaw_JNT
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/upperJaw_JNT/joint22
+        weight: 1
+      - path: root_Jnt/joint23
+        weight: 1
+      - path: root_Jnt/joint23/joint24
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

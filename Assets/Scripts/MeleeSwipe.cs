@@ -24,6 +24,8 @@ public class MeleeSwipe : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other) {
+
+
 		if(other.tag == "Enemy" && !didHit)
 		{
 			didHit = true;
@@ -39,7 +41,6 @@ public class MeleeSwipe : MonoBehaviour {
 
 		if (other.tag == "Soul" && !didHit)
 		{
-			didHit = true;
 			SoulMovement soul = other.GetComponent<SoulMovement>();
 			soul.destroySoul();
 

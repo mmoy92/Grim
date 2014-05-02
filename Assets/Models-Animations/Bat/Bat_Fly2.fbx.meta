@@ -1,0 +1,639 @@
+fileFormatVersion: 2
+guid: 1a13590776c40694bab4d87292888533
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: Body1
+    100006: BottomJaw
+    100008: FangLeft
+    100010: FangLeft 1
+    100012: FangRight
+    100014: FangRight 1
+    100016: Head
+    100018: Head 1
+    100020: ikHandle1
+    100022: ikHandle2
+    100024: imagePlane1
+    100026: JawBase
+    100028: joint1
+    100030: joint10
+    100032: joint10 1
+    100034: joint11
+    100036: joint11 1
+    100038: joint12
+    100040: joint13
+    100042: joint14
+    100044: joint14 1
+    100046: joint15
+    100048: joint15 1
+    100050: joint16
+    100052: joint17
+    100054: joint18
+    100056: joint18 1
+    100058: joint19
+    100060: joint19 1
+    100062: joint2
+    100064: joint20
+    100066: joint3
+    100068: joint4
+    100070: joint5
+    100072: joint6
+    100074: joint6 1
+    100076: joint7
+    100078: joint7 1
+    100080: joint8
+    100082: joint8 1
+    100084: joint9
+    100086: joint9 1
+    100088: Left_Eye
+    100090: Left_Eye 1
+    100092: Neck
+    100094: Nose
+    100096: Nose 1
+    100098: nurbsCircle1
+    100100: pCone3
+    100102: pCone3 1
+    100104: pCone4
+    100106: pCone4 1
+    100108: pCone5
+    100110: pCone5 1
+    100112: pCube2
+    100114: polySurface1
+    100116: polySurface10
+    100118: polySurface11
+    100120: polySurface12
+    100122: polySurface13
+    100124: polySurface2
+    100126: polySurface34
+    100128: polySurface35
+    100130: polySurface7
+    100132: polySurface9
+    100134: Right_Eye
+    100136: Right_Eye 1
+    100138: Teeth
+    100140: Teeth 1
+    100142: teeth1
+    100144: teeth1 1
+    100146: teeth2
+    100148: teeth2 1
+    100150: teeth3
+    100152: teeth3 1
+    100154: teeth4
+    100156: teeth4 1
+    100158: TopJaw
+    100160: transform1
+    100162: transform10
+    100164: transform11
+    100166: transform12
+    100168: transform13
+    100170: transform14
+    100172: transform15
+    100174: transform16
+    100176: transform17
+    100178: transform18
+    100180: transform19
+    100182: transform2
+    100184: transform20
+    100186: transform21
+    100188: transform22
+    100190: transform23
+    100192: transform28
+    100194: transform29
+    100196: transform3
+    100198: transform30
+    100200: transform31
+    100202: transform32
+    100204: transform4
+    100206: transform5
+    100208: transform6
+    100210: transform7
+    100212: transform8
+    100214: transform9
+    100216: Wingskin1
+    100218: Wingskin1 1
+    100220: WingSkin2
+    100222: WingSkin2 1
+    100224: WingSkin3
+    100226: WingSkin3 1
+    100228: WingSkin4
+    100230: WingSkin4 1
+    100232: WingSkin5
+    100234: WingSkin5 1
+    100236: WingSkin6
+    100238: WingSkin6 1
+    400000: //RootNode
+    400002: Body
+    400004: Body1
+    400006: BottomJaw
+    400008: FangLeft
+    400010: FangLeft 1
+    400012: FangRight
+    400014: FangRight 1
+    400016: Head
+    400018: Head 1
+    400020: ikHandle1
+    400022: ikHandle2
+    400024: imagePlane1
+    400026: JawBase
+    400028: joint1
+    400030: joint10
+    400032: joint10 1
+    400034: joint11
+    400036: joint11 1
+    400038: joint12
+    400040: joint13
+    400042: joint14
+    400044: joint14 1
+    400046: joint15
+    400048: joint15 1
+    400050: joint16
+    400052: joint17
+    400054: joint18
+    400056: joint18 1
+    400058: joint19
+    400060: joint19 1
+    400062: joint2
+    400064: joint20
+    400066: joint3
+    400068: joint4
+    400070: joint5
+    400072: joint6
+    400074: joint6 1
+    400076: joint7
+    400078: joint7 1
+    400080: joint8
+    400082: joint8 1
+    400084: joint9
+    400086: joint9 1
+    400088: Left_Eye
+    400090: Left_Eye 1
+    400092: Neck
+    400094: Nose
+    400096: Nose 1
+    400098: nurbsCircle1
+    400100: pCone3
+    400102: pCone3 1
+    400104: pCone4
+    400106: pCone4 1
+    400108: pCone5
+    400110: pCone5 1
+    400112: pCube2
+    400114: polySurface1
+    400116: polySurface10
+    400118: polySurface11
+    400120: polySurface12
+    400122: polySurface13
+    400124: polySurface2
+    400126: polySurface34
+    400128: polySurface35
+    400130: polySurface7
+    400132: polySurface9
+    400134: Right_Eye
+    400136: Right_Eye 1
+    400138: Teeth
+    400140: Teeth 1
+    400142: teeth1
+    400144: teeth1 1
+    400146: teeth2
+    400148: teeth2 1
+    400150: teeth3
+    400152: teeth3 1
+    400154: teeth4
+    400156: teeth4 1
+    400158: TopJaw
+    400160: transform1
+    400162: transform10
+    400164: transform11
+    400166: transform12
+    400168: transform13
+    400170: transform14
+    400172: transform15
+    400174: transform16
+    400176: transform17
+    400178: transform18
+    400180: transform19
+    400182: transform2
+    400184: transform20
+    400186: transform21
+    400188: transform22
+    400190: transform23
+    400192: transform28
+    400194: transform29
+    400196: transform3
+    400198: transform30
+    400200: transform31
+    400202: transform32
+    400204: transform4
+    400206: transform5
+    400208: transform6
+    400210: transform7
+    400212: transform8
+    400214: transform9
+    400216: Wingskin1
+    400218: Wingskin1 1
+    400220: WingSkin2
+    400222: WingSkin2 1
+    400224: WingSkin3
+    400226: WingSkin3 1
+    400228: WingSkin4
+    400230: WingSkin4 1
+    400232: WingSkin5
+    400234: WingSkin5 1
+    400236: WingSkin6
+    400238: WingSkin6 1
+    2300000: Body1
+    2300002: FangLeft 1
+    2300004: FangRight 1
+    2300006: Head 1
+    2300008: Left_Eye 1
+    2300010: Nose 1
+    2300012: pCone3 1
+    2300014: pCone4 1
+    2300016: pCone5 1
+    2300018: pCube2
+    2300020: Right_Eye 1
+    2300022: Teeth 1
+    2300024: teeth1 1
+    2300026: teeth2 1
+    2300028: teeth3 1
+    2300030: teeth4 1
+    2300032: Wingskin1 1
+    2300034: WingSkin2 1
+    2300036: WingSkin3 1
+    2300038: WingSkin4 1
+    2300040: WingSkin5 1
+    2300042: WingSkin6 1
+    3300000: Body1
+    3300002: FangLeft 1
+    3300004: FangRight 1
+    3300006: Head 1
+    3300008: Left_Eye 1
+    3300010: Nose 1
+    3300012: pCone3 1
+    3300014: pCone4 1
+    3300016: pCone5 1
+    3300018: pCube2
+    3300020: Right_Eye 1
+    3300022: Teeth 1
+    3300024: teeth1 1
+    3300026: teeth2 1
+    3300028: teeth3 1
+    3300030: teeth4 1
+    3300032: Wingskin1 1
+    3300034: WingSkin2 1
+    3300036: WingSkin3 1
+    3300038: WingSkin4 1
+    3300040: WingSkin5 1
+    3300042: WingSkin6 1
+    4300000: pCube2
+    4300002: Body1
+    4300004: Wingskin1
+    4300006: WingSkin2
+    4300008: WingSkin3
+    4300010: WingSkin4
+    4300012: WingSkin5
+    4300014: WingSkin6
+    4300016: Head
+    4300018: FangLeft
+    4300020: FangRight
+    4300022: pCone3
+    4300024: pCone4
+    4300026: pCone5
+    4300028: teeth4
+    4300030: teeth3
+    4300032: teeth2
+    4300034: teeth1
+    4300036: Teeth
+    4300038: Right_Eye
+    4300040: Left_Eye
+    4300042: Nose
+    4300044: polySurface13
+    4300046: polySurface34
+    4300048: polySurface35
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface13
+    13700002: polySurface34
+    13700004: polySurface35
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/FangLeft
+        weight: 1
+      - path: Body/Head/FangLeft/transform16
+        weight: 1
+      - path: Body/Head/FangRight
+        weight: 1
+      - path: Body/Head/FangRight/transform15
+        weight: 1
+      - path: Body/Head/Left_Eye
+        weight: 1
+      - path: Body/Head/Left_Eye/transform5
+        weight: 1
+      - path: Body/Head/Nose
+        weight: 1
+      - path: Body/Head/Nose/transform4
+        weight: 1
+      - path: Body/Head/pCone3
+        weight: 1
+      - path: Body/Head/pCone3/transform14
+        weight: 1
+      - path: Body/Head/pCone4
+        weight: 1
+      - path: Body/Head/pCone4/transform13
+        weight: 1
+      - path: Body/Head/pCone5
+        weight: 1
+      - path: Body/Head/pCone5/transform12
+        weight: 1
+      - path: Body/Head/Right_Eye
+        weight: 1
+      - path: Body/Head/Right_Eye/transform6
+        weight: 1
+      - path: Body/Head/Teeth
+        weight: 1
+      - path: Body/Head/Teeth/transform7
+        weight: 1
+      - path: Body/Head/teeth1
+        weight: 1
+      - path: Body/Head/teeth1/transform8
+        weight: 1
+      - path: Body/Head/teeth2
+        weight: 1
+      - path: Body/Head/teeth2/transform9
+        weight: 1
+      - path: Body/Head/teeth3
+        weight: 1
+      - path: Body/Head/teeth3/transform10
+        weight: 1
+      - path: Body/Head/teeth4
+        weight: 1
+      - path: Body/Head/teeth4/transform11
+        weight: 1
+      - path: Body/Head/transform17
+        weight: 1
+      - path: Body/transform21
+        weight: 1
+      - path: Body/Wingskin1
+        weight: 1
+      - path: Body/Wingskin1/transform2
+        weight: 1
+      - path: Body/WingSkin2
+        weight: 1
+      - path: Body/WingSkin2/transform3
+        weight: 1
+      - path: Body/WingSkin3
+        weight: 1
+      - path: Body/WingSkin3/transform1
+        weight: 1
+      - path: Body/WingSkin4
+        weight: 1
+      - path: Body/WingSkin4/transform20
+        weight: 1
+      - path: Body/WingSkin5
+        weight: 1
+      - path: Body/WingSkin5/transform19
+        weight: 1
+      - path: Body/WingSkin6
+        weight: 1
+      - path: Body/WingSkin6/transform18
+        weight: 1
+      - path: Body1
+        weight: 1
+      - path: Body1/Head 1
+        weight: 1
+      - path: Body1/Head 1/FangLeft 1
+        weight: 1
+      - path: Body1/Head 1/FangRight 1
+        weight: 1
+      - path: Body1/Head 1/Left_Eye 1
+        weight: 1
+      - path: Body1/Head 1/Nose 1
+        weight: 1
+      - path: Body1/Head 1/pCone3 1
+        weight: 1
+      - path: Body1/Head 1/pCone4 1
+        weight: 1
+      - path: Body1/Head 1/pCone5 1
+        weight: 1
+      - path: Body1/Head 1/Right_Eye 1
+        weight: 1
+      - path: Body1/Head 1/Teeth 1
+        weight: 1
+      - path: Body1/Head 1/teeth1 1
+        weight: 1
+      - path: Body1/Head 1/teeth2 1
+        weight: 1
+      - path: Body1/Head 1/teeth3 1
+        weight: 1
+      - path: Body1/Head 1/teeth4 1
+        weight: 1
+      - path: Body1/Wingskin1 1
+        weight: 1
+      - path: Body1/WingSkin2 1
+        weight: 1
+      - path: Body1/WingSkin3 1
+        weight: 1
+      - path: Body1/WingSkin4 1
+        weight: 1
+      - path: Body1/WingSkin5 1
+        weight: 1
+      - path: Body1/WingSkin6 1
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: imagePlane1
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint2/joint3
+        weight: 1
+      - path: joint1/joint2/joint5
+        weight: 1
+      - path: joint1/joint2/joint5/joint6 1
+        weight: 1
+      - path: joint1/joint2/joint5/joint6 1/joint7 1
+        weight: 1
+      - path: joint1/joint2/joint5/joint6 1/joint7 1/joint8 1
+        weight: 1
+      - path: joint1/joint2/joint5/joint6 1/joint7 1/joint8 1/joint9 1
+        weight: 1
+      - path: joint1/joint2/joint5/joint6 1/joint7 1/joint8 1/joint9 1/joint10 1
+        weight: 1
+      - path: joint1/joint2/joint5/joint6 1/joint7 1/joint8 1/joint9 1/joint10 1/joint11
+          1
+        weight: 1
+      - path: joint1/joint2/joint12
+        weight: 1
+      - path: joint1/joint2/joint12/joint6
+        weight: 1
+      - path: joint1/joint2/joint12/joint6/joint7
+        weight: 1
+      - path: joint1/joint2/joint12/joint6/joint7/joint8
+        weight: 1
+      - path: joint1/joint2/joint12/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: joint1/joint2/joint12/joint6/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: joint1/joint2/joint12/joint6/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: joint1/joint2/joint13
+        weight: 1
+      - path: joint1/joint2/joint13/joint14
+        weight: 1
+      - path: joint1/joint2/joint13/joint14/joint15
+        weight: 1
+      - path: joint1/joint2/joint16
+        weight: 1
+      - path: joint1/joint2/joint16/joint14 1
+        weight: 1
+      - path: joint1/joint2/joint16/joint14 1/joint15 1
+        weight: 1
+      - path: joint1/Neck
+        weight: 1
+      - path: joint1/Neck/JawBase
+        weight: 1
+      - path: joint1/Neck/JawBase/BottomJaw
+        weight: 1
+      - path: joint1/Neck/JawBase/BottomJaw/joint4
+        weight: 1
+      - path: joint1/Neck/JawBase/joint17
+        weight: 1
+      - path: joint1/Neck/JawBase/joint17/joint18
+        weight: 1
+      - path: joint1/Neck/JawBase/joint17/joint18/joint19
+        weight: 1
+      - path: joint1/Neck/JawBase/joint20
+        weight: 1
+      - path: joint1/Neck/JawBase/joint20/joint18 1
+        weight: 1
+      - path: joint1/Neck/JawBase/joint20/joint18 1/joint19 1
+        weight: 1
+      - path: joint1/Neck/JawBase/TopJaw
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      - path: polySurface1/transform22
+        weight: 1
+      - path: polySurface2
+        weight: 1
+      - path: polySurface2/polySurface7
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface9
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface9/transform29
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface10
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface10/transform32
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface11
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface11/transform31
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface12
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface12/transform30
+        weight: 1
+      - path: polySurface2/polySurface7/polySurface13
+        weight: 1
+      - path: polySurface2/polySurface7/transform28
+        weight: 1
+      - path: polySurface2/transform23
+        weight: 1
+      - path: polySurface34
+        weight: 1
+      - path: polySurface35
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
