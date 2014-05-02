@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1005fa160d59584994b6606df6896dc
+guid: 64a06c489247d3640af39d4c8904efe8
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -260,7 +260,7 @@ ModelImporter:
     4300108: pCone52
     4300110: pCone53
     4300112: pCone54
-    7400000: Take 001
+    7400000: dying
     9500000: //RootNode
     13700000: pCone1
     13700002: pCone10
@@ -333,7 +333,233 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: dying
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: group1/pCone1
+        weight: 1
+      - path: group1/pCone2
+        weight: 1
+      - path: group1/pCone3
+        weight: 1
+      - path: group1/pCone4
+        weight: 1
+      - path: group1/pCone5
+        weight: 1
+      - path: group1/pCone6
+        weight: 1
+      - path: group1/pCone7
+        weight: 1
+      - path: group1/pCone8
+        weight: 1
+      - path: group1/pCone9
+        weight: 1
+      - path: group1/pCone10
+        weight: 1
+      - path: group1/pCone11
+        weight: 1
+      - path: group1/pCone12
+        weight: 1
+      - path: group1/pCone13
+        weight: 1
+      - path: group1/pCone14
+        weight: 1
+      - path: group1/pCone15
+        weight: 1
+      - path: group1/pCone16
+        weight: 1
+      - path: group1/pCone17
+        weight: 1
+      - path: group1/pCone18
+        weight: 1
+      - path: group1/pCone19
+        weight: 1
+      - path: group1/pCone20
+        weight: 1
+      - path: group1/pCone21
+        weight: 1
+      - path: group1/pCone22
+        weight: 1
+      - path: group1/pCone23
+        weight: 1
+      - path: group1/pCone24
+        weight: 1
+      - path: group1/pCone25
+        weight: 1
+      - path: group1/pCone26
+        weight: 1
+      - path: group1/pCone27
+        weight: 1
+      - path: group1/pCone28
+        weight: 1
+      - path: group1/pCone29
+        weight: 1
+      - path: group1/pCone30
+        weight: 1
+      - path: group1/pCone31
+        weight: 1
+      - path: group1/pCone32
+        weight: 1
+      - path: group1/pCone33
+        weight: 1
+      - path: group1/pCone34
+        weight: 1
+      - path: group1/pCone35
+        weight: 1
+      - path: group1/pCone36
+        weight: 1
+      - path: group1/pCone37
+        weight: 1
+      - path: group1/pCone38
+        weight: 1
+      - path: group1/pCone39
+        weight: 1
+      - path: group1/pCone40
+        weight: 1
+      - path: group1/pCone41
+        weight: 1
+      - path: group1/pCone42
+        weight: 1
+      - path: group1/pCone43
+        weight: 1
+      - path: group1/pCone44
+        weight: 1
+      - path: group1/pCone45
+        weight: 1
+      - path: group1/pCone46
+        weight: 1
+      - path: group1/pCone47
+        weight: 1
+      - path: group1/pCone48
+        weight: 1
+      - path: group1/pCone49
+        weight: 1
+      - path: group1/pCone50
+        weight: 1
+      - path: group1/pCone51
+        weight: 1
+      - path: group1/pCone52
+        weight: 1
+      - path: group1/pCone53
+        weight: 1
+      - path: group1/pCone54
+        weight: 1
+      - path: group1/pCube1
+        weight: 1
+      - path: group1/pSphere1
+        weight: 1
+      - path: group1/pSphere2
+        weight: 1
+      - path: ikHandle1_left
+        weight: 1
+      - path: ikHandle2_right
+        weight: 1
+      - path: ikHandle3_tail
+        weight: 1
+      - path: l_wrist_CTRL
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/tailBase_Cluster1
+        weight: 1
+      - path: nurbsCircle2
+        weight: 1
+      - path: nurbsCircle2/tailBase_Cluster2
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/tailBase_Cluster3
+        weight: 1
+      - path: r_wrist_CTRL
+        weight: 1
+      - path: root_CTRL
+        weight: 1
+      - path: root_Jnt
+        weight: 1
+      - path: root_Jnt/curve1
+        weight: 1
+      - path: root_Jnt/joint7
+        weight: 1
+      - path: root_Jnt/joint7/joint8
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11/joint12/joint13
+        weight: 1
+      - path: root_Jnt/joint7/joint8/joint9/joint10/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: root_Jnt/joint15
+        weight: 1
+      - path: root_Jnt/joint15/joint1
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2/joint3
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2/joint3/joint4
+        weight: 1
+      - path: root_Jnt/joint15/joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: root_Jnt/joint16
+        weight: 1
+      - path: root_Jnt/joint16/joint17
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/lowJaw_JNT
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/lowJaw_JNT/joint20
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/upperJaw_JNT
+        weight: 1
+      - path: root_Jnt/joint16/joint17/joint18/upperJaw_JNT/joint22
+        weight: 1
+      - path: root_Jnt/joint23
+        weight: 1
+      - path: root_Jnt/joint23/joint24
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: root_Jnt/joint23/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

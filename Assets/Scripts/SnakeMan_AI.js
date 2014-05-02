@@ -4,10 +4,10 @@ var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
 var chargeSpeed : float = 12; //Charge speed for last part of attack
-var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
+var rotSpeed : float = 180;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
 var attackRange : float = 4; 
-var chargeDistance : float = 6;
+var chargeDistance : float = 10;
 var detectRange : float = 20;  // detection distance
 var health = 10;
 var anim : Animator;
@@ -31,10 +31,11 @@ function Update(){
     	//Loose the souls! But only do it once because this is the update method. 
     	Destroy(gameObject, 2.0f);
     }
-    if (target){
+    else if (target){
         var tgtDir = target.position - transf.position;
         var tgtDist = tgtDir.magnitude; // get distance to the target
         var hit : RaycastHit;
+        Debug.Log(tgtDist);
         if ((Physics.Raycast(transf.position, tgtDir, hit, detectRange))&&hit.collider.tag.Equals("Player")){
             var moveDir = target.position - transf.position;
             moveDir.y = 0;  // prevents enemy tilting
@@ -49,8 +50,8 @@ function Update(){
             }
             else if((tgtDist <= chargeDistance) && (tgtDist > attackDistance) && (tgtDist <= attackRange))
             {
-            	anim.SetBool("Running", true);
-            	anim.SetBool("Attacking", true); 
+            	anim.SetBool("RunningAttack", true);
+            	anim.SetBool("Running", false);
             	anim.SetBool("Walking", false); 
             	MoveCharacter(moveDir, chargeSpeed);
             }
@@ -75,9 +76,9 @@ function Update(){
     }
 }
 
-var walkSpeed = 3.0; 
-var travelTime = 2.0; 
-var idleTime = 1.5;
+var walkSpeed : float = 3.0f; 
+var travelTime : float = 3.96f; 
+var idleTime : float = 1.98f;
 var rndAngle = 180;  // enemy will turn +/- rndAngle
 
 private var timeToNewDir = 0.0;

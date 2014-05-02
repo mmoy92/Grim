@@ -41,7 +41,7 @@ function Update(){
             moveDir.y = 0;  // prevents enemy tilting
             var rot = Quaternion.FromToRotation(Vector3.forward, moveDir);
             transf.rotation = Quaternion.RotateTowards(transf.rotation, rot, rotSpeed * Time.deltaTime);
-            Debug.Log(tgtDist);
+//            Debug.Log(tgtDist);
             if (tgtDist <= attackDistance){  // if dist <= attackDistance: attack
                 // do your attack here
                 anim.SetBool("Attacking", true);
@@ -78,11 +78,11 @@ function Update(){
     }
 }
 
-var walkSpeed = 1.0; //None of these values can be changed. 
-var travelTime = 8.0; //Animator doesn't seem to like cutting animation midway.
-var idleTime = 4.0; //So you get gliding enemies unless times match up in multiples. 
+var walkSpeed : float = 1.0f; //None of these values can be changed. 
+var travelTime : float = 8.0f; //Animator doesn't seem to like cutting animation midway.
+var idleTime : float = 4.0f; //So you get gliding enemies unless times match up in multiples. 
 var rndAngle = 180;  // enemy will turn +/- rndAngle
-var delayTime = 4.167;
+var delayTime : float = 4.167f;
 
 private var timeToNewDir = 0.0; //For calcs, don't change
 private var turningTime = 0.0; //For calcs, don't change

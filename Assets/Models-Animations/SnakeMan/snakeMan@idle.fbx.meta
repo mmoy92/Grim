@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e19133e40a6b3f4c9e8291ce93771f5
+guid: e4b5c632b75f5154ea0cc8417b4f9661
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -260,7 +260,7 @@ ModelImporter:
     4300108: pCone52
     4300110: pCone53
     4300112: pCone54
-    7400000: Take 001
+    7400000: idle
     9500000: //RootNode
     13700000: pCone1
     13700002: pCone10
@@ -335,16 +335,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: idle
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 48
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

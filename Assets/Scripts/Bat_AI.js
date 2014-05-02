@@ -22,7 +22,7 @@ private var switchRound: int = 60;
 var attackTurnFrames: int = 60; 
 function Update(){
 	transform.position.z = 0;
-    if (target){
+    /*if (target){
         var tgtDir = target.position - transf.position;
         var tgtDist = tgtDir.magnitude; // get distance to the target
         var hit : RaycastHit;
@@ -61,7 +61,8 @@ function Update(){
             // stays in idle mode if can't see target
             Idle(); 
         }
-    }
+    }*/
+    Idle();
 }
 
 var dropTime = 3.0;
