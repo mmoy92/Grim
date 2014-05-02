@@ -5,7 +5,7 @@ var Soul:GameObject;
 var target : Transform;    
 var lookAtDistance = 15.0;
 var attackRange = 10.0;
-var moveSpeed = 15.0;
+var moveSpeed = 1.0;
 var damping = 6.0;
 var health = 50;
 

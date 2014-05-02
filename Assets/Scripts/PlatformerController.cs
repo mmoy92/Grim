@@ -5,7 +5,7 @@ public class PlatformerController : MonoBehaviour
 {
 	PlatformerPhysics mPlayer;
 	bool mHasControl;
-	float dashingTime = 5f;
+	public float dashingTime = 0f;
 
 	void Start () 
 	{
