@@ -120,5 +120,5 @@ function MoveCharacter(dir: Vector3, speed: float){
 function die()
 {
 	anim.SetBool("Dead", true);
-	health = 0; 
+	hp = 0; 
 }

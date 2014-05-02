@@ -1,0 +1,262 @@
+fileFormatVersion: 2
+guid: 8be51141d615e1e418dcf39cbb5386ce
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: BottomJaw
+    100006: FangLeft
+    100008: FangRight
+    100010: Head
+    100012: ikHandle1
+    100014: ikHandle2
+    100016: imagePlane1
+    100018: JawBase
+    100020: joint1
+    100022: joint10
+    100024: joint10 1
+    100026: joint11
+    100028: joint11 1
+    100030: joint12
+    100032: joint13
+    100034: joint14
+    100036: joint14 1
+    100038: joint15
+    100040: joint15 1
+    100042: joint16
+    100044: joint17
+    100046: joint18
+    100048: joint18 1
+    100050: joint19
+    100052: joint19 1
+    100054: joint2
+    100056: joint20
+    100058: joint3
+    100060: joint4
+    100062: joint5
+    100064: joint6
+    100066: joint6 1
+    100068: joint7
+    100070: joint7 1
+    100072: joint8
+    100074: joint8 1
+    100076: joint9
+    100078: joint9 1
+    100080: Left_Eye
+    100082: Neck
+    100084: Nose
+    100086: nurbsCircle1
+    100088: pCone3
+    100090: pCone4
+    100092: pCone5
+    100094: polySurface1
+    100096: polySurface10
+    100098: polySurface11
+    100100: polySurface12
+    100102: polySurface13
+    100104: polySurface2
+    100106: polySurface34
+    100108: polySurface35
+    100110: polySurface7
+    100112: polySurface9
+    100114: Right_Eye
+    100116: Teeth
+    100118: teeth1
+    100120: teeth2
+    100122: teeth3
+    100124: teeth4
+    100126: TopJaw
+    100128: transform1
+    100130: transform10
+    100132: transform11
+    100134: transform12
+    100136: transform13
+    100138: transform14
+    100140: transform15
+    100142: transform16
+    100144: transform17
+    100146: transform18
+    100148: transform19
+    100150: transform2
+    100152: transform20
+    100154: transform21
+    100156: transform22
+    100158: transform23
+    100160: transform28
+    100162: transform29
+    100164: transform3
+    100166: transform30
+    100168: transform31
+    100170: transform32
+    100172: transform4
+    100174: transform5
+    100176: transform6
+    100178: transform7
+    100180: transform8
+    100182: transform9
+    100184: Wingskin1
+    100186: WingSkin2
+    100188: WingSkin3
+    100190: WingSkin4
+    100192: WingSkin5
+    100194: WingSkin6
+    400000: //RootNode
+    400002: Body
+    400004: BottomJaw
+    400006: FangLeft
+    400008: FangRight
+    400010: Head
+    400012: ikHandle1
+    400014: ikHandle2
+    400016: imagePlane1
+    400018: JawBase
+    400020: joint1
+    400022: joint10
+    400024: joint10 1
+    400026: joint11
+    400028: joint11 1
+    400030: joint12
+    400032: joint13
+    400034: joint14
+    400036: joint14 1
+    400038: joint15
+    400040: joint15 1
+    400042: joint16
+    400044: joint17
+    400046: joint18
+    400048: joint18 1
+    400050: joint19
+    400052: joint19 1
+    400054: joint2
+    400056: joint20
+    400058: joint3
+    400060: joint4
+    400062: joint5
+    400064: joint6
+    400066: joint6 1
+    400068: joint7
+    400070: joint7 1
+    400072: joint8
+    400074: joint8 1
+    400076: joint9
+    400078: joint9 1
+    400080: Left_Eye
+    400082: Neck
+    400084: Nose
+    400086: nurbsCircle1
+    400088: pCone3
+    400090: pCone4
+    400092: pCone5
+    400094: polySurface1
+    400096: polySurface10
+    400098: polySurface11
+    400100: polySurface12
+    400102: polySurface13
+    400104: polySurface2
+    400106: polySurface34
+    400108: polySurface35
+    400110: polySurface7
+    400112: polySurface9
+    400114: Right_Eye
+    400116: Teeth
+    400118: teeth1
+    400120: teeth2
+    400122: teeth3
+    400124: teeth4
+    400126: TopJaw
+    400128: transform1
+    400130: transform10
+    400132: transform11
+    400134: transform12
+    400136: transform13
+    400138: transform14
+    400140: transform15
+    400142: transform16
+    400144: transform17
+    400146: transform18
+    400148: transform19
+    400150: transform2
+    400152: transform20
+    400154: transform21
+    400156: transform22
+    400158: transform23
+    400160: transform28
+    400162: transform29
+    400164: transform3
+    400166: transform30
+    400168: transform31
+    400170: transform32
+    400172: transform4
+    400174: transform5
+    400176: transform6
+    400178: transform7
+    400180: transform8
+    400182: transform9
+    400184: Wingskin1
+    400186: WingSkin2
+    400188: WingSkin3
+    400190: WingSkin4
+    400192: WingSkin5
+    400194: WingSkin6
+    4300000: polySurface13
+    4300002: polySurface34
+    4300004: polySurface35
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface13
+    13700002: polySurface34
+    13700004: polySurface35
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
