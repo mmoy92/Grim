@@ -58,8 +58,8 @@ public class PlayerHealthBarScript : MonoBehaviour
 				player = GameObject.FindGameObjectWithTag ("Player");
 				griminfo = player.GetComponent<grimInfo> ();
 
-				xSize = 455f;
-				ySize = 65f;
+				xSize = 456f;
+				ySize = 66f;
 
 				healthPosition = new Vector2 (0, 0);
 				healthSize = new Vector2 (xSize, ySize);
@@ -70,14 +70,14 @@ public class PlayerHealthBarScript : MonoBehaviour
 				moralitySize = new Vector2 (xSize, ySize);
 				moralityPosition = new Vector2 ((Screen.width - xSize) / 2, Screen.height - ySize);
 	
-				iconSize = new Vector2 (xSize / 45.5f, ySize);
+				iconSize = new Vector2 (xSize / 45f, ySize);
 				moralityBar = 0.5f;
 
 				dashPosition = new Vector2 (0, ySize);
-				dashSize = new Vector2 (xSize / 2f, ySize); 
+				dashSize = new Vector2 (xSize / 2f, ySize/2f); 
 
 				ultimatePosition = new Vector2 (xSize/2f, ySize);
-				ultimateSize = new Vector2 (xSize / 2f, ySize); 
+				ultimateSize = new Vector2 (xSize / 2f, ySize/2fd); 
 	}
 	
 		void OnGUI ()
