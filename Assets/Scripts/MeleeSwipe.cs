@@ -42,7 +42,6 @@ public class MeleeSwipe : MonoBehaviour {
 			}
 			if(!didHit)
 			{
-				print (other);
 				alreadyHit.Add(other);
 
 				Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
@@ -58,6 +57,7 @@ public class MeleeSwipe : MonoBehaviour {
 
 		if (other.tag == "Soul" && alreadyHit.Count == 0)
 		{
+			alreadyHit.Add(other);
 			SoulMovement soul = other.GetComponent<SoulMovement>();
 			soul.destroySoul();
 

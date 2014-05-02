@@ -77,7 +77,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 				dashSize = new Vector2 (xSize / 2f, ySize/2f); 
 
 				ultimatePosition = new Vector2 (xSize/2f, ySize);
-				ultimateSize = new Vector2 (xSize / 2f, ySize/2fd); 
+				ultimateSize = new Vector2 (xSize / 2f, ySize/2f); 
 	}
 	
 		void OnGUI ()

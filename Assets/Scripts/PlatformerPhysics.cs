@@ -12,7 +12,6 @@ public class PlatformerPhysics : MonoBehaviour
 	public float accelerationWalking	= 35;		//Character acceleration while walking
 	public float accelerationSprinting	= 60;		//Character acceleration while sprinting
 	public float maxSpeedWalking		= 15;		//Maximum character speed while walking
-	public float maxSpeedSprinting		= 20;		//Maximum character speed while sprinting
 	public float moveFriction			= 0.9f;		//Friction multiplier if the character is on ground and no moving buttons are pressed
 	public float speedToStopAt			= 5.0f;		//If the character's speed falls below this while being on the ground, the character stops
 	public float airFriction			= 0.98f;	//Air friction is always applied to the character
@@ -33,9 +32,13 @@ public class PlatformerPhysics : MonoBehaviour
 	public bool hasEvilAttack			= false;
 	public bool hasGoodAttack			= true;
 
+	public float goodDashSpeed = 30.0f;
+	public float evilDashSpeed = 10.0f;
+
 	public float wallJumpVelocity		= 15;		//Sideways velocity when doing a walljump
 	public float wallStickyness			= 0.5f;		//Amount of seconds the player has to move away from a wall to let go of it. The idea behind this is that players can press the opposite direction to prepare for a walljump without immediately letting go of the wall
 	public float gravityMultiplier		= 3.5f;		//Amount of gravity applied to the character compared to the rest of the physics world
+
 
 
 
@@ -330,14 +333,14 @@ public class PlatformerPhysics : MonoBehaviour
 				//rigidbody.AddForce (mGroundDirection * 500, ForceMode.VelocityChange);
 				Vector3 vel = rigidbody.velocity;
 				vel.y = 0;
-				vel.x = mGoingRight ? 100 : -100;
+				vel.x = mGoingRight ? evilDashSpeed : -evilDashSpeed;
 				rigidbody.velocity = vel;
 				SendAnimMessage ("StartedEvilDash");
 			} else if (hasGoodDash){
 				infoComponent.setInvulnFor(1.0f);
 				Vector3 vel = rigidbody.velocity;
 				vel.y = 0;
-				vel.x = mGoingRight ? 200 : -200;
+				vel.x = mGoingRight ? goodDashSpeed : -goodDashSpeed;
 				rigidbody.velocity = vel;
 				SendAnimMessage ("StartedGoodDash");
 
@@ -429,12 +432,12 @@ public class PlatformerPhysics : MonoBehaviour
 
 		//Apply maximum speed
 		float maxSpeed = maxSpeedWalking;
-		if (mSprinting)
-			maxSpeed = maxSpeedSprinting;
 
-		if (absSpeed > maxSpeed)
-			velocity.x *= maxSpeed / absSpeed;
-
+		if (!mDashing) {
+			if (absSpeed > maxSpeed ){
+				velocity.x *= maxSpeed / absSpeed;
+			}
+		}
 		//Apply minimum speed
 		if (absSpeed < speedToStopAt && mStoppingForce == 1.0f)
 			velocity.x = 0;
