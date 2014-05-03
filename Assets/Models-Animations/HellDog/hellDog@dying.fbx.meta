@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: 01e2f1fa1fa69f6459a6f2429cb7427d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Back_Knee_Left
+    100002: Body
+    100004: BottomJaw
+    100006: //RootNode
+    100008: Hip_Right
+    100010: ikHandle1
+    100012: ikHandle2
+    100014: ikHandle3
+    100016: ikHandle4
+    100018: ikHandle5
+    100020: joint10
+    100022: joint13
+    100024: joint15
+    100026: joint16
+    100028: joint18
+    100030: joint19
+    100032: joint21
+    100034: joint22
+    100036: joint23
+    100038: Lips
+    100040: Right_Left
+    100042: Shoulder_Left
+    100044: Shoulder_Right
+    100046: Spine1
+    100048: Spine2
+    100050: Spine3
+    100052: Spine4
+    100054: Tail1
+    100056: Tail2
+    100058: Tail3__Handle_
+    100060: Tongue
+    100062: tooth1left
+    100064: tooth1right
+    100066: tooth2left
+    100068: tooth2right
+    100070: tooth3left
+    100072: tooth3right
+    100074: Topjaw
+    400000: Back_Knee_Left
+    400002: Body
+    400004: BottomJaw
+    400006: //RootNode
+    400008: Hip_Right
+    400010: ikHandle1
+    400012: ikHandle2
+    400014: ikHandle3
+    400016: ikHandle4
+    400018: ikHandle5
+    400020: joint10
+    400022: joint13
+    400024: joint15
+    400026: joint16
+    400028: joint18
+    400030: joint19
+    400032: joint21
+    400034: joint22
+    400036: joint23
+    400038: Lips
+    400040: Right_Left
+    400042: Shoulder_Left
+    400044: Shoulder_Right
+    400046: Spine1
+    400048: Spine2
+    400050: Spine3
+    400052: Spine4
+    400054: Tail1
+    400056: Tail2
+    400058: Tail3__Handle_
+    400060: Tongue
+    400062: tooth1left
+    400064: tooth1right
+    400066: tooth2left
+    400068: tooth2right
+    400070: tooth3left
+    400072: tooth3right
+    400074: Topjaw
+    4300000: Body
+    4300002: Lips
+    4300004: Tongue
+    4300006: tooth3right
+    4300008: tooth1right
+    4300010: tooth2right
+    4300012: tooth1left
+    4300014: tooth2left
+    4300016: tooth3left
+    7400000: Helldog Dying
+    9500000: //RootNode
+    13700000: Body
+    13700002: Lips
+    13700004: Tongue
+    13700006: tooth1left
+    13700008: tooth1right
+    13700010: tooth2left
+    13700012: tooth2right
+    13700014: tooth3left
+    13700016: tooth3right
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Helldog Dying
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Lips
+        weight: 1
+      - path: Body/Tongue
+        weight: 1
+      - path: Body/tooth1left
+        weight: 1
+      - path: Body/tooth1right
+        weight: 1
+      - path: Body/tooth2left
+        weight: 1
+      - path: Body/tooth2right
+        weight: 1
+      - path: Body/tooth3left
+        weight: 1
+      - path: Body/tooth3right
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: ikHandle4
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: Spine1
+        weight: 1
+      - path: Spine1/BottomJaw
+        weight: 1
+      - path: Spine1/BottomJaw/joint23
+        weight: 1
+      - path: Spine1/Shoulder_Left
+        weight: 1
+      - path: Spine1/Shoulder_Left/joint15
+        weight: 1
+      - path: Spine1/Shoulder_Left/joint15/joint16
+        weight: 1
+      - path: Spine1/Shoulder_Right
+        weight: 1
+      - path: Spine1/Shoulder_Right/joint18
+        weight: 1
+      - path: Spine1/Shoulder_Right/joint18/joint19
+        weight: 1
+      - path: Spine1/Spine2
+        weight: 1
+      - path: Spine1/Spine2/Spine3
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Hip_Right
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Hip_Right/joint21
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Hip_Right/joint21/joint22
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Right_Left
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Right_Left/Back_Knee_Left
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Right_Left/Back_Knee_Left/joint13
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Tail1
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Tail1/Tail2
+        weight: 1
+      - path: Spine1/Spine2/Spine3/Spine4/Tail1/Tail2/joint10
+        weight: 1
+      - path: Spine1/Topjaw
+        weight: 1
+      - path: Tail3__Handle_
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

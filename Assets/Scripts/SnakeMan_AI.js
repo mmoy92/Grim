@@ -4,7 +4,7 @@ var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
 var chargeSpeed : float = 12; //Charge speed for last part of attack
-var rotSpeed : float = 180;  // speed to turn to the player (degrees/second)
+var rotSpeed : float = 63.514f;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
 var attackRange : float = 4; 
 var chargeDistance : float = 10;
@@ -40,7 +40,9 @@ function Update(){
             var moveDir = target.position - transf.position;
             moveDir.y = 0;  // prevents enemy tilting
             var rot = Quaternion.FromToRotation(Vector3.forward, moveDir);
+            anim.SetBool("Turning", true);
             transf.rotation = Quaternion.RotateTowards(transf.rotation, rot, rotSpeed * Time.deltaTime);
+            anim.SetBool("Turning", false); 
             if (tgtDist <= attackDistance){  // if dist <= attackDistance: stop and attack
                 anim.SetBool("Attacking", true); 
                 anim.SetBool("Walking", false);
@@ -77,8 +79,8 @@ function Update(){
 }
 
 var walkSpeed : float = 3.0f; 
-var travelTime : float = 3.96f; 
-var idleTime : float = 1.98f;
+var travelTime : float = 4.068f; 
+var idleTime : float = 2.834f;
 var rndAngle = 180;  // enemy will turn +/- rndAngle
 
 private var timeToNewDir = 0.0;
@@ -96,8 +98,10 @@ function Idle () {
 //    	anim.SetBool("Turning", true);
  //   	anim.SetBool("Walking", false); 
 //      anim.SetBool("Running", false); 
+		anim.SetBool("Turning", true); 
         transform.Rotate(0, turn*Time.deltaTime/idleTime, 0);
     } else {  // and travel until timeToNewDir
+    	anim.SetBool("Turning", false); 
     	anim.SetBool("Walking", true); 
 //    	anim.SetBool("Turning", false); 
 		anim.SetBool("Attacking", false);
