@@ -79,7 +79,11 @@ public class PlayerHealthBarScript : MonoBehaviour
 
 				ultimatePosition = new Vector2 (xSize/2f, ySize);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				ultimateSize = new Vector2 (xSize / 2f, ySize /2f); 
+=======
+				ultimateSize = new Vector2 (xSize / 2f, ySize/2f); 
+>>>>>>> d8184193a17831355d51eb8bdf48939cf57b38e4
 =======
 				ultimateSize = new Vector2 (xSize / 2f, ySize/2f); 
 >>>>>>> d8184193a17831355d51eb8bdf48939cf57b38e4
