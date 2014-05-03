@@ -15,7 +15,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 		public GUIStyle dash_full;
 		public GUIStyle ultimate_empty;
 		public GUIStyle ultimate_full;
-	//private GUIStyle extra_unlocked;
+		//private GUIStyle extra_unlocked;
 	
 		//current progress
 		float healthBar;
@@ -23,8 +23,6 @@ public class PlayerHealthBarScript : MonoBehaviour
 		public float moralityBar;
 		float dashingTime;
 		float ultimateTime;
-	
-
 		Vector2 healthPosition;
 		Vector2 healthSize;
 		Vector2 keyPosition;
@@ -37,8 +35,6 @@ public class PlayerHealthBarScript : MonoBehaviour
 		Vector2 dashSize;
 		Vector2 ultimatePosition;
 		Vector2 ultimateSize;
-	
-	
 		public Texture2D iconTex;
 		public Texture2D moralityMeter;
 		public Texture2D emptyHealth;
@@ -49,10 +45,8 @@ public class PlayerHealthBarScript : MonoBehaviour
 		public Texture2D downDash;
 		public Texture2D upUltimate;
 		public Texture2D downUltimate;
-
 		private float xSize;
 		private float ySize;
-	private float animationSmoother;
 
 		void Start ()
 		{
@@ -75,19 +69,11 @@ public class PlayerHealthBarScript : MonoBehaviour
 				moralityBar = 0.5f;
 
 				dashPosition = new Vector2 (0, ySize);
-				dashSize = new Vector2 (xSize / 2f, ySize/2f); 
+				dashSize = new Vector2 (xSize / 2f, ySize / 2f); 
 
-				ultimatePosition = new Vector2 (xSize/2f, ySize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-				ultimateSize = new Vector2 (xSize / 2f, ySize /2f); 
-=======
-				ultimateSize = new Vector2 (xSize / 2f, ySize/2f); 
->>>>>>> d8184193a17831355d51eb8bdf48939cf57b38e4
-=======
-				ultimateSize = new Vector2 (xSize / 2f, ySize/2f); 
->>>>>>> d8184193a17831355d51eb8bdf48939cf57b38e4
-	}
+				ultimatePosition = new Vector2 (xSize / 2f, ySize);
+				ultimateSize = new Vector2 (xSize / 2f, ySize / 2f); 
+		}
 	
 		void OnGUI ()
 		{
@@ -126,18 +112,18 @@ public class PlayerHealthBarScript : MonoBehaviour
 				GUI.EndGroup ();
 
 				//ULTIMATE STUFF
-			GUI.BeginGroup (new Rect (ultimatePosition.x, ultimatePosition.y, ultimateSize.x, ultimateSize.y));
-			GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), downUltimate, ultimate_empty);
-			GUI.BeginGroup (new Rect (0, 0, ultimateSize.x * ultimateTime, ultimateSize.y));
-			GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), upUltimate, ultimate_full);
-			GUI.EndGroup ();
-			GUI.EndGroup ();
-	}
+				GUI.BeginGroup (new Rect (ultimatePosition.x, ultimatePosition.y, ultimateSize.x, ultimateSize.y));
+				GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), downUltimate, ultimate_empty);
+				GUI.BeginGroup (new Rect (0, 0, ultimateSize.x * ultimateTime, ultimateSize.y));
+				GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), upUltimate, ultimate_full);
+				GUI.EndGroup ();
+				GUI.EndGroup ();
+		}
 	
-	void Update ()
+		void Update ()
 		{
-				dashingTime = (player.GetComponent<PlatformerController> ().dashingTime)/5.0f;
-				ultimateTime = (player.GetComponent<PlayerCombat> ().ultimateTimer)/5.0f;
+				dashingTime = (player.GetComponent<PlatformerController> ().dashingTime) / 5.0f;
+				ultimateTime = (player.GetComponent<PlayerCombat> ().ultimateTimer) / 5.0f;
 	
 				if (griminfo.grimHP == 5) {
 						healthBar = 1;
