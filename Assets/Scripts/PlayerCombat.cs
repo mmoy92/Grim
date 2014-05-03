@@ -112,8 +112,8 @@ public class PlayerCombat : MonoBehaviour {
 			
 			mAttackTimer = 0.5f;
 
-			vel.y = -20;
-			rigidbody.velocity = vel; 
+			//vel.y = -20;
+			//rigidbody.velocity = vel; 
 
 			SendAnimMessage("StartEvilSplode");
 			

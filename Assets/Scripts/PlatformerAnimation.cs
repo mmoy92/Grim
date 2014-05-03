@@ -6,13 +6,15 @@ public class PlatformerAnimation : MonoBehaviour
 	public Transform animatedPlayerModel; //Animated model that will have all the animations in it
 	public Object necroTrail;
 	public Object necroEffect;
-	public Object holySpark;
-	public Object holySpiral;
+	public Object teleportParticle;
+
 	bool mPlayerDead = false;
     bool mIdle = false;
 	bool mGround = true;
 	bool mAttack = false;
 	bool isRight =  true;
+
+	private bool isEvilDash = false;
 
 	GameObject weapon;
 	Transform renderedNinja;
@@ -69,8 +71,6 @@ public class PlatformerAnimation : MonoBehaviour
 
 		if (animatedPlayerModel.animation["walk"] == null ||
 			animatedPlayerModel.animation["jump"] == null ||
-			animatedPlayerModel.animation["slidein"] == null ||
-			animatedPlayerModel.animation["slideout"] == null ||
 			animatedPlayerModel.animation["death"] == null ||
 			animatedPlayerModel.animation["onwall"] == null ||
 		    animatedPlayerModel.animation["idle"] == null ||
@@ -110,7 +110,14 @@ public class PlatformerAnimation : MonoBehaviour
 			}
 		}
 
-		if (!animatedPlayerModel.animation ["dash"].enabled  && !renderedNinja.renderer.enabled) 
+		if (animatedPlayerModel.animation ["dash"].enabled) {
+			if(isEvilDash){
+				Vector3 spawn = transform.position;
+				spawn.y += 1;
+				
+				Instantiate (necroTrail, spawn, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			}
+		}else if ( !renderedNinja.renderer.enabled) 
 		{
 			EndGoodDash();
 		}
@@ -229,6 +236,7 @@ public class PlatformerAnimation : MonoBehaviour
 	void StartedEvilDash()
 	{
 		PlayAnim("dash");
+		isEvilDash = true;
 		Vector3 spawn = transform.position;
 		spawn.y += 1;
 		if(isRight)
@@ -249,25 +257,24 @@ public class PlatformerAnimation : MonoBehaviour
 	}
 	void StartedGoodDash()
 	{
-
+		isEvilDash = false;
 		PlayAnim("dash");
 		renderedNinja.renderer.enabled = false;
 
-		HolyEffect ();
+		teleportEffect ();
 		
 
 	}
 	void EndGoodDash()
 	{
-		HolyEffect ();
+		teleportEffect();
 		renderedNinja.renderer.enabled = true;
 	}
-	void HolyEffect()
+	void teleportEffect()
 	{
 		Vector3 spawn = transform.position;
 		spawn.y += 1;
-		Instantiate(holySpark, spawn, Quaternion.Euler(new Vector3(0,0,0)));
-		Instantiate(holySpiral, spawn, Quaternion.Euler(new Vector3(0,0,0)));
+		Instantiate(teleportParticle, spawn, Quaternion.Euler(new Vector3(0,0,0)));
 	}
 	void StartGoodSpear()
 	{

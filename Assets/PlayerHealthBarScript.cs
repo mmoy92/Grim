@@ -20,7 +20,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 		//current progress
 		float healthBar;
 		float keyProgress;
-		float moralityBar;
+		public float moralityBar;
 		float dashingTime;
 		float ultimateTime;
 	
@@ -52,6 +52,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 
 		private float xSize;
 		private float ySize;
+	private float animationSmoother;
 
 		void Start ()
 		{
@@ -77,7 +78,11 @@ public class PlayerHealthBarScript : MonoBehaviour
 				dashSize = new Vector2 (xSize / 2f, ySize/2f); 
 
 				ultimatePosition = new Vector2 (xSize/2f, ySize);
-				ultimateSize = new Vector2 (xSize / 2f, ySize/2fd); 
+<<<<<<< HEAD
+				ultimateSize = new Vector2 (xSize / 2f, ySize /2f); 
+=======
+				ultimateSize = new Vector2 (xSize / 2f, ySize/2f); 
+>>>>>>> d8184193a17831355d51eb8bdf48939cf57b38e4
 	}
 	
 		void OnGUI ()
@@ -129,17 +134,17 @@ public class PlayerHealthBarScript : MonoBehaviour
 		{
 				dashingTime = (player.GetComponent<PlatformerController> ().dashingTime)/5.0f;
 				ultimateTime = (player.GetComponent<PlayerCombat> ().ultimateTimer)/5.0f;
-
+	
 				if (griminfo.grimHP == 5) {
 						healthBar = 1;
 				} else if (griminfo.grimHP == 4) {
-						healthBar = (356f / 455f) * (455 / xSize);
+						healthBar = (356f / 456f) * (456 / xSize);
 				} else if (griminfo.grimHP == 3) {
-						healthBar = (253f / 455f) * (455 / xSize);
+						healthBar = (253f / 456f) * (456 / xSize);
 				} else if (griminfo.grimHP == 2) {
-						healthBar = (151f / 455f) * (455 / xSize);
+						healthBar = (151f / 456f) * (456 / xSize);
 				} else if (griminfo.grimHP == 1) {
-						healthBar = (47f / 455f) * (455 / xSize);
+						healthBar = (47f / 456f) * (456 / xSize);
 				} else
 						healthBar = 0;
 
@@ -150,6 +155,6 @@ public class PlayerHealthBarScript : MonoBehaviour
 				else if (moralityBar >= 1.0f)
 						moralityBar = 1.0f;
 				else
-						moralityBar = 0.5f - griminfo.soulCount / 20f;
+						moralityBar = 0.5f - griminfo.soulCount / 50f;
 		}	
 }
