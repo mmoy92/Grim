@@ -12,7 +12,6 @@ public class grimInfo : MonoBehaviour
 	public float maxKeys;
 	private float lastHitTime;           // The time at which the player was last hit.
 	private PlatformerController player;   // Reference to the PlatformerController script.
-
 	//private SpriteRenderer healthBar;			// Reference to the sprite renderer of the health bar.
 	//private Vector3 healthScale;				// The local scale of the health bar initially (with full health).
 

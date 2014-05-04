@@ -8,6 +8,7 @@ public class PlayerCombat : MonoBehaviour {
 	bool mAttacking						= false;	//Are we currently attacking
 	bool mCanAttack						= true;		//Can the player click the button to do the next attack?
 	float mAttackTimer					= 0;		//Current time until the current attack is done
+	public float ultimateTimer		    = 0;		//Current time until next use of ultimate.
 	public int mCurrentAttack			= 0;		//Current attack type being performed (0,1, or 2)
 	public float AttackALength		 	= 0.23f;	//The duration of attack A
 	public float AttackA_velY			= 5;		//The vertical thrust of attack A
@@ -28,11 +29,13 @@ public class PlayerCombat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		ultimateTimer += Time.deltaTime;
+
 		if (mAttacking) 
 		{
 			mAttackTimer -= Time.deltaTime;
-			
-			
+
 			if(mAttackTimer <= 0.15) //Allows the player to click near the end of an attack animation to do the next attack
 			{
 				mCanAttack = true;
@@ -99,8 +102,9 @@ public class PlayerCombat : MonoBehaviour {
 	}
 	public void EvilAttack(Vector3 vel, bool mGoingRight)
 	{
-		if (mCanAttack)
+		if (mCanAttack && ultimateTimer >= 5f)
 		{
+			ultimateTimer = 0.0f;
 			mCanAttack = false;
 			mAttacking = true;
 			
@@ -108,8 +112,8 @@ public class PlayerCombat : MonoBehaviour {
 			
 			mAttackTimer = 0.5f;
 
-			vel.y = -20;
-			rigidbody.velocity = vel; 
+			//vel.y = -20;
+			//rigidbody.velocity = vel; 
 
 			SendAnimMessage("StartEvilSplode");
 			
@@ -120,8 +124,9 @@ public class PlayerCombat : MonoBehaviour {
 	}
 	public void GoodAttack(Vector3 vel, bool mGoingRight)
 	{
-		if (mCanAttack)
+		if (mCanAttack && ultimateTimer >= 5f)
 		{
+			ultimateTimer = 0.0f;
 			mCanAttack = false;
 			mAttacking = true;
 			

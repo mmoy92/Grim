@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
-	private bool didHit = false;
 	public float damage = 10; 
-
+	private List<Collider> alreadyHit;
+	void Start()
+	{
+		alreadyHit = new List<Collider> ();
+	}
 	void Update()
 	{
 
@@ -25,22 +29,35 @@ public class MeleeSwipe : MonoBehaviour {
 
 	void OnTriggerStay(Collider other) {
 
-
-		if(other.tag == "Enemy" && !didHit)
+		if(other.tag == "Enemy")
 		{
-			didHit = true;
-			Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
-			other.gameObject.SendMessage("getHurt",damage);
-			other.gameObject.SendMessage("knockBack");
+			bool didHit = false;
+			foreach(Collider col in alreadyHit)
+			{
+				if(other.Equals(col))
+				{
+					didHit = true;
+					break;
+				}
+			}
+			if(!didHit)
+			{
+				alreadyHit.Add(other);
 
-			FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
-			//camComponent.SendMessage("Shake", 0.1);
+				Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
+				other.gameObject.SendMessage("getHurt",damage);
+				other.gameObject.SendMessage("knockBack");
 
-			//Destroy(gameObject,0.1f);
+				FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
+				camComponent.SendMessage("Shake", 0.1);
+
+				//Destroy(gameObject,0.1f);
+			}
 		}
 
-		if (other.tag == "Soul" && !didHit)
+		if (other.tag == "Soul" && alreadyHit.Count == 0)
 		{
+			alreadyHit.Add(other);
 			SoulMovement soul = other.GetComponent<SoulMovement>();
 			soul.destroySoul();
 
