@@ -176,25 +176,11 @@ public class PlatformerAnimation : MonoBehaviour
 	{
         PlayAnim("jump");
 	}
-
-	void StartedCrouching()
-	{
-        PlayAnim("slidein");
-	}
-
-	void StoppedCrouching()
-	{
-        PlayAnim("slideout");
-
-		if (GetComponent<PlatformerPhysics>().IsOnWall())
-			LandedOnWall();
-		else
-			animatedPlayerModel.animation.CrossFade("walk", 2.0f);
-	}
+	
 
 	void LandedOnGround()
 	{
-		if (!GetComponent<PlatformerPhysics>().IsCrouching() &&!mAttack)
+		if (!mAttack)
 		{
             PlayAnim("walk");
 		}
@@ -203,26 +189,25 @@ public class PlatformerAnimation : MonoBehaviour
 
 	void LandedOnWall()
 	{
-        if (!GetComponent<PlatformerPhysics>().IsCrouching())
-        {
-            PlayAnim("onwall");
+        
+	    PlayAnim("onwall");
 
-            if (!GetComponent<PlatformerPhysics>().IsWallOnRightSide())
-            {
-                animatedPlayerModel.transform.localPosition = new Vector3(0.45f, 0, 0);
-                GoLeft();
-            }
-            else
-            {
-                animatedPlayerModel.transform.localPosition = new Vector3(-0.45f, 0, 0);
-                GoRight();
-            }
-        }
+	    if (!GetComponent<PlatformerPhysics>().IsWallOnRightSide())
+	    {
+	        animatedPlayerModel.transform.localPosition = new Vector3(0.45f, 0, 0);
+	        GoLeft();
+	    }
+	    else
+	    {
+	        animatedPlayerModel.transform.localPosition = new Vector3(-0.45f, 0, 0);
+	        GoRight();
+	    }
+        
 	}
 
 	void ReleasedWall()
 	{
-		if (!animatedPlayerModel.animation["jump"].enabled && !GetComponent<PlatformerPhysics>().IsCrouching())
+		if (!animatedPlayerModel.animation["jump"].enabled)
             PlayAnim("walk");
 	}
 	void FinishedAttack()

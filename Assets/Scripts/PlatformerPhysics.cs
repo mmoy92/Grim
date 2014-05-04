@@ -16,13 +16,10 @@ public class PlatformerPhysics : MonoBehaviour
 	public float speedToStopAt			= 5.0f;		//If the character's speed falls below this while being on the ground, the character stops
 	public float airFriction			= 0.98f;	//Air friction is always applied to the character
 	public float maxGroundWalkingAngle	= 30.0f;	//Maximum angle the ground can be for the character to still be able to jump off and not slide down
-	public float crouchColliderScale	= 0.5f;		//Multiplier to the Y-size of the collider when crouching
-	public float crouchedAccelMultiplier= 0.1f;		//Maximum speed factor while crouched
 
 	//Configurable variables regarding jumping
 	public float jumpVelocity			= 12;		//Velocity while jumping
 	public int jumpTimeFrames			= 15;		//Amount of frames the jump can be held, the player can release the jump button earlier for a lower jump
-	public float crouchDownwardForce	= 20;		//Extra gravity added to the character if the crouch button is pressed
 	public bool canDoubleJump			= false;	//Whether the character can double jump or not
 	public bool canWallJump				= true;		//Whether the character can do a wall jump or not
 
@@ -46,8 +43,6 @@ public class PlatformerPhysics : MonoBehaviour
 	bool mOnGround						= false;	//Are we on the ground or not?
 	bool mSprinting						= false;	//Are we sprinting or not?
 	bool mDashing						= false; 	//Are we dashing or not?
-	bool mCrouching						= false;	//Are we crouching or not?
-	bool mTryingToUncrouch				= false;	//Are we trying to get out of crouch at the moment?
 	Vector3 mGroundDirection			= Vector3.right; //The direction of the ground we are standing on
 
 	bool mCanDash						= true;
@@ -106,7 +101,6 @@ public class PlatformerPhysics : MonoBehaviour
 	{
 		mOnGround = false;
 		mSprinting = false;
-		StopCrouch();
 		mGroundDirection = Vector3.right;
 		mInJump = false;
 		mJumpPressed = false;
@@ -131,7 +125,6 @@ public class PlatformerPhysics : MonoBehaviour
 		UpdateGroundInfo();			//Check below to see if we are on the ground
 
 		UpdateJumping();
-		UpdateCrouching();
 		ApplyGravity();
 		ApplyMovementFriction();
 	}
@@ -165,8 +158,6 @@ public class PlatformerPhysics : MonoBehaviour
 			float accel = accelerationWalking;
 			if (mSprinting)
 					accel = accelerationSprinting;
-			if (mCrouching && mOnGround)
-					accel = accelerationWalking * crouchedAccelMultiplier;
 
 			//apply actual force 
 			rigidbody.AddForce (mGroundDirection * direction * accel, ForceMode.Acceleration);
@@ -193,7 +184,7 @@ public class PlatformerPhysics : MonoBehaviour
 		mJumpPressed = true;
 
 		//See if we can start a jump
-		if (mJumpFramesLeft == 0 && !mInJump && !mCrouching && !mDashing)
+		if (mJumpFramesLeft == 0 && !mInJump  && !mDashing)
 		{
 			if (!mOnGround && mSecondJumpLeft && canDoubleJump) //Second jump
 			{
@@ -261,68 +252,9 @@ public class PlatformerPhysics : MonoBehaviour
 			}
 		}
 	}
+	
 
-    //Called when the player presses the crouch button
-	public void Crouch() 
-	{
-		if (!mCrouching) //make sure we aren't crouching
-		{
-			mCrouching = true;
 
-			CrouchCollider();
-
-			RecalcBounds();
-
-			SendAnimMessage("StartedCrouching");
-		}
-	}
-
-	public void CrouchCollider()
-	{
-		//change collider scale		
-		BoxCollider myCollider = (BoxCollider)collider;
-
-		Vector3 center = myCollider.center;
-		Vector3 size = myCollider.size;
-
-		//adjust the center and size in a way that it doesn't matter if the box collider has a center pivot or bottom pivot
-		size.y = origColliderSizeY * crouchColliderScale;
-		center.y = origColliderCenterY - (origColliderSizeY * (1.0f - crouchColliderScale))*0.5f;
-
-		myCollider.size = size;
-		myCollider.center = center;
-	}
-
-    //Called when the player releases the crouch button
-	public void UnCrouch()
-	{
-		mTryingToUncrouch = true; //try to uncrouch if possible
-	}
-
-	//Called when actually going out of crouch
-	void StopCrouch() 
-	{
-		mTryingToUncrouch = false;
-		mCrouching = false;
-		UnCrouchCollider();
-		RecalcBounds();
-		SendAnimMessage("StoppedCrouching");
-	}
-
-	public void UnCrouchCollider()
-	{
-		//reset collider scale
-		BoxCollider myCollider = (BoxCollider)collider;
-
-		Vector3 center = myCollider.center;
-		Vector3 size = myCollider.size;
-
-		size.y = origColliderSizeY;
-		center.y = origColliderCenterY;
-
-		myCollider.size = size;
-		myCollider.center = center;
-	}
 	//Called when the player presses the dash button
 	public void StartDash() 
 	{
@@ -379,24 +311,14 @@ public class PlatformerPhysics : MonoBehaviour
 
 	void ApplyGravity()
 	{
-		if (!mOnGround && !mDashing) //basic gravity, only applied when we are not on the ground
+		if (!mOnGround && !mDashing &&!mOnWall) //basic gravity, only applied when we are not on the ground
 		{
 			rigidbody.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
 		}
 
-		if (mCrouching) //extra gravity for when we are holding crouch
-		{
-			rigidbody.AddForce(Vector3.down * crouchDownwardForce, ForceMode.Acceleration);
-		}
-	}
 
-	void UpdateCrouching()
-	{
-		if (mTryingToUncrouch && CanUnCrouch())
-		{
-			StopCrouch();
-		}
 	}
+	
 
 
 	void UpdateJumping()
@@ -561,40 +483,16 @@ public class PlatformerPhysics : MonoBehaviour
 
 		if (!mOnWall)
 		{
-			rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, 0); //Remove horizontal speed
+			rigidbody.velocity = new Vector3(0, 0, 0); //Remove horizontal speed
 			mWallStickynessLeft = wallStickyness;
 			mOnWall = true;
             SendAnimMessage("LandedOnWall");
 		}
 
+
 		mOnWall = true;
 		mDashing = false;
 		mCanDash = true;
-	}
-
-	bool CanUnCrouch()
-	{
-		//We will trace 2 rays from the front and back of the character both upwards, to see if we can uncrouch
-		float epsilon = 0.05f; //the amount the ray will trace below the feet of the character to check if there is ground
-		float origCharHeight = origColliderSizeY;
-		float extraHeight = origCharHeight * 0.75f;
-		float halfPlayerWidth = mCharacterWidth * 0.49f;
-
-		//Origins of the ray
-		Vector3 origin1 = GetBottomCenter() + Vector3.right * halfPlayerWidth + Vector3.up * (origCharHeight - extraHeight);
-		Vector3 origin2 = GetBottomCenter() + Vector3.left * halfPlayerWidth + Vector3.up * (origCharHeight - extraHeight);
-		Vector3 direction = Vector3.up;
-		RaycastHit hit;
-
-		bool canUncrouch = true;
-
-		//Actual physic traces
-		if (Physics.Raycast(origin1, direction, out hit) && (hit.distance < extraHeight + epsilon))
-			canUncrouch = false;
-		else if (Physics.Raycast(origin2, direction, out hit) && (hit.distance < extraHeight + epsilon))
-			canUncrouch = false;
-
-		return canUncrouch;
 	}
 
     //send a message to all other scripts to trigger for example the animations
@@ -621,7 +519,6 @@ public class PlatformerPhysics : MonoBehaviour
 	
 	//getter functions
 	public bool IsWallOnRightSide() { return mWallIsOnRightSide; }
-	public bool IsCrouching() { return mCrouching; }
 	public bool IsOnWall() { return mOnWall; }
 	public bool IsOnGround() { return mOnGround; }
 	public bool IsSprinting() { return mSprinting; }
