@@ -66,6 +66,8 @@ public class PlatformerPhysics : MonoBehaviour
 
 	float origColliderCenterY;						//Original sizes of collision box
 	float origColliderSizeY;
+
+	float rawAxis_H						= 0.0f;
 	
 	PlayerCombat combatComponent;
 	grimInfo infoComponent;
@@ -133,6 +135,7 @@ public class PlatformerPhysics : MonoBehaviour
     //Called when the player presses a walking button (direction -1.0f is full left, and 1.0f is full right)
 	public void Walk(float direction) 
 	{
+		rawAxis_H = direction;
 		//See if we need to stick to a wall
 		if (mOnWall && mWallStickynessLeft > 0)
 		{
@@ -146,6 +149,7 @@ public class PlatformerPhysics : MonoBehaviour
 			//see if we just released the wall
 			if (mWallStickynessLeft <= 0)
 			{
+
 				SendAnimMessage("ReleasedWall");
 			}
 
@@ -220,7 +224,7 @@ public class PlatformerPhysics : MonoBehaviour
 		}
 
 		//Check if we are in the middle of a jump
-		if(mJumpFramesLeft != 0)
+		if(mJumpFramesLeft != 0 && !mOnWall)
 		{
 			Vector3 vel = rigidbody.velocity;
 			vel.y = jumpVelocity;
@@ -438,10 +442,10 @@ public class PlatformerPhysics : MonoBehaviour
 		RaycastHit hit;
 
 
-		//Raycast going to the right
-		if (Physics.Raycast(origin, Vector3.right, out hit))
+		//Key is pressing right and raycast going to the right
+		if (rawAxis_H > 0 && Physics.Raycast(origin, Vector3.right, out hit))
 		{
-			if (hit.distance < halfPlayerWidth + epsilon && !mOnGround)
+			if (hit.collider.tag == "Level" && hit.distance < halfPlayerWidth + epsilon && !mOnGround)
 			{
 				//remove collider penetration
 				transform.position += Vector3.left * (halfPlayerWidth - hit.distance);
@@ -452,10 +456,10 @@ public class PlatformerPhysics : MonoBehaviour
 			}
 		}
 
-		//Raycast going to the left
-		if (Physics.Raycast(origin, Vector3.left, out hit))
+		//Key is pressing left and raycast going to the left
+		if (rawAxis_H < 0 &&Physics.Raycast(origin, Vector3.left, out hit))
 		{
-			if (hit.distance < halfPlayerWidth + epsilon && !mOnGround)
+			if (hit.collider.tag == "Level" && hit.distance < halfPlayerWidth + epsilon && !mOnGround)
 			{
 				//remove collider penetration
 				transform.position += Vector3.right * (halfPlayerWidth - hit.distance);
