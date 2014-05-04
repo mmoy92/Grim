@@ -1,6 +1,5 @@
 ﻿#pragma strict
 
-var deathEffect:Transform;
 var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
@@ -9,10 +8,8 @@ var rotSpeed : float = 90;  // speed to turn to the player (degrees/second)
 var attackDistance : float = 2;  // attack distance
 var chargeDistance : float = 6;
 var detectRange : float = 20;  // detection distance
-var health = 10;
 var deathLocation : Transform;
 
-public var Soul:GameObject;
 private var transf : Transform;
 private var character: CharacterController; 
 
@@ -98,7 +95,7 @@ function MoveCharacter(dir: Vector3, speed: float){
        			Quaternion.identity);
     }
 }*/
-
+/*
 function getHurt(amt:int)
 {
 	health -= amt;	
@@ -114,8 +111,4 @@ function getHurt(amt:int)
        Instantiate(deathEffect, Vector3(transform.position.x,transform.position.y + 1, transform.position.z), Quaternion.Euler(new Vector3(0,0,0)));
     }
 }
-
-function knockBack()
-{
-	transform.Translate(Vector3.back * 0.5f);
-}
+*/
