@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+var deathEffect:Transform;
+var Soul:GameObject;
 var target : Transform;
 var gravity : float = 20;
 var moveSpeed : float = 1;  // chase speed
@@ -9,14 +11,12 @@ var attackDistance : float = 1.5;  // attack distance
 var AttackRange : float = 3;
 var detectRange : float = 20;  // detection distance
 //var animatedPlayerModel : ;
-var anim : Animator;
-var hp : int; 
+var anim : Animator; 
 
 private var transf : Transform;
 private var character: CharacterController; 
 
 function Start () { 
-	hp = 1; 
     if (!target) target = GameObject.FindWithTag ("Player").transform; 
     transf = transform;
     character = GetComponent(CharacterController);
@@ -26,13 +26,8 @@ function Start () {
 function Update(){
 	//animatedPlayerModel.transform.localPosition = Vector3.zero;
 	transform.position.z = 0;
-	if (hp <= 0)
-	{
-		anim.SetBool("Dead", true); 
-		//Spawn soul. Only once, this is update method so don't spawn 100 during destruction time. 
-		Destroy(gameObject, 2.0f);
-	}
-    else if (target){
+	
+    if (target){
         var tgtDir = target.position - transf.position;
         var tgtDist = tgtDir.magnitude; // get distance to the target
         var hit : RaycastHit;
@@ -49,7 +44,7 @@ function Update(){
                 anim.SetBool("WalkingAttack", false);
                 MoveCharacter(moveDir, shuffleSpeed); //Continue moving and pushing for hitbox ease
                 //anim.Play("Attack");
-                print("Attack!");
+                //print("Attack!");
             }
             else if((tgtDist <= AttackRange) && (tgtDist > attackDistance))
             {//Replacing charge logic with walk & attack area
@@ -58,7 +53,7 @@ function Update(){
             	anim.SetBool("Walking", true);
             	anim.SetBool("WalkingAttack", true);
             	MoveCharacter(moveDir, moveSpeed);
-            	print("Attack Region");
+            	//print("Attack Region");
             }
             else {  // if attackDistance < dist < detectRange: chase the player
                 // Move towards target
@@ -117,8 +112,8 @@ function MoveCharacter(dir: Vector3, speed: float){
     vel.y -= gravity * Time.deltaTime;  // apply gravity
     character.Move(vel * Time.deltaTime);  // move
 }
-function die()
+
+function PlayDeathAnim()
 {
 	anim.SetBool("Dead", true);
-	hp = 0; 
 }
