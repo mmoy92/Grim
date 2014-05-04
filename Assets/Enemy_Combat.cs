@@ -7,6 +7,8 @@ public class Enemy_Combat : MonoBehaviour {
 	public float deathDelay = 0.0f;
 
 	public Transform deathEffect;
+
+	public float effectShift_Y = 0.0f;
 	public GameObject Soul;
 
 
@@ -41,9 +43,12 @@ public class Enemy_Combat : MonoBehaviour {
 	{
 		isDead = true;
 		GameObject.FindGameObjectWithTag("MainCamera").GetComponent("FollowCam2D").SendMessage("SlowMoShake");
-		
-		Instantiate(deathEffect, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
-		Instantiate (Soul, transform.position, Quaternion.identity);
+
+		Vector3 spawnLoc = transform.position;
+		spawnLoc.y += effectShift_Y;
+
+		Instantiate(deathEffect, spawnLoc, Quaternion.Euler(new Vector3(0,0,0)));
+		Instantiate (Soul, spawnLoc, Quaternion.identity);
 
 		SendMessage ("PlayDeathAnim");
 

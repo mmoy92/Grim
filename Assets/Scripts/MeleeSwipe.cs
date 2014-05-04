@@ -44,7 +44,11 @@ public class MeleeSwipe : MonoBehaviour {
 			{
 				alreadyHit.Add(other);
 
-				Object newInst = Instantiate(slash, other.transform.position, Quaternion.Euler(new Vector3(0,0,0)));
+				Enemy_Combat enemyCombat = other.GetComponent<Enemy_Combat>();
+				Vector3 effectSpawn = other.transform.position;
+				effectSpawn.y += enemyCombat.effectShift_Y;
+
+				Object newInst = Instantiate(slash, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
 				other.gameObject.SendMessage("getHurt",damage);
 				other.gameObject.SendMessage("knockBack");
 
