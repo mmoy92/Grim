@@ -1,342 +1,347 @@
 fileFormatVersion: 2
-guid: 912fe4313878c0d438b38e12f5d061eb
+guid: 2688110c6ef85a34fb07f64c34ecdf05
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: CollarLeft
-    100002: CollarRight
-    100004: ElbowLeft
-    100006: ElbowRight
-    100008: EndofLowerJaw
-    100010: EndofSpine
-    100012: EndofUpperJaw
-    100014: group1
-    100016: HandLeft
-    100018: HandRight
-    100020: Head
-    100022: joint28
-    100024: joint5
-    100026: lowJaw_JNT
-    100028: Neck1
-    100030: Neck2
-    100032: RootJoint
-    100034: ShoulderLeft
-    100036: ShoulderRight
-    100038: //RootNode
-    100040: SnakeMan2_rig2:all_SnakeMan
-    100042: SnakeMan2_rig2:group1
-    100044: SnakeMan2_rig2:group2
-    100046: SnakeMan2_rig2:group3
-    100048: SnakeMan2_rig2:group4
-    100050: SnakeMan2_rig2:ikHandle3_tail
-    100052: SnakeMan2_rig2:ikHandle_left
-    100054: SnakeMan2_rig2:ikHandle_right
-    100056: SnakeMan2_rig2:l_wrist_CTRL
-    100058: SnakeMan2_rig2:locator1
-    100060: SnakeMan2_rig2:locator2
-    100062: SnakeMan2_rig2:master_CTRL
-    100064: SnakeMan2_rig2:pCone1
-    100066: SnakeMan2_rig2:pCone10
-    100068: SnakeMan2_rig2:pCone11
-    100070: SnakeMan2_rig2:pCone12
-    100072: SnakeMan2_rig2:pCone13
-    100074: SnakeMan2_rig2:pCone14
-    100076: SnakeMan2_rig2:pCone15
-    100078: SnakeMan2_rig2:pCone16
-    100080: SnakeMan2_rig2:pCone17
-    100082: SnakeMan2_rig2:pCone18
-    100084: SnakeMan2_rig2:pCone19
-    100086: SnakeMan2_rig2:pCone2
-    100088: SnakeMan2_rig2:pCone20
-    100090: SnakeMan2_rig2:pCone21
-    100092: SnakeMan2_rig2:pCone22
-    100094: SnakeMan2_rig2:pCone23
-    100096: SnakeMan2_rig2:pCone24
-    100098: SnakeMan2_rig2:pCone25
-    100100: SnakeMan2_rig2:pCone26
-    100102: SnakeMan2_rig2:pCone27
-    100104: SnakeMan2_rig2:pCone28
-    100106: SnakeMan2_rig2:pCone29
-    100108: SnakeMan2_rig2:pCone3
-    100110: SnakeMan2_rig2:pCone30
-    100112: SnakeMan2_rig2:pCone31
-    100114: SnakeMan2_rig2:pCone32
-    100116: SnakeMan2_rig2:pCone33
-    100118: SnakeMan2_rig2:pCone34
-    100120: SnakeMan2_rig2:pCone35
-    100122: SnakeMan2_rig2:pCone36
-    100124: SnakeMan2_rig2:pCone37
-    100126: SnakeMan2_rig2:pCone38
-    100128: SnakeMan2_rig2:pCone39
-    100130: SnakeMan2_rig2:pCone4
-    100132: SnakeMan2_rig2:pCone40
-    100134: SnakeMan2_rig2:pCone41
-    100136: SnakeMan2_rig2:pCone42
-    100138: SnakeMan2_rig2:pCone43
-    100140: SnakeMan2_rig2:pCone44
-    100142: SnakeMan2_rig2:pCone45
-    100144: SnakeMan2_rig2:pCone46
-    100146: SnakeMan2_rig2:pCone47
-    100148: SnakeMan2_rig2:pCone48
-    100150: SnakeMan2_rig2:pCone49
-    100152: SnakeMan2_rig2:pCone5
-    100154: SnakeMan2_rig2:pCone50
-    100156: SnakeMan2_rig2:pCone51
-    100158: SnakeMan2_rig2:pCone52
-    100160: SnakeMan2_rig2:pCone53
-    100162: SnakeMan2_rig2:pCone54
-    100164: SnakeMan2_rig2:pCone6
-    100166: SnakeMan2_rig2:pCone7
-    100168: SnakeMan2_rig2:pCone8
-    100170: SnakeMan2_rig2:pCone9
-    100172: SnakeMan2_rig2:pCube1
-    100174: SnakeMan2_rig2:pSphere1
-    100176: SnakeMan2_rig2:pSphere2
-    100178: SnakeMan2_rig2:r_wrist_CTRL
-    100180: SnakeMan2_rig2:root_CTRL
-    100182: SnakeMan2_rig2:tail1_CTRL
-    100184: SnakeMan2_rig2:tail2_CTRL
-    100186: SnakeMan2_rig2:tail3_CTRL
-    100188: SnakeMan2_rig2:tail_Curv
-    100190: SnakeMan2_rig2:tailBase_Cluster1
-    100192: SnakeMan2_rig2:tailBase_Cluster2
-    100194: SnakeMan2_rig2:tailBase_Cluster3
-    100196: SnakeMan2_rig2:tailBase_CURVE
-    100198: Spine1
-    100200: Spine2
-    100202: Spine3
-    100204: Spine4
-    100206: Spine5
-    100208: Spine6
-    100210: Spine7
-    100212: upperJaw_JNT
-    100214: WristLeft
-    100216: WristRight
-    400000: CollarLeft
-    400002: CollarRight
-    400004: ElbowLeft
-    400006: ElbowRight
-    400008: EndofLowerJaw
-    400010: EndofSpine
-    400012: EndofUpperJaw
-    400014: group1
-    400016: HandLeft
-    400018: HandRight
-    400020: Head
-    400022: joint28
-    400024: joint5
-    400026: lowJaw_JNT
-    400028: Neck1
-    400030: Neck2
-    400032: RootJoint
-    400034: ShoulderLeft
-    400036: ShoulderRight
-    400038: //RootNode
-    400040: SnakeMan2_rig2:all_SnakeMan
-    400042: SnakeMan2_rig2:group1
-    400044: SnakeMan2_rig2:group2
-    400046: SnakeMan2_rig2:group3
-    400048: SnakeMan2_rig2:group4
-    400050: SnakeMan2_rig2:ikHandle3_tail
-    400052: SnakeMan2_rig2:ikHandle_left
-    400054: SnakeMan2_rig2:ikHandle_right
-    400056: SnakeMan2_rig2:l_wrist_CTRL
-    400058: SnakeMan2_rig2:locator1
-    400060: SnakeMan2_rig2:locator2
-    400062: SnakeMan2_rig2:master_CTRL
-    400064: SnakeMan2_rig2:pCone1
-    400066: SnakeMan2_rig2:pCone10
-    400068: SnakeMan2_rig2:pCone11
-    400070: SnakeMan2_rig2:pCone12
-    400072: SnakeMan2_rig2:pCone13
-    400074: SnakeMan2_rig2:pCone14
-    400076: SnakeMan2_rig2:pCone15
-    400078: SnakeMan2_rig2:pCone16
-    400080: SnakeMan2_rig2:pCone17
-    400082: SnakeMan2_rig2:pCone18
-    400084: SnakeMan2_rig2:pCone19
-    400086: SnakeMan2_rig2:pCone2
-    400088: SnakeMan2_rig2:pCone20
-    400090: SnakeMan2_rig2:pCone21
-    400092: SnakeMan2_rig2:pCone22
-    400094: SnakeMan2_rig2:pCone23
-    400096: SnakeMan2_rig2:pCone24
-    400098: SnakeMan2_rig2:pCone25
-    400100: SnakeMan2_rig2:pCone26
-    400102: SnakeMan2_rig2:pCone27
-    400104: SnakeMan2_rig2:pCone28
-    400106: SnakeMan2_rig2:pCone29
-    400108: SnakeMan2_rig2:pCone3
-    400110: SnakeMan2_rig2:pCone30
-    400112: SnakeMan2_rig2:pCone31
-    400114: SnakeMan2_rig2:pCone32
-    400116: SnakeMan2_rig2:pCone33
-    400118: SnakeMan2_rig2:pCone34
-    400120: SnakeMan2_rig2:pCone35
-    400122: SnakeMan2_rig2:pCone36
-    400124: SnakeMan2_rig2:pCone37
-    400126: SnakeMan2_rig2:pCone38
-    400128: SnakeMan2_rig2:pCone39
-    400130: SnakeMan2_rig2:pCone4
-    400132: SnakeMan2_rig2:pCone40
-    400134: SnakeMan2_rig2:pCone41
-    400136: SnakeMan2_rig2:pCone42
-    400138: SnakeMan2_rig2:pCone43
-    400140: SnakeMan2_rig2:pCone44
-    400142: SnakeMan2_rig2:pCone45
-    400144: SnakeMan2_rig2:pCone46
-    400146: SnakeMan2_rig2:pCone47
-    400148: SnakeMan2_rig2:pCone48
-    400150: SnakeMan2_rig2:pCone49
-    400152: SnakeMan2_rig2:pCone5
-    400154: SnakeMan2_rig2:pCone50
-    400156: SnakeMan2_rig2:pCone51
-    400158: SnakeMan2_rig2:pCone52
-    400160: SnakeMan2_rig2:pCone53
-    400162: SnakeMan2_rig2:pCone54
-    400164: SnakeMan2_rig2:pCone6
-    400166: SnakeMan2_rig2:pCone7
-    400168: SnakeMan2_rig2:pCone8
-    400170: SnakeMan2_rig2:pCone9
-    400172: SnakeMan2_rig2:pCube1
-    400174: SnakeMan2_rig2:pSphere1
-    400176: SnakeMan2_rig2:pSphere2
-    400178: SnakeMan2_rig2:r_wrist_CTRL
-    400180: SnakeMan2_rig2:root_CTRL
-    400182: SnakeMan2_rig2:tail1_CTRL
-    400184: SnakeMan2_rig2:tail2_CTRL
-    400186: SnakeMan2_rig2:tail3_CTRL
-    400188: SnakeMan2_rig2:tail_Curv
-    400190: SnakeMan2_rig2:tailBase_Cluster1
-    400192: SnakeMan2_rig2:tailBase_Cluster2
-    400194: SnakeMan2_rig2:tailBase_Cluster3
-    400196: SnakeMan2_rig2:tailBase_CURVE
-    400198: Spine1
-    400200: Spine2
-    400202: Spine3
-    400204: Spine4
-    400206: Spine5
-    400208: Spine6
-    400210: Spine7
-    400212: upperJaw_JNT
-    400214: WristLeft
-    400216: WristRight
-    4300000: SnakeMan2_rig2:pCube1
-    4300002: SnakeMan2_rig2:pSphere1
-    4300004: SnakeMan2_rig2:pSphere2
-    4300006: SnakeMan2_rig2:pCone1
-    4300008: SnakeMan2_rig2:pCone2
-    4300010: SnakeMan2_rig2:pCone3
-    4300012: SnakeMan2_rig2:pCone4
-    4300014: SnakeMan2_rig2:pCone5
-    4300016: SnakeMan2_rig2:pCone6
-    4300018: SnakeMan2_rig2:pCone7
-    4300020: SnakeMan2_rig2:pCone8
-    4300022: SnakeMan2_rig2:pCone9
-    4300024: SnakeMan2_rig2:pCone10
-    4300026: SnakeMan2_rig2:pCone11
-    4300028: SnakeMan2_rig2:pCone12
-    4300030: SnakeMan2_rig2:pCone13
-    4300032: SnakeMan2_rig2:pCone14
-    4300034: SnakeMan2_rig2:pCone15
-    4300036: SnakeMan2_rig2:pCone16
-    4300038: SnakeMan2_rig2:pCone17
-    4300040: SnakeMan2_rig2:pCone18
-    4300042: SnakeMan2_rig2:pCone19
-    4300044: SnakeMan2_rig2:pCone20
-    4300046: SnakeMan2_rig2:pCone21
-    4300048: SnakeMan2_rig2:pCone22
-    4300050: SnakeMan2_rig2:pCone23
-    4300052: SnakeMan2_rig2:pCone24
-    4300054: SnakeMan2_rig2:pCone25
-    4300056: SnakeMan2_rig2:pCone26
-    4300058: SnakeMan2_rig2:pCone27
-    4300060: SnakeMan2_rig2:pCone28
-    4300062: SnakeMan2_rig2:pCone29
-    4300064: SnakeMan2_rig2:pCone30
-    4300066: SnakeMan2_rig2:pCone31
-    4300068: SnakeMan2_rig2:pCone32
-    4300070: SnakeMan2_rig2:pCone33
-    4300072: SnakeMan2_rig2:pCone34
-    4300074: SnakeMan2_rig2:pCone35
-    4300076: SnakeMan2_rig2:pCone36
-    4300078: SnakeMan2_rig2:pCone37
-    4300080: SnakeMan2_rig2:pCone38
-    4300082: SnakeMan2_rig2:pCone39
-    4300084: SnakeMan2_rig2:pCone40
-    4300086: SnakeMan2_rig2:pCone41
-    4300088: SnakeMan2_rig2:pCone42
-    4300090: SnakeMan2_rig2:pCone43
-    4300092: SnakeMan2_rig2:pCone44
-    4300094: SnakeMan2_rig2:pCone45
-    4300096: SnakeMan2_rig2:pCone46
-    4300098: SnakeMan2_rig2:pCone47
-    4300100: SnakeMan2_rig2:pCone48
-    4300102: SnakeMan2_rig2:pCone49
-    4300104: SnakeMan2_rig2:pCone50
-    4300106: SnakeMan2_rig2:pCone51
-    4300108: SnakeMan2_rig2:pCone52
-    4300110: SnakeMan2_rig2:pCone53
-    4300112: SnakeMan2_rig2:pCone54
-    7400000: Take 001
+    100000: all_SnakeMan
+    100002: CollarLeft
+    100004: CollarRight
+    100006: ElbowLeft
+    100008: ElbowRight
+    100010: EndofLowerJaw
+    100012: EndofSpine
+    100014: EndofUpperJaw
+    100016: group1
+    100018: group2
+    100020: group3
+    100022: group4
+    100024: HandLeft
+    100026: HandRight
+    100028: Head
+    100030: ikHandle3_tail
+    100032: ikHandle_left
+    100034: ikHandle_right
+    100036: joint28
+    100038: joint5
+    100040: l_wrist_CTRL
+    100042: locator1
+    100044: locator2
+    100046: lowJaw_JNT
+    100048: master_CTRL
+    100050: Neck1
+    100052: Neck2
+    100054: pCone1
+    100056: pCone10
+    100058: pCone11
+    100060: pCone12
+    100062: pCone13
+    100064: pCone14
+    100066: pCone15
+    100068: pCone16
+    100070: pCone17
+    100072: pCone18
+    100074: pCone19
+    100076: pCone2
+    100078: pCone20
+    100080: pCone21
+    100082: pCone22
+    100084: pCone23
+    100086: pCone24
+    100088: pCone25
+    100090: pCone26
+    100092: pCone27
+    100094: pCone28
+    100096: pCone29
+    100098: pCone3
+    100100: pCone30
+    100102: pCone31
+    100104: pCone32
+    100106: pCone33
+    100108: pCone34
+    100110: pCone35
+    100112: pCone36
+    100114: pCone37
+    100116: pCone38
+    100118: pCone39
+    100120: pCone4
+    100122: pCone40
+    100124: pCone41
+    100126: pCone42
+    100128: pCone43
+    100130: pCone44
+    100132: pCone45
+    100134: pCone46
+    100136: pCone47
+    100138: pCone48
+    100140: pCone49
+    100142: pCone5
+    100144: pCone50
+    100146: pCone51
+    100148: pCone52
+    100150: pCone53
+    100152: pCone54
+    100154: pCone6
+    100156: pCone7
+    100158: pCone8
+    100160: pCone9
+    100162: pCube1
+    100164: pSphere1
+    100166: pSphere2
+    100168: r_wrist_CTRL
+    100170: root_CTRL
+    100172: RootJoint
+    100174: ShoulderLeft
+    100176: ShoulderRight
+    100178: //RootNode
+    100180: SnakeManTurn_Final:group1
+    100182: SnakeManTurn_Final:SnakeMan2_rig2:all_SnakeMan
+    100184: SnakeManTurn_Final:SnakeMan2_rig2:group1
+    100186: Spine1
+    100188: Spine2
+    100190: Spine3
+    100192: Spine4
+    100194: Spine5
+    100196: Spine6
+    100198: Spine7
+    100200: tail1_CTRL
+    100202: tail2_CTRL
+    100204: tail3_CTRL
+    100206: tail_Curv
+    100208: tailBase_Cluster1
+    100210: tailBase_Cluster2
+    100212: tailBase_Cluster3
+    100214: tailBase_CURVE
+    100216: upperJaw_JNT
+    100218: WristLeft
+    100220: WristRight
+    400000: all_SnakeMan
+    400002: CollarLeft
+    400004: CollarRight
+    400006: ElbowLeft
+    400008: ElbowRight
+    400010: EndofLowerJaw
+    400012: EndofSpine
+    400014: EndofUpperJaw
+    400016: group1
+    400018: group2
+    400020: group3
+    400022: group4
+    400024: HandLeft
+    400026: HandRight
+    400028: Head
+    400030: ikHandle3_tail
+    400032: ikHandle_left
+    400034: ikHandle_right
+    400036: joint28
+    400038: joint5
+    400040: l_wrist_CTRL
+    400042: locator1
+    400044: locator2
+    400046: lowJaw_JNT
+    400048: master_CTRL
+    400050: Neck1
+    400052: Neck2
+    400054: pCone1
+    400056: pCone10
+    400058: pCone11
+    400060: pCone12
+    400062: pCone13
+    400064: pCone14
+    400066: pCone15
+    400068: pCone16
+    400070: pCone17
+    400072: pCone18
+    400074: pCone19
+    400076: pCone2
+    400078: pCone20
+    400080: pCone21
+    400082: pCone22
+    400084: pCone23
+    400086: pCone24
+    400088: pCone25
+    400090: pCone26
+    400092: pCone27
+    400094: pCone28
+    400096: pCone29
+    400098: pCone3
+    400100: pCone30
+    400102: pCone31
+    400104: pCone32
+    400106: pCone33
+    400108: pCone34
+    400110: pCone35
+    400112: pCone36
+    400114: pCone37
+    400116: pCone38
+    400118: pCone39
+    400120: pCone4
+    400122: pCone40
+    400124: pCone41
+    400126: pCone42
+    400128: pCone43
+    400130: pCone44
+    400132: pCone45
+    400134: pCone46
+    400136: pCone47
+    400138: pCone48
+    400140: pCone49
+    400142: pCone5
+    400144: pCone50
+    400146: pCone51
+    400148: pCone52
+    400150: pCone53
+    400152: pCone54
+    400154: pCone6
+    400156: pCone7
+    400158: pCone8
+    400160: pCone9
+    400162: pCube1
+    400164: pSphere1
+    400166: pSphere2
+    400168: r_wrist_CTRL
+    400170: root_CTRL
+    400172: RootJoint
+    400174: ShoulderLeft
+    400176: ShoulderRight
+    400178: //RootNode
+    400180: SnakeManTurn_Final:group1
+    400182: SnakeManTurn_Final:SnakeMan2_rig2:all_SnakeMan
+    400184: SnakeManTurn_Final:SnakeMan2_rig2:group1
+    400186: Spine1
+    400188: Spine2
+    400190: Spine3
+    400192: Spine4
+    400194: Spine5
+    400196: Spine6
+    400198: Spine7
+    400200: tail1_CTRL
+    400202: tail2_CTRL
+    400204: tail3_CTRL
+    400206: tail_Curv
+    400208: tailBase_Cluster1
+    400210: tailBase_Cluster2
+    400212: tailBase_Cluster3
+    400214: tailBase_CURVE
+    400216: upperJaw_JNT
+    400218: WristLeft
+    400220: WristRight
+    4300000: pCube1
+    4300002: pSphere1
+    4300004: pSphere2
+    4300006: pCone1
+    4300008: pCone2
+    4300010: pCone3
+    4300012: pCone4
+    4300014: pCone5
+    4300016: pCone6
+    4300018: pCone7
+    4300020: pCone8
+    4300022: pCone9
+    4300024: pCone10
+    4300026: pCone11
+    4300028: pCone12
+    4300030: pCone13
+    4300032: pCone14
+    4300034: pCone15
+    4300036: pCone16
+    4300038: pCone17
+    4300040: pCone18
+    4300042: pCone19
+    4300044: pCone20
+    4300046: pCone21
+    4300048: pCone22
+    4300050: pCone23
+    4300052: pCone24
+    4300054: pCone25
+    4300056: pCone26
+    4300058: pCone27
+    4300060: pCone28
+    4300062: pCone29
+    4300064: pCone30
+    4300066: pCone31
+    4300068: pCone32
+    4300070: pCone33
+    4300072: pCone34
+    4300074: pCone35
+    4300076: pCone36
+    4300078: pCone37
+    4300080: pCone38
+    4300082: pCone39
+    4300084: pCone40
+    4300086: pCone41
+    4300088: pCone42
+    4300090: pCone43
+    4300092: pCone44
+    4300094: pCone45
+    4300096: pCone46
+    4300098: pCone47
+    4300100: pCone48
+    4300102: pCone49
+    4300104: pCone50
+    4300106: pCone51
+    4300108: pCone52
+    4300110: pCone53
+    4300112: pCone54
+    7400000: turning
+    7400002: Take 001
     9500000: //RootNode
-    13700000: SnakeMan2_rig2:pCone1
-    13700002: SnakeMan2_rig2:pCone10
-    13700004: SnakeMan2_rig2:pCone11
-    13700006: SnakeMan2_rig2:pCone12
-    13700008: SnakeMan2_rig2:pCone13
-    13700010: SnakeMan2_rig2:pCone14
-    13700012: SnakeMan2_rig2:pCone15
-    13700014: SnakeMan2_rig2:pCone16
-    13700016: SnakeMan2_rig2:pCone17
-    13700018: SnakeMan2_rig2:pCone18
-    13700020: SnakeMan2_rig2:pCone19
-    13700022: SnakeMan2_rig2:pCone2
-    13700024: SnakeMan2_rig2:pCone20
-    13700026: SnakeMan2_rig2:pCone21
-    13700028: SnakeMan2_rig2:pCone22
-    13700030: SnakeMan2_rig2:pCone23
-    13700032: SnakeMan2_rig2:pCone24
-    13700034: SnakeMan2_rig2:pCone25
-    13700036: SnakeMan2_rig2:pCone26
-    13700038: SnakeMan2_rig2:pCone27
-    13700040: SnakeMan2_rig2:pCone28
-    13700042: SnakeMan2_rig2:pCone29
-    13700044: SnakeMan2_rig2:pCone3
-    13700046: SnakeMan2_rig2:pCone30
-    13700048: SnakeMan2_rig2:pCone31
-    13700050: SnakeMan2_rig2:pCone32
-    13700052: SnakeMan2_rig2:pCone33
-    13700054: SnakeMan2_rig2:pCone34
-    13700056: SnakeMan2_rig2:pCone35
-    13700058: SnakeMan2_rig2:pCone36
-    13700060: SnakeMan2_rig2:pCone37
-    13700062: SnakeMan2_rig2:pCone38
-    13700064: SnakeMan2_rig2:pCone39
-    13700066: SnakeMan2_rig2:pCone4
-    13700068: SnakeMan2_rig2:pCone40
-    13700070: SnakeMan2_rig2:pCone41
-    13700072: SnakeMan2_rig2:pCone42
-    13700074: SnakeMan2_rig2:pCone43
-    13700076: SnakeMan2_rig2:pCone44
-    13700078: SnakeMan2_rig2:pCone45
-    13700080: SnakeMan2_rig2:pCone46
-    13700082: SnakeMan2_rig2:pCone47
-    13700084: SnakeMan2_rig2:pCone48
-    13700086: SnakeMan2_rig2:pCone49
-    13700088: SnakeMan2_rig2:pCone5
-    13700090: SnakeMan2_rig2:pCone50
-    13700092: SnakeMan2_rig2:pCone51
-    13700094: SnakeMan2_rig2:pCone52
-    13700096: SnakeMan2_rig2:pCone53
-    13700098: SnakeMan2_rig2:pCone54
-    13700100: SnakeMan2_rig2:pCone6
-    13700102: SnakeMan2_rig2:pCone7
-    13700104: SnakeMan2_rig2:pCone8
-    13700106: SnakeMan2_rig2:pCone9
-    13700108: SnakeMan2_rig2:pCube1
-    13700110: SnakeMan2_rig2:pSphere1
-    13700112: SnakeMan2_rig2:pSphere2
+    13700000: pCone1
+    13700002: pCone10
+    13700004: pCone11
+    13700006: pCone12
+    13700008: pCone13
+    13700010: pCone14
+    13700012: pCone15
+    13700014: pCone16
+    13700016: pCone17
+    13700018: pCone18
+    13700020: pCone19
+    13700022: pCone2
+    13700024: pCone20
+    13700026: pCone21
+    13700028: pCone22
+    13700030: pCone23
+    13700032: pCone24
+    13700034: pCone25
+    13700036: pCone26
+    13700038: pCone27
+    13700040: pCone28
+    13700042: pCone29
+    13700044: pCone3
+    13700046: pCone30
+    13700048: pCone31
+    13700050: pCone32
+    13700052: pCone33
+    13700054: pCone34
+    13700056: pCone35
+    13700058: pCone36
+    13700060: pCone37
+    13700062: pCone38
+    13700064: pCone39
+    13700066: pCone4
+    13700068: pCone40
+    13700070: pCone41
+    13700072: pCone42
+    13700074: pCone43
+    13700076: pCone44
+    13700078: pCone45
+    13700080: pCone46
+    13700082: pCone47
+    13700084: pCone48
+    13700086: pCone49
+    13700088: pCone5
+    13700090: pCone50
+    13700092: pCone51
+    13700094: pCone52
+    13700096: pCone53
+    13700098: pCone54
+    13700100: pCone6
+    13700102: pCone7
+    13700104: pCone8
+    13700106: pCone9
+    13700108: pCube1
+    13700110: pSphere1
+    13700112: pSphere2
   materials:
     importMaterials: 1
     materialName: 0
@@ -351,7 +356,255 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: all_SnakeMan
+        weight: 1
+      - path: all_SnakeMan/group1
+        weight: 1
+      - path: all_SnakeMan/group1/pCone1
+        weight: 1
+      - path: all_SnakeMan/group1/pCone2
+        weight: 1
+      - path: all_SnakeMan/group1/pCone3
+        weight: 1
+      - path: all_SnakeMan/group1/pCone4
+        weight: 1
+      - path: all_SnakeMan/group1/pCone5
+        weight: 1
+      - path: all_SnakeMan/group1/pCone6
+        weight: 1
+      - path: all_SnakeMan/group1/pCone7
+        weight: 1
+      - path: all_SnakeMan/group1/pCone8
+        weight: 1
+      - path: all_SnakeMan/group1/pCone9
+        weight: 1
+      - path: all_SnakeMan/group1/pCone10
+        weight: 1
+      - path: all_SnakeMan/group1/pCone11
+        weight: 1
+      - path: all_SnakeMan/group1/pCone12
+        weight: 1
+      - path: all_SnakeMan/group1/pCone13
+        weight: 1
+      - path: all_SnakeMan/group1/pCone14
+        weight: 1
+      - path: all_SnakeMan/group1/pCone15
+        weight: 1
+      - path: all_SnakeMan/group1/pCone16
+        weight: 1
+      - path: all_SnakeMan/group1/pCone17
+        weight: 1
+      - path: all_SnakeMan/group1/pCone18
+        weight: 1
+      - path: all_SnakeMan/group1/pCone19
+        weight: 1
+      - path: all_SnakeMan/group1/pCone20
+        weight: 1
+      - path: all_SnakeMan/group1/pCone21
+        weight: 1
+      - path: all_SnakeMan/group1/pCone22
+        weight: 1
+      - path: all_SnakeMan/group1/pCone23
+        weight: 1
+      - path: all_SnakeMan/group1/pCone24
+        weight: 1
+      - path: all_SnakeMan/group1/pCone25
+        weight: 1
+      - path: all_SnakeMan/group1/pCone26
+        weight: 1
+      - path: all_SnakeMan/group1/pCone27
+        weight: 1
+      - path: all_SnakeMan/group1/pCone28
+        weight: 1
+      - path: all_SnakeMan/group1/pCone29
+        weight: 1
+      - path: all_SnakeMan/group1/pCone30
+        weight: 1
+      - path: all_SnakeMan/group1/pCone31
+        weight: 1
+      - path: all_SnakeMan/group1/pCone32
+        weight: 1
+      - path: all_SnakeMan/group1/pCone33
+        weight: 1
+      - path: all_SnakeMan/group1/pCone34
+        weight: 1
+      - path: all_SnakeMan/group1/pCone35
+        weight: 1
+      - path: all_SnakeMan/group1/pCone36
+        weight: 1
+      - path: all_SnakeMan/group1/pCone37
+        weight: 1
+      - path: all_SnakeMan/group1/pCone38
+        weight: 1
+      - path: all_SnakeMan/group1/pCone39
+        weight: 1
+      - path: all_SnakeMan/group1/pCone40
+        weight: 1
+      - path: all_SnakeMan/group1/pCone41
+        weight: 1
+      - path: all_SnakeMan/group1/pCone42
+        weight: 1
+      - path: all_SnakeMan/group1/pCone43
+        weight: 1
+      - path: all_SnakeMan/group1/pCone44
+        weight: 1
+      - path: all_SnakeMan/group1/pCone45
+        weight: 1
+      - path: all_SnakeMan/group1/pCone46
+        weight: 1
+      - path: all_SnakeMan/group1/pCone47
+        weight: 1
+      - path: all_SnakeMan/group1/pCone48
+        weight: 1
+      - path: all_SnakeMan/group1/pCone49
+        weight: 1
+      - path: all_SnakeMan/group1/pCone50
+        weight: 1
+      - path: all_SnakeMan/group1/pCone51
+        weight: 1
+      - path: all_SnakeMan/group1/pCone52
+        weight: 1
+      - path: all_SnakeMan/group1/pCone53
+        weight: 1
+      - path: all_SnakeMan/group1/pCone54
+        weight: 1
+      - path: all_SnakeMan/group1/pCube1
+        weight: 1
+      - path: all_SnakeMan/group1/pSphere1
+        weight: 1
+      - path: all_SnakeMan/group1/pSphere2
+        weight: 1
+      - path: all_SnakeMan/ikHandle3_tail
+        weight: 1
+      - path: all_SnakeMan/ikHandle_left
+        weight: 1
+      - path: all_SnakeMan/ikHandle_right
+        weight: 1
+      - path: all_SnakeMan/master_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/l_wrist_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/l_wrist_CTRL/locator1
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/r_wrist_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/r_wrist_CTRL/locator2
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail1_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail1_CTRL/group2
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail1_CTRL/group2/tailBase_Cluster1
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail2_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail2_CTRL/group3
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail2_CTRL/group3/tailBase_Cluster2
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail3_CTRL
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail3_CTRL/group4
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/root_CTRL/tail3_CTRL/group4/tailBase_Cluster3
+        weight: 1
+      - path: all_SnakeMan/master_CTRL/tailBase_CURVE
+        weight: 1
+      - path: all_SnakeMan/RootJoint
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarLeft
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarLeft/ShoulderLeft
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarLeft/ShoulderLeft/ElbowLeft
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarLeft/ShoulderLeft/ElbowLeft/WristLeft
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarLeft/ShoulderLeft/ElbowLeft/WristLeft/HandLeft
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarLeft/ShoulderLeft/ElbowLeft/WristLeft/HandLeft/joint5
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarRight
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarRight/ShoulderRight
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarRight/ShoulderRight/ElbowRight
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarRight/ShoulderRight/ElbowRight/WristRight
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarRight/ShoulderRight/ElbowRight/WristRight/HandRight
+        weight: 1
+      - path: all_SnakeMan/RootJoint/CollarRight/ShoulderRight/ElbowRight/WristRight/HandRight/joint28
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2/Neck1
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2/Neck1/Head
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2/Neck1/Head/lowJaw_JNT
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2/Neck1/Head/lowJaw_JNT/EndofLowerJaw
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2/Neck1/Head/upperJaw_JNT
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Neck2/Neck1/Head/upperJaw_JNT/EndofUpperJaw
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2/Spine3
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2/Spine3/Spine4
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2/Spine3/Spine4/Spine5
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2/Spine3/Spine4/Spine5/Spine6
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2/Spine3/Spine4/Spine5/Spine6/Spine7
+        weight: 1
+      - path: all_SnakeMan/RootJoint/Spine1/Spine2/Spine3/Spine4/Spine5/Spine6/Spine7/EndofSpine
+        weight: 1
+      - path: all_SnakeMan/tail_Curv
+        weight: 1
+      - path: SnakeManTurn_Final:group1
+        weight: 1
+      - path: SnakeManTurn_Final:SnakeMan2_rig2:all_SnakeMan
+        weight: 1
+      - path: SnakeManTurn_Final:SnakeMan2_rig2:all_SnakeMan/SnakeManTurn_Final:SnakeMan2_rig2:group1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
