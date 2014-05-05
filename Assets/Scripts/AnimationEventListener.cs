@@ -6,8 +6,8 @@ public class AnimationEventListener : MonoBehaviour {
 	PlatformerPhysics mPhysics;
 	// Use this for initialization
 	void Start () {
-		mPlayer = transform.parent.gameObject.GetComponent<PlayerCombat>();
-		mPhysics = transform.parent.gameObject.GetComponent<PlatformerPhysics>();
+		mPlayer = transform.gameObject.GetComponent<PlayerCombat>();
+		mPhysics = transform.gameObject.GetComponent<PlatformerPhysics>();
 	}
 	
 	void DealAttack()
