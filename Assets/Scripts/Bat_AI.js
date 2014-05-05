@@ -79,7 +79,7 @@ private var turningTime = 0.0;
 private var turn: float;
 private var thrusting : boolean = false;
 var verticalHover = 2;
-private var hoverDir = (Random.value > 0.5)? 1 : -1; // choose new direction
+private var hoverDir = 1;//(Random.value > 0.5)? 1 : -1; // choose new direction
 
 function Idle () { 
     // Walk around and pause in random directions 

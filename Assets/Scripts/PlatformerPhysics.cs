@@ -36,7 +36,7 @@ public class PlatformerPhysics : MonoBehaviour
 	public float wallStickyness			= 0.5f;		//Amount of seconds the player has to move away from a wall to let go of it. The idea behind this is that players can press the opposite direction to prepare for a walljump without immediately letting go of the wall
 	public float gravityMultiplier		= 3.5f;		//Amount of gravity applied to the character compared to the rest of the physics world
 
-
+	public Object dustEffect;
 
 
 	//Private variables, no need to configure these
@@ -66,6 +66,9 @@ public class PlatformerPhysics : MonoBehaviour
 
 	float origColliderCenterY;						//Original sizes of collision box
 	float origColliderSizeY;
+
+	float rawAxis_H						= 0.0f;
+	float dustTimer						= 0.0f;
 	
 	PlayerCombat combatComponent;
 	grimInfo infoComponent;
@@ -133,6 +136,7 @@ public class PlatformerPhysics : MonoBehaviour
     //Called when the player presses a walking button (direction -1.0f is full left, and 1.0f is full right)
 	public void Walk(float direction) 
 	{
+		rawAxis_H = direction;
 		//See if we need to stick to a wall
 		if (mOnWall && mWallStickynessLeft > 0)
 		{
@@ -146,6 +150,7 @@ public class PlatformerPhysics : MonoBehaviour
 			//see if we just released the wall
 			if (mWallStickynessLeft <= 0)
 			{
+
 				SendAnimMessage("ReleasedWall");
 			}
 
@@ -156,8 +161,6 @@ public class PlatformerPhysics : MonoBehaviour
 		{
 			//get an acceleration amount
 			float accel = accelerationWalking;
-			if (mSprinting)
-					accel = accelerationSprinting;
 
 			//apply actual force 
 			rigidbody.AddForce (mGroundDirection * direction * accel, ForceMode.Acceleration);
@@ -173,7 +176,18 @@ public class PlatformerPhysics : MonoBehaviour
 					mGoingRight = true;
 					SendAnimMessage ("GoRight");
 			}
+			if(mOnGround && rawAxis_H != 0)
+			{
+				/*if(dustTimer > 0){
+					dustTimer -= Time.deltaTime;
+				} else {
+					dustTimer = 0.2f;
 
+					Vector3 spawnLoc = gameObject.transform.position;
+					spawnLoc.y += 1;
+					Instantiate (dustEffect,spawnLoc, Quaternion.Euler (new Vector3 (0, 0, 0)));
+				}*/
+			}
 		}
 	}
 
@@ -193,6 +207,7 @@ public class PlatformerPhysics : MonoBehaviour
 				mJumpFramesLeft = jumpTimeFrames;
 				mInJump = true;
 
+				spawnDust();
                 SendAnimMessage("StartedJump");
 			}
 
@@ -214,13 +229,14 @@ public class PlatformerPhysics : MonoBehaviour
 				}
 				else
 				{
+					spawnDust();
                     SendAnimMessage("StartedJump");
 				}
 			}
 		}
 
 		//Check if we are in the middle of a jump
-		if(mJumpFramesLeft != 0)
+		if(mJumpFramesLeft != 0 && !mOnWall)
 		{
 			Vector3 vel = rigidbody.velocity;
 			vel.y = jumpVelocity;
@@ -406,9 +422,12 @@ public class PlatformerPhysics : MonoBehaviour
 		//Check if we can walk on this angle of ground
 		if (groundAngle <= maxGroundWalkingAngle)
 		{
-			if(!mOnGround)
-                SendAnimMessage("LandedOnGround");
+			if(!mOnGround){
+				if(rigidbody.velocity.y < -8)
+					spawnDust();
 
+				SendAnimMessage("LandedOnGround");
+			}
 			Debug.DrawLine(hit.point+Vector3.up, hit.point, Color.green);
 			Debug.DrawLine(hit.point, hit.point + mGroundDirection, Color.magenta);
 			mOnGround = true;
@@ -438,10 +457,11 @@ public class PlatformerPhysics : MonoBehaviour
 		RaycastHit hit;
 
 
-		//Raycast going to the right
+		//Key is pressing right and raycast going to the right
+		//rawAxis_H > 0 && 
 		if (Physics.Raycast(origin, Vector3.right, out hit))
 		{
-			if (hit.distance < halfPlayerWidth + epsilon && !mOnGround)
+			if (hit.collider.tag == "Level" && hit.distance < halfPlayerWidth + epsilon && !mOnGround)
 			{
 				//remove collider penetration
 				transform.position += Vector3.left * (halfPlayerWidth - hit.distance);
@@ -452,10 +472,10 @@ public class PlatformerPhysics : MonoBehaviour
 			}
 		}
 
-		//Raycast going to the left
+		//Key is pressing left and raycast going to the left
 		if (Physics.Raycast(origin, Vector3.left, out hit))
 		{
-			if (hit.distance < halfPlayerWidth + epsilon && !mOnGround)
+			if (hit.collider.tag == "Level" && hit.distance < halfPlayerWidth + epsilon && !mOnGround)
 			{
 				//remove collider penetration
 				transform.position += Vector3.right * (halfPlayerWidth - hit.distance);
@@ -494,7 +514,12 @@ public class PlatformerPhysics : MonoBehaviour
 		mDashing = false;
 		mCanDash = true;
 	}
-
+	void spawnDust()
+	{
+		Vector3 spawnLoc = gameObject.transform.position;
+		spawnLoc.y += 1;
+		Instantiate (dustEffect,spawnLoc, Quaternion.Euler (new Vector3 (0, 0, 0)));
+	}
     //send a message to all other scripts to trigger for example the animations
     void SendAnimMessage(string message)
     {

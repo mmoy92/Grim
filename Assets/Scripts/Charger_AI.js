@@ -112,3 +112,8 @@ function getHurt(amt:int)
     }
 }
 */
+
+function die()
+{
+	target = null;
+}

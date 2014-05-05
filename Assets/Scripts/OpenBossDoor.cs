@@ -19,11 +19,12 @@ public class OpenBossDoor : MonoBehaviour {
 	{
 		// If the colliding gameobject is the player...
 		if (other.gameObject == player) {
-			if (griminfo.keys == 2 && !griminfo.usedKey) // Check to see if the player has the key
+			if ((griminfo.keys == griminfo.maxKeys) && !griminfo.usedKey) // Check to see if the player has the key
 			{
 				// Destroy the door
 				gameObject.GetComponent<MeshRenderer>().enabled=false;
 				gameObject.GetComponent<MeshCollider>().enabled=false;
+				Destroy (gameObject);
 				griminfo.usedKey = true;
 			}
 		}

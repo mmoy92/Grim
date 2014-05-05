@@ -35,5 +35,8 @@ function Update()
     	//rigidbody.velocity = (target.transform.position - transform.position).normalized    * (moveSpeed );
 	}
 }
-
+function die()
+{
+	target = null;
+}
 
