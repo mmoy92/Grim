@@ -24,6 +24,7 @@ public class OpenBossDoor : MonoBehaviour {
 				// Destroy the door
 				gameObject.GetComponent<MeshRenderer>().enabled=false;
 				gameObject.GetComponent<MeshCollider>().enabled=false;
+				Destroy (gameObject);
 				griminfo.usedKey = true;
 			}
 		}
