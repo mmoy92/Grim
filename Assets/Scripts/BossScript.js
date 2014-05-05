@@ -5,8 +5,8 @@ var fireball : Transform;
 var bat : Transform;
 
 var health: int = 100;
-var attackDistance = 8.0;
-var attackTimer = Time.time;
+var attackDistance = 10.0;
+var attackTimer : float;
 var attackDif = 5f;
 var attackMode: int = 0;
 var stage1 : int = 0;
@@ -18,12 +18,19 @@ private var character: CharacterController;
 function Start () {
 	if (!target) target = GameObject.FindWithTag ("Player").transform; 
 	transf = transform;
+	attackTimer = Time.time;
     character = GetComponent(CharacterController);
 }
 
-function getHurt(amt:int)
+function getHurt(amt : int)
 {
+	print("HURT!!!!");
 	health -= amt;	
+}
+
+function knockBack()
+{
+	//Empty, just receiver for message
 }
 
 function Update () {
@@ -52,7 +59,7 @@ function Update () {
         		attackTimer = Time.time;
         	}
         	//Stage 2 - 2 bats, fast fireballs
-        	if(health <= 7 && stage1 == 0)
+        	if(health <= 70 && stage1 == 0)
         	{
         		Instantiate (bat, transform.position, Quaternion.identity);
         		Instantiate (bat, transform.position, Quaternion.identity);
@@ -61,7 +68,7 @@ function Update () {
         		attackDif = 4;
         	}
         	//Stage 3 - 3 bats, faster fireballs
-        	if(health <= 4 && stage2 == 0)
+        	if(health <= 40 && stage2 == 0)
         	{
         		Instantiate (bat, transform.position, Quaternion.identity);
         		Instantiate (bat, transform.position, Quaternion.identity);

@@ -48,7 +48,7 @@ public class MeleeSwipe : MonoBehaviour {
 				Enemy_Combat enemyCombat = other.GetComponent<Enemy_Combat>();
 				if(enemyCombat  != null)
 				{
-				effectSpawn.y += enemyCombat.effectShift_Y;
+					effectSpawn.y += enemyCombat.effectShift_Y;
 				}
 
 				Instantiate(slash, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
