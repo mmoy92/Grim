@@ -42,7 +42,7 @@ function Update () {
 	}
 	else if (target){
 		var tgtDir = target.position - transf.position;
-		var spawnLoc = transf.position + new Vector3(-4, 5, 0);
+		var spawnLoc = transf.position + new Vector3(-10, 10, 0);
         var tgtDist = tgtDir.magnitude;
         //Stage 1 - 1 bat, start fireballs
         if(tgtDist < attackDistance)
