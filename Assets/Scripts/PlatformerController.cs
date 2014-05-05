@@ -22,9 +22,12 @@ public class PlatformerController : MonoBehaviour
 		if (mPlayer && mHasControl)
 		{
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
-				if(dashingTime >= 5f){
-					dashingTime = 0;
-					mPlayer.StartDash();
+				if((PlayerPrefs.GetInt("goodDash") == 1) || (PlayerPrefs.GetInt("evilDash") == 1))
+				{
+					if(dashingTime >= 5f){
+						dashingTime = 0;
+						mPlayer.StartDash();
+					}
 				}
 			}
 
