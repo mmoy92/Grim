@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+
+
 var target : Transform;
 var fireball : Transform;
 var bat : Transform;
@@ -96,4 +98,7 @@ function Die () {
 			Destroy(bats[i]);
 		}
 	}
+	
+	SendMessage("WinMessage");
+	
 }
