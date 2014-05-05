@@ -11,12 +11,12 @@ public class Enemy_Combat : MonoBehaviour {
 	public float effectShift_Y = 0.0f;
 	public GameObject Soul;
 
-
-
+	private Vector3 spawnLoc;
+	
 	private bool isDead = false;
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -29,7 +29,7 @@ public class Enemy_Combat : MonoBehaviour {
 		health -= amt;
 		if(health <=0 && !isDead)
 		{
-			die();
+			SendMessage ("die");
 		}
 		
 	}
@@ -44,14 +44,18 @@ public class Enemy_Combat : MonoBehaviour {
 		isDead = true;
 		GameObject.FindGameObjectWithTag("MainCamera").GetComponent("FollowCam2D").SendMessage("SlowMoShake");
 
-		Vector3 spawnLoc = transform.position;
+		spawnLoc = transform.position;
 		spawnLoc.y += effectShift_Y;
 
 		Instantiate(deathEffect, spawnLoc, Quaternion.Euler(new Vector3(0,0,0)));
+
+
+		Invoke ("despawn", deathDelay);
+
+	}
+	void despawn()
+	{
 		Instantiate (Soul, spawnLoc, Quaternion.identity);
-
-		SendMessage ("PlayDeathAnim");
-
-		Destroy (gameObject, deathDelay);
+		Destroy (gameObject);
 	}
 }
