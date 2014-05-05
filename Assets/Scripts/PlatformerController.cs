@@ -25,8 +25,12 @@ public class PlatformerController : MonoBehaviour
 		//here are the actions that are triggered by a press or a release
 		if (mPlayer && mHasControl)
 		{
+			if(Input.GetKeyDown(KeyCode.P) ){
+				Application.Quit();
+			}
+
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
-				if(((PlayerPrefs.GetInt("goodDash") == 1) || (PlayerPrefs.GetInt("evilDash") == 1)) && (hpScript.dashingTime < 5))
+				if(((PlayerPrefs.GetInt("goodDash") == 1) || (PlayerPrefs.GetInt("evilDash") == 1)))
 				{
 					if(dashingTime >= 5f){
 						dashingTime = 0;
