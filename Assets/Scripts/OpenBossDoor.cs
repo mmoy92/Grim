@@ -3,6 +3,7 @@ using System.Collections;
 
 public class OpenBossDoor : MonoBehaviour {
 
+	public AudioClip doorRejectClip;
 	private GameObject player;                      // Reference to the player.
 	private grimInfo griminfo;        // Reference to the player's inventory.
 	
@@ -26,6 +27,8 @@ public class OpenBossDoor : MonoBehaviour {
 				gameObject.GetComponent<MeshCollider>().enabled=false;
 				Destroy (gameObject);
 				griminfo.usedKey = true;
+			} else {
+				AudioSource.PlayClipAtPoint(doorRejectClip, transform.position);
 			}
 		}
 	}

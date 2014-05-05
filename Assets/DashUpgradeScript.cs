@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UpgradeScript : MonoBehaviour {
+public class DashUpgradeScript : MonoBehaviour {
 	public GUIText guiText;
 	private bool entered = false;
 
