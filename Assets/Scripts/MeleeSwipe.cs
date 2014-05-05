@@ -29,7 +29,6 @@ public class MeleeSwipe : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other) {
-
 		if(other.tag == "Enemy")
 		{
 			bool didHit = false;
@@ -44,10 +43,13 @@ public class MeleeSwipe : MonoBehaviour {
 			if(!didHit)
 			{
 				alreadyHit.Add(other);
+				Vector3 effectSpawn = other.transform.position;
 
 				Enemy_Combat enemyCombat = other.GetComponent<Enemy_Combat>();
-				Vector3 effectSpawn = other.transform.position;
+				if(enemyCombat  != null)
+				{
 				effectSpawn.y += enemyCombat.effectShift_Y;
+				}
 
 				Instantiate(slash, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
 				Instantiate(bloodSplat, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));

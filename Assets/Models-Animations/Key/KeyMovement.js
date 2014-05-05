@@ -1,13 +1,11 @@
 ﻿#pragma strict
 
-var rotateSpeed : float;
-var vertBounce : float;
-var rotationReference : float; 
+var rotateSpeed : float = 50.0f;
+var vertBounce : float = 1.0f;
+var rotationReference : float = 0.0f;
 
 function Start () {
-	rotateSpeed = 50.0f;
-	vertBounce = 1.0f;
-	rotationReference = 0.0f;
+
 }
 
 private var upDown : int = 180;
