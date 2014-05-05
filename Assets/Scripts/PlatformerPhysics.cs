@@ -157,8 +157,8 @@ public class PlatformerPhysics : MonoBehaviour
 			return;
 		}
 
-		if (!combatComponent.IsAttacking() && !mDashing)  //Do not allow horizontal walking movement during attacks
-		{
+		//if (!combatComponent.IsAttacking() && !mDashing)  //Do not allow horizontal walking movement during attacks
+		//{
 			//get an acceleration amount
 			float accel = accelerationWalking;
 
@@ -166,7 +166,6 @@ public class PlatformerPhysics : MonoBehaviour
 			rigidbody.AddForce (mGroundDirection * direction * accel, ForceMode.Acceleration);
 
 			mStoppingForce = 1 - Mathf.Abs (direction);
-
 
 			if (direction < 0 && mGoingRight) {
 					mGoingRight = false;
@@ -188,7 +187,7 @@ public class PlatformerPhysics : MonoBehaviour
 					Instantiate (dustEffect,spawnLoc, Quaternion.Euler (new Vector3 (0, 0, 0)));
 				}*/
 			}
-		}
+		//}
 	}
 
 
