@@ -3,6 +3,7 @@ using System.Collections;
 
 public class grimInfo : MonoBehaviour
 {
+	public GameObject slashEffect;
 	public AudioClip hurtClip;			// clip to play when player gets hurt
 	public AudioClip dieClip;			// clip to play when player dies
 	public float grimHP;         // The player's health.
@@ -15,7 +16,6 @@ public class grimInfo : MonoBehaviour
 	private PlatformerPhysics physics;
 	//private SpriteRenderer healthBar;			// Reference to the sprite renderer of the health bar.
 	//private Vector3 healthScale;				// The local scale of the health bar initially (with full health).
-
 	public float invulPer = 2f; //Invulnerability period to prevent instant re-hit (NOTE: figure out what this timescale is...)
 								//Development quandry -> would it be more efficient to have a bool vuln method that responded to triggering
 								//damage scripts instead of handling it all here?
@@ -68,6 +68,9 @@ public class grimInfo : MonoBehaviour
 			print ("Taking damage");
 			grimHP -= dam;
 			AudioSource.PlayClipAtPoint(hurtClip, transform.position, 1f);
+
+			getHurtEffect();
+
 			if (grimHP <= 0) 
 			{
 				StartCoroutine (GrimDeath (player.gameObject));
@@ -75,7 +78,18 @@ public class grimInfo : MonoBehaviour
 			}
 		}
 	}
+	private void getHurtEffect()
+	{
 
+		Vector3 effectSpawn = physics.transform.position;
+		effectSpawn.y += 1;
+		
+		Instantiate(slashEffect, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
+
+		
+		FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
+		camComponent.SendMessage("Shake", 0.2);
+	}
 	public void Damage(int dam, Transform enemy)
 	{
 		/*

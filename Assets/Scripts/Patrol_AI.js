@@ -1,8 +1,7 @@
 ﻿#pragma strict
 
-var deathEffect:Transform;
-var Soul:GameObject;
 var target : Transform;
+var enemySwipe : GameObject;
 var gravity : float = 20;
 var moveSpeed : float = 1;  // chase speed
 var shuffleSpeed : float = 0.01; //Forward moving while stationary attack
@@ -15,6 +14,7 @@ var anim : Animator;
 
 private var transf : Transform;
 private var character: CharacterController; 
+private var myDir : Vector3;
 
 function Start () { 
     if (!target) target = GameObject.FindWithTag ("Player").transform; 
@@ -105,6 +105,7 @@ function Idle () {
 }
 
 function MoveCharacter(dir: Vector3, speed: float){
+	myDir = dir;
 	anim.SetBool("Walking", true);
     var vel = dir.normalized * speed;  // vel = velocity to move 
     // clamp the current vertical velocity for gravity purpose
@@ -117,4 +118,16 @@ function die()
 {
 	anim.SetBool("Dead", true);
 	target = null;
+}
+
+function DealAttack()
+{
+	if(target != null)
+	{
+		var spawn = transform.position;
+		spawn.x -= myDir.x < 0 ? 1.3f : -1.3f; 
+		spawn.y += 1.3f;
+		var newObject = Instantiate (enemySwipe, spawn, Quaternion.identity);
+	}
+
 }

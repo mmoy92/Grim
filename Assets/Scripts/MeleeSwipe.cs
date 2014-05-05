@@ -57,7 +57,7 @@ public class MeleeSwipe : MonoBehaviour {
 				other.gameObject.SendMessage("knockBack");
 
 				FollowCam2D camComponent = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCam2D>();
-				camComponent.SendMessage("Shake", 0.1);
+				camComponent.SendMessage("Shake", 0.05);
 
 				//Destroy(gameObject,0.1f);
 			}
