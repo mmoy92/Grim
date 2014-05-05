@@ -2,9 +2,12 @@
 using System.Collections;
 
 public class SoulMovement : MonoBehaviour {
+	public GameObject soulFreed;
+	public GameObject soulKilled;
+
 	private GameObject player;                 
 	private grimInfo info;
-	private int lifetime = 10;
+	private int lifetime = 5;
 	private Vector3 pos1;
 	private Vector3 pos2;
 	private Vector3 moveTo;
@@ -22,7 +25,7 @@ public class SoulMovement : MonoBehaviour {
 		pos2 = transform.position + offset; 
 
 		if (info.good) {
-			lifetime = 20;
+			lifetime = 10;
 		}
 		StartCoroutine(killNow(lifetime));
 	}
@@ -32,6 +35,8 @@ public class SoulMovement : MonoBehaviour {
 		yield return new WaitForSeconds(timeKill);
 		Destroy(gameObject);
 		info.soulCount -= 1;
+
+		Instantiate (soulFreed, transform.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 	}
 
 	// Update is called once per frame
@@ -59,6 +64,8 @@ public class SoulMovement : MonoBehaviour {
 		grimInfo grim_info = player.GetComponent<grimInfo> ();
 		grim_info.soulCount += 1;
 		Destroy (this.gameObject);
+
+		Instantiate (soulKilled, transform.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 	}
 	
 }

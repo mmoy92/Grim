@@ -458,8 +458,8 @@ public class PlatformerPhysics : MonoBehaviour
 
 
 		//Key is pressing right and raycast going to the right
-		//rawAxis_H > 0 && 
-		if (Physics.Raycast(origin, Vector3.right, out hit))
+		// 
+		if (rawAxis_H > 0 && Physics.Raycast(origin, Vector3.right, out hit))
 		{
 			if (hit.collider.tag == "Level" && hit.distance < halfPlayerWidth + epsilon && !mOnGround)
 			{
@@ -473,7 +473,7 @@ public class PlatformerPhysics : MonoBehaviour
 		}
 
 		//Key is pressing left and raycast going to the left
-		if (Physics.Raycast(origin, Vector3.left, out hit))
+		if (rawAxis_H < 0 && Physics.Raycast(origin, Vector3.left, out hit))
 		{
 			if (hit.collider.tag == "Level" && hit.distance < halfPlayerWidth + epsilon && !mOnGround)
 			{
