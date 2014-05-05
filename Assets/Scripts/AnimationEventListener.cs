@@ -12,10 +12,17 @@ public class AnimationEventListener : MonoBehaviour {
 	
 	void DealAttack()
 	{
+		print ("DEAL ATTACK");
 		mPlayer.DealAttack ();
 	}
 	void EndDash()
 	{
 		mPhysics.EndDash ();
 	}
+
+	void OnAnimationEvent()
+
+	{
+
+		}
 }
