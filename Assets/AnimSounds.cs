@@ -24,8 +24,8 @@ public class AnimSounds : MonoBehaviour {
 	public void Start()
 	{
 		platformer = GetComponent<PlatformerPhysics>();
-		audios = camera.GetComponents<AudioSource>();
 		StartCoroutine(footsteps());
+		audios = camera.GetComponents<AudioSource>();
 		if (audios.Length == 1)
 		{
 			audios[0].loop = true;
