@@ -85,10 +85,12 @@ function FixedUpdate()
 
  
 
-function OnCollisionEnter(collision : Collision)
+function OnTriggerEnter(other : Collider)
 
 {
-
-   Destroy(gameObject);
+	if(!other.gameObject.CompareTag("Enemy"))
+	{
+   		Destroy(gameObject);
+   	}
 
 }

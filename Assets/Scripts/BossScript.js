@@ -4,7 +4,7 @@ var target : Transform;
 var fireball : Transform;
 var bat : Transform;
 
-var health: int = 10;
+var health: int = 100;
 var attackDistance = 8.0;
 var attackTimer = Time.time;
 var attackDif = 5f;

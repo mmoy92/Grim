@@ -113,7 +113,8 @@ function MoveCharacter(dir: Vector3, speed: float){
     character.Move(vel * Time.deltaTime);  // move
 }
 
-function PlayDeathAnim()
+function die()
 {
 	anim.SetBool("Dead", true);
+	target = null;
 }

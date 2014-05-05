@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 5933272725a78e447868365b7d547cb4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Cloak
+    100002: ElbowLeft
+    100004: ElbowRight
+    100006: FootLeft
+    100008: FootRight
+    100010: //RootNode
+    100012: HandEndLeft
+    100014: HandEndRight
+    100016: HandLeft
+    100018: HandLeft 1
+    100020: HandRight
+    100022: HandRight 1
+    100024: HeadMiddle
+    100026: HeadTop
+    100028: HipLeft
+    100030: HipRight
+    100032: Hood1
+    100034: hood2
+    100036: Hood3
+    100038: ikHandle1
+    100040: ikHandle2
+    100042: ikHandle3
+    100044: ikHandle4
+    100046: ikHandle5
+    100048: KneeLeft
+    100050: KneeRight
+    100052: Mask
+    100054: MidBody
+    100056: RootJoint
+    100058: Scythe
+    100060: ShoulderLeft
+    100062: ShoulderRight
+    400000: Cloak
+    400002: ElbowLeft
+    400004: ElbowRight
+    400006: FootLeft
+    400008: FootRight
+    400010: //RootNode
+    400012: HandEndLeft
+    400014: HandEndRight
+    400016: HandLeft
+    400018: HandLeft 1
+    400020: HandRight
+    400022: HandRight 1
+    400024: HeadMiddle
+    400026: HeadTop
+    400028: HipLeft
+    400030: HipRight
+    400032: Hood1
+    400034: hood2
+    400036: Hood3
+    400038: ikHandle1
+    400040: ikHandle2
+    400042: ikHandle3
+    400044: ikHandle4
+    400046: ikHandle5
+    400048: KneeLeft
+    400050: KneeRight
+    400052: Mask
+    400054: MidBody
+    400056: RootJoint
+    400058: Scythe
+    400060: ShoulderLeft
+    400062: ShoulderRight
+    2300000: Scythe
+    3300000: Scythe
+    4300000: Cloak
+    4300002: HandRight
+    4300004: HandLeft
+    4300006: Mask
+    4300008: Scythe
+    7400000: jump
+    7400002: Grim-Jump
+    9500000: //RootNode
+    13700000: Cloak
+    13700002: HandLeft
+    13700004: HandRight
+    13700006: Mask
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Grim-Jump
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cloak
+        weight: 1
+      - path: Cloak/HandLeft
+        weight: 1
+      - path: Cloak/HandRight
+        weight: 1
+      - path: Cloak/Mask
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: ikHandle4
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/HeadMiddle
+        weight: 1
+      - path: RootJoint/HeadMiddle/HeadTop
+        weight: 1
+      - path: RootJoint/HeadMiddle/HeadTop/Hood1
+        weight: 1
+      - path: RootJoint/HeadMiddle/HeadTop/Hood1/hood2
+        weight: 1
+      - path: RootJoint/HeadMiddle/HeadTop/Hood1/hood2/Hood3
+        weight: 1
+      - path: RootJoint/MidBody
+        weight: 1
+      - path: RootJoint/MidBody/HipLeft
+        weight: 1
+      - path: RootJoint/MidBody/HipLeft/KneeLeft
+        weight: 1
+      - path: RootJoint/MidBody/HipLeft/KneeLeft/FootLeft
+        weight: 1
+      - path: RootJoint/MidBody/HipRight
+        weight: 1
+      - path: RootJoint/MidBody/HipRight/KneeRight
+        weight: 1
+      - path: RootJoint/MidBody/HipRight/KneeRight/FootRight
+        weight: 1
+      - path: RootJoint/ShoulderLeft
+        weight: 1
+      - path: RootJoint/ShoulderLeft/ElbowLeft
+        weight: 1
+      - path: RootJoint/ShoulderLeft/ElbowLeft/HandLeft 1
+        weight: 1
+      - path: RootJoint/ShoulderLeft/ElbowLeft/HandLeft 1/HandEndLeft
+        weight: 1
+      - path: RootJoint/ShoulderLeft/ElbowLeft/HandLeft 1/Scythe
+        weight: 1
+      - path: RootJoint/ShoulderRight
+        weight: 1
+      - path: RootJoint/ShoulderRight/ElbowRight
+        weight: 1
+      - path: RootJoint/ShoulderRight/ElbowRight/HandRight 1
+        weight: 1
+      - path: RootJoint/ShoulderRight/ElbowRight/HandRight 1/HandEndRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

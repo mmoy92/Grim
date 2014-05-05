@@ -9,12 +9,10 @@ var attackDistance : float = 2;  // attack distance
 var attackRange : float = 4; 
 var chargeDistance : float = 10;
 var detectRange : float = 200;  // detection distance
-var health = 10;
 var anim : Animator;
 //var enemyMask = 1 << 2; 
 //enemyMask = ~enemyMask;
 
-public var Soul:GameObject;
 private var transf : Transform;
 private var character: CharacterController; 
 
@@ -27,13 +25,7 @@ function Start () {
 
 function Update(){
 	transform.position.z = 0;
-    if (health <= 0)
-    {
-    	anim.SetBool("Alive", false); 
-    	//Loose the souls! But only do it once because this is the update method. 
-    	Destroy(gameObject, 2.0f);
-    }
-    else if (target){
+    if (target){
         var tgtDir = target.position - transf.position;
         var tgtDist = tgtDir.magnitude; // get distance to the target
         var hit : RaycastHit;
@@ -125,30 +117,8 @@ function MoveCharacter(dir: Vector3, speed: float){
     character.Move(vel * Time.deltaTime);  // move
 }
 
-function OnCollisionEnter (other : Collision)
-{
-    if(other.gameObject.name == "Player")
-    {
-      // health = health - 10;  // Reworked line
-    }
-	if (health < 0){
-       Destroy (gameObject);
-       var new_Soul : GameObject;
-       new_Soul = Instantiate (Soul, Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), 
-       			Quaternion.identity);
-    }
-}
-
-function getHurt(amt:int)
-{
-	health -= amt;
-}
 function die()
 {
 	anim.SetBool("Alive", false);
-	health = 0; 
-}
-function knockBack()
-{
-	transform.Translate(Vector3.back * 0.5f);
+	target = null;
 }
