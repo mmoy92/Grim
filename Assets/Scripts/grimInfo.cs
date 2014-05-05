@@ -148,13 +148,13 @@ public class grimInfo : MonoBehaviour
 	IEnumerator GrimDeath(GameObject player)
 	{
 		AudioSource.PlayClipAtPoint(dieClip, transform.position, 1f);
-		player.GetComponent<PlatformerAnimation> ().PlayerDied ();
+		player.GetComponent<GrimAnimation> ().PlayerDied ();
 		player.GetComponent<PlatformerController> ().RemoveControl ();
 		
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(1.5f);
 		
 		player.GetComponent<PlatformerPhysics>().Reset();
-		player.GetComponent<PlatformerAnimation>().PlayerLives();
+		player.GetComponent<GrimAnimation>().PlayerLives();
 		player.GetComponent<PlatformerController>().GiveControl();
 	}
 	
