@@ -104,20 +104,23 @@ public class PlayerHealthBarScript : MonoBehaviour
 				GUI.EndGroup ();
 
 				//DASH STUFF
-				GUI.BeginGroup (new Rect (dashPosition.x, dashPosition.y, dashSize.x, dashSize.y));
-				GUI.Box (new Rect (0, 0, dashSize.x, dashSize.y), downDash, dash_empty);
-				GUI.BeginGroup (new Rect (0, 0, dashSize.x * dashingTime, dashSize.y));
-				GUI.Box (new Rect (0, 0, dashSize.x, dashSize.y), upDash, dash_full);
-				GUI.EndGroup ();
-				GUI.EndGroup ();
-
-				//ULTIMATE STUFF
-				GUI.BeginGroup (new Rect (ultimatePosition.x, ultimatePosition.y, ultimateSize.x, ultimateSize.y));
-				GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), downUltimate, ultimate_empty);
-				GUI.BeginGroup (new Rect (0, 0, ultimateSize.x * ultimateTime, ultimateSize.y));
-				GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), upUltimate, ultimate_full);
-				GUI.EndGroup ();
-				GUI.EndGroup ();
+				if ((PlayerPrefs.GetInt ("goodDash") == 1) || (PlayerPrefs.GetInt ("evilDash") == 1)) {
+						GUI.BeginGroup (new Rect (dashPosition.x, dashPosition.y, dashSize.x, dashSize.y));
+						GUI.Box (new Rect (0, 0, dashSize.x, dashSize.y), downDash, dash_empty);
+						GUI.BeginGroup (new Rect (0, 0, dashSize.x * dashingTime, dashSize.y));
+						GUI.Box (new Rect (0, 0, dashSize.x, dashSize.y), upDash, dash_full);
+						GUI.EndGroup ();
+						GUI.EndGroup ();
+				}
+				if ((PlayerPrefs.GetInt ("goodAttack") == 1) || (PlayerPrefs.GetInt ("evilAttack") == 1)) {
+						//ULTIMATE STUFF
+						GUI.BeginGroup (new Rect (ultimatePosition.x, ultimatePosition.y, ultimateSize.x, ultimateSize.y));
+						GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), downUltimate, ultimate_empty);
+						GUI.BeginGroup (new Rect (0, 0, ultimateSize.x * ultimateTime, ultimateSize.y));
+						GUI.Box (new Rect (0, 0, ultimateSize.x, ultimateSize.y), upUltimate, ultimate_full);
+						GUI.EndGroup ();
+						GUI.EndGroup ();
+				}
 		}
 	
 		void Update ()

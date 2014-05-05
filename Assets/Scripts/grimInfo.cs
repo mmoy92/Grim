@@ -12,15 +12,21 @@ public class grimInfo : MonoBehaviour
 	public float maxKeys;
 	private float lastHitTime;           // The time at which the player was last hit.
 	private PlatformerController player;   // Reference to the PlatformerController script.
+	private PlatformerPhysics physics;
 	//private SpriteRenderer healthBar;			// Reference to the sprite renderer of the health bar.
 	//private Vector3 healthScale;				// The local scale of the health bar initially (with full health).
 
 	public float invulPer = 2f; //Invulnerability period to prevent instant re-hit (NOTE: figure out what this timescale is...)
 								//Development quandry -> would it be more efficient to have a bool vuln method that responded to triggering
 								//damage scripts instead of handling it all here?
-	public int soulCount;
+	public float soulCount;
 	public bool usedKey;
 	public bool good = false;
+
+	public int goodDash;
+	public int evilDash;
+	public int evilAttack;
+	public int goodAttack;
 	
 	// Use this for initialization
 	void Start ()
@@ -29,9 +35,28 @@ public class grimInfo : MonoBehaviour
 		grimHP = maxHP;
 		maxKeys = 4;
 		player 					= GetComponent<PlatformerController>();
-		soulCount = 0;
+		physics 				= GetComponent<PlatformerPhysics> ();
+
+		soulCount = PlayerPrefs.GetFloat ("soulCount");
+		goodDash = PlayerPrefs.GetInt ("goodDash");
+		evilDash = PlayerPrefs.GetInt ("evilDash");
+		evilAttack = PlayerPrefs.GetInt ("evilAttack");
+		goodAttack = PlayerPrefs.GetInt ("goodAttack");
 		//healthScale = healthBar.transform.localScale;
 		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
+		if (evilDash == 1) {
+		    physics.hasEvilDash = true;
+	    }
+		else if(goodDash == 1){
+			physics.hasGoodDash = true;
+		}
+
+		if (evilAttack == 1) {
+			physics.hasEvilAttack = true;
+		} 
+		else if (goodAttack == 1) {
+			physics.hasGoodAttack = true;
+		}
 
 	}
 
