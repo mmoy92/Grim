@@ -78,7 +78,7 @@ public class GrimAnimation : MonoBehaviour
 	{
 		//recalculate walking speed
 		float walkingSpeed = Mathf.Abs (rigidbody.velocity.x);//*0.075f;
-		Debug.Log (walkingSpeed);
+		//Debug.Log (walkingSpeed);
 		//Set mAttack to false if no attack animation is running
 		if (mAttack && !anim.GetBool("Attack") && !anim.GetBool("SpinAttack")) 
 		{

@@ -60,7 +60,7 @@ public class SoulMovement : MonoBehaviour {
 
 	public void destroySoul ()
 	{
-		GameObject player = GameObject.Find ("Player");
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		grimInfo grim_info = player.GetComponent<grimInfo> ();
 		grim_info.soulCount += 1;
 		Destroy (this.gameObject);

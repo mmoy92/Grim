@@ -51,6 +51,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 		void Start ()
 		{
 				player = GameObject.FindGameObjectWithTag ("Player");
+		print (player);
 				griminfo = player.GetComponent<grimInfo> ();
 
 				xSize = 456f;

@@ -7,7 +7,7 @@ public class MaskUpgradeScript : MonoBehaviour {
 	public GameObject goodSkully;
 	public GameObject badSkully;
 	void OnTriggerEnter(Collider other) {
-		if (entered || other.name != "Player")
+		if (entered || other.tag!= "Player")
 			return;
 		entered = true;
 		PlatformerPhysics phys = other.gameObject.GetComponent<PlatformerPhysics>();
