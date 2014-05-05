@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
 var target : Transform;
+var enemySwipe : GameObject;
 var gravity : float = 20;
 var moveSpeed : float = 6;  // chase speed
 var chargeSpeed : float = 12; //Charge speed for last part of attack
@@ -15,6 +16,7 @@ var anim : Animator;
 
 private var transf : Transform;
 private var character: CharacterController; 
+private var myDir : Vector3;
 
 function Start () { 
     if (!target) target = GameObject.FindWithTag ("Player").transform; 
@@ -41,9 +43,10 @@ function Update(){
             if (tgtDist <= attackDistance){  // if dist <= attackDistance: stop and attack
                 anim.SetBool("Attacking", true); 
                 anim.SetBool("Walking", false);
-                anim.SetBool("Running", false); 
+                anim.SetBool("Running", false);
+                DealAttack();
                 // do your attack here
-                print("Attack!");
+                
             }
             else if((tgtDist <= chargeDistance) && (tgtDist > attackDistance) && (tgtDist <= attackRange))
             {
@@ -121,4 +124,16 @@ function die()
 {
 	anim.SetBool("Alive", false);
 	target = null;
+}
+
+function DealAttack()
+{
+	if(target != null)
+	{
+		var spawn = transform.position;
+		spawn.x -= myDir.x < 0 ? -0.3f : 0.3f; 
+		spawn.y += 1.3f;
+		var newObject = Instantiate (enemySwipe, spawn, Quaternion.identity);
+	}
+
 }
