@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 0826eff7ddbee394794030314ac28f93
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Collar
+    100004: ElbowLeft
+    100006: ElbowRight
+    100008: EndofJaw
+    100010: Geometry
+    100012: Geometry_MeshPart0
+    100014: Geometry_MeshPart1
+    100016: Head
+    100018: ikHandle1
+    100020: ikHandle2
+    100022: joint11
+    100024: joint12
+    100026: joint13
+    100028: joint14
+    100030: joint15
+    100032: joint16
+    100034: joint17
+    100036: joint18
+    100038: joint19
+    100040: joint20
+    100042: joint21
+    100044: joint22
+    100046: joint23
+    100048: joint24
+    100050: joint25
+    100052: joint26
+    100054: joint27
+    100056: joint28
+    100058: joint29
+    100060: joint30
+    100062: joint31
+    100064: joint32
+    100066: joint33
+    100068: joint34
+    100070: joint35
+    100072: joint36
+    100074: joint37
+    100076: joint38
+    100078: joint39
+    100080: joint40
+    100082: MidBody
+    100084: Neck
+    100086: pTorus1
+    100088: RootJoint
+    100090: ShoulderLeft
+    100092: ShoulderRight
+    100094: WristLeft
+    100096: WristRight
+    400000: //RootNode
+    400002: Collar
+    400004: ElbowLeft
+    400006: ElbowRight
+    400008: EndofJaw
+    400010: Geometry
+    400012: Geometry_MeshPart0
+    400014: Geometry_MeshPart1
+    400016: Head
+    400018: ikHandle1
+    400020: ikHandle2
+    400022: joint11
+    400024: joint12
+    400026: joint13
+    400028: joint14
+    400030: joint15
+    400032: joint16
+    400034: joint17
+    400036: joint18
+    400038: joint19
+    400040: joint20
+    400042: joint21
+    400044: joint22
+    400046: joint23
+    400048: joint24
+    400050: joint25
+    400052: joint26
+    400054: joint27
+    400056: joint28
+    400058: joint29
+    400060: joint30
+    400062: joint31
+    400064: joint32
+    400066: joint33
+    400068: joint34
+    400070: joint35
+    400072: joint36
+    400074: joint37
+    400076: joint38
+    400078: joint39
+    400080: joint40
+    400082: MidBody
+    400084: Neck
+    400086: pTorus1
+    400088: RootJoint
+    400090: ShoulderLeft
+    400092: ShoulderRight
+    400094: WristLeft
+    400096: WristRight
+    2300000: pTorus1
+    3300000: pTorus1
+    4300000: Geometry_MeshPart0
+    4300002: Geometry_MeshPart1
+    4300004: pTorus1
+    7400000: bossRig@idle
+    9500000: //RootNode
+    13700000: Geometry_MeshPart0
+    13700002: Geometry_MeshPart1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: bossRig@idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry
+        weight: 1
+      - path: Geometry/Geometry_MeshPart0
+        weight: 1
+      - path: Geometry/Geometry_MeshPart1
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: pTorus1
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/MidBody
+        weight: 1
+      - path: RootJoint/MidBody/Collar
+        weight: 1
+      - path: RootJoint/MidBody/Collar/Neck
+        weight: 1
+      - path: RootJoint/MidBody/Collar/Neck/Head
+        weight: 1
+      - path: RootJoint/MidBody/Collar/Neck/Head/EndofJaw
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint11
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint11/joint12
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint11/joint12/joint13
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint14
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint14/joint15
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint14/joint15/joint16
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint17
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint17/joint18
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint17/joint18/joint19
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint20
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint20/joint21
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint20/joint21/joint22
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint23
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint23/joint24
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderLeft/ElbowLeft/WristLeft/joint23/joint24/joint25
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint26
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint26/joint27
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint26/joint27/joint28
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint29
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint29/joint30
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint29/joint30/joint31
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint32
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint32/joint33
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint32/joint33/joint34
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint35
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint35/joint36
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint35/joint36/joint37
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint38
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint38/joint39
+        weight: 1
+      - path: RootJoint/MidBody/Collar/ShoulderRight/ElbowRight/WristRight/joint38/joint39/joint40
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

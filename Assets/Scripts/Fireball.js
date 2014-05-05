@@ -69,10 +69,10 @@ function FixedUpdate()
  
 	transform.position.z = 0;
 	
-  if(_target == null || _rigidbody == null)
+  	if(_target == null || _rigidbody == null)
 	{
 		print("null target: "+_target.tag+" Rigid: "+_rigidbody.tag);
-     return;
+     	return;
 	}
     _rigidbody.velocity = transform.forward * _velocity;
 
