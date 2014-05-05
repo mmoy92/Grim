@@ -339,5 +339,13 @@ public class GrimAnimation : MonoBehaviour
 		anim.SetBool ("Attack", true);
 		mAttack = true;
 	}
+	void EndCharge()
+	{
+		anim.SetBool ("Charge", false);
+	}
+	void EndSpear()
+	{
+		anim.SetBool ("Spear", false);
+	}
 }
 
