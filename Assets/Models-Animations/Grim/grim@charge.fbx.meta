@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5933272725a78e447868365b7d547cb4
+guid: 28dcec29bf657ae4588a6c9d57b4b07f
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -74,8 +74,8 @@ ModelImporter:
     4300004: HandLeft
     4300006: Mask
     4300008: Scythe
-    7400000: jump
-    7400002: Grim-Jump
+    7400000: charge
+    7400002: Grim-Charge
     9500000: //RootNode
     13700000: Cloak
     13700002: HandLeft
@@ -97,7 +97,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Grim-Jump
+      name: Grim-Charge
       takeName: Take 001
       firstFrame: 1
       lastFrame: 20
@@ -106,7 +106,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
