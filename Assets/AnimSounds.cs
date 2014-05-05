@@ -23,6 +23,8 @@ public class AnimSounds : MonoBehaviour {
 
 	public void Start()
 	{
+		if (camera == null)
+			camera = GameObject.FindGameObjectWithTag("MainCamera");
 		platformer = GetComponent<PlatformerPhysics>();
 		StartCoroutine(footsteps());
 		audios = camera.GetComponents<AudioSource>();
