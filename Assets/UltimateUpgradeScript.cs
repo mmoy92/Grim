@@ -13,7 +13,7 @@ public class UltimateUpgradeScript : MonoBehaviour {
 		entered = true;
 		PlatformerPhysics phys = other.gameObject.GetComponent<PlatformerPhysics>();
 		grimInfo info = other.gameObject.GetComponent<grimInfo>();
-		if (info.soulCount < 0) { // good
+		if (info.soulCount + info.maskDifference< 0) { // good
 						phys.hasEvilAttack = false;
 						phys.hasGoodAttack = true;
 						Instantiate(goodSkully, location, Quaternion.Euler(new Vector3(0,0,0)));

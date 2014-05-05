@@ -19,6 +19,7 @@ public class grimInfo : MonoBehaviour
 	public float invulPer = 2f; //Invulnerability period to prevent instant re-hit (NOTE: figure out what this timescale is...)
 								//Development quandry -> would it be more efficient to have a bool vuln method that responded to triggering
 								//damage scripts instead of handling it all here?
+	public float maskDifference;
 	public float soulCount;
 	public bool usedKey;
 	public bool good = false;
@@ -37,7 +38,7 @@ public class grimInfo : MonoBehaviour
 		player 					= GetComponent<PlatformerController>();
 		physics 				= GetComponent<PlatformerPhysics> ();
 
-		soulCount = PlayerPrefs.GetFloat ("soulCount");
+		maskDifference = PlayerPrefs.GetFloat ("soulCount");
 		goodDash = PlayerPrefs.GetInt ("goodDash");
 		evilDash = PlayerPrefs.GetInt ("evilDash");
 		evilAttack = PlayerPrefs.GetInt ("evilAttack");
