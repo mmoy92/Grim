@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MeleeSwipe : MonoBehaviour {
 	public Transform slash;
+	public Transform bloodSplat;
 	public float damage = 10; 
 	private List<Collider> alreadyHit;
 	void Start()
@@ -48,7 +49,8 @@ public class MeleeSwipe : MonoBehaviour {
 				Vector3 effectSpawn = other.transform.position;
 				effectSpawn.y += enemyCombat.effectShift_Y;
 
-				Object newInst = Instantiate(slash, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
+				Instantiate(slash, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
+				Instantiate(bloodSplat, effectSpawn, Quaternion.Euler(new Vector3(0,0,0)));
 				other.gameObject.SendMessage("getHurt",damage);
 				other.gameObject.SendMessage("knockBack");
 
