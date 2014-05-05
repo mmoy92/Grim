@@ -15,7 +15,7 @@ public class PlatformerPhysics : MonoBehaviour
 	public float moveFriction			= 0.9f;		//Friction multiplier if the character is on ground and no moving buttons are pressed
 	public float speedToStopAt			= 5.0f;		//If the character's speed falls below this while being on the ground, the character stops
 	public float airFriction			= 0.98f;	//Air friction is always applied to the character
-	public float maxGroundWalkingAngle	= 30.0f;	//Maximum angle the ground can be for the character to still be able to jump off and not slide down
+	public float maxGroundWalkingAngle	= 45.0f;	//Maximum angle the ground can be for the character to still be able to jump off and not slide down
 
 	//Configurable variables regarding jumping
 	public float jumpVelocity			= 12;		//Velocity while jumping
