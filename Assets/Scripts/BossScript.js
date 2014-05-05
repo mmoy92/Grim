@@ -4,8 +4,8 @@ var target : Transform;
 var fireball : Transform;
 var bat : Transform;
 
-var health: int = 100;
-var attackDistance = 10.0;
+var health: int = 150;
+var attackDistance = 20.0;
 var attackTimer : float;
 var attackDif = 1f;
 var attackMode: int = 0;
@@ -42,7 +42,7 @@ function Update () {
 	}
 	else if (target){
 		var tgtDir = target.position - transf.position;
-		var spawnLoc = transf.position + new Vector3(-6, 5, 0);
+		var spawnLoc = transf.position + new Vector3(-4, 5, 0);
         var tgtDist = tgtDir.magnitude;
         //Stage 1 - 1 bat, start fireballs
         if(tgtDist < attackDistance)
@@ -63,7 +63,7 @@ function Update () {
         		attackTimer = Time.time;
         	}
         	//Stage 2 - 2 bats, fast fireballs
-        	if(health <= 70 && stage1 == 0)
+        	if(health <= 130 && stage1 == 0)
         	{
         		Instantiate (bat, spawnLoc, Quaternion.identity);
         		Instantiate (bat, spawnLoc, Quaternion.identity);
@@ -72,7 +72,7 @@ function Update () {
         		attackDif *= 0.9;
         	}
         	//Stage 3 - 3 bats, faster fireballs
-        	if(health <= 40 && stage2 == 0)
+        	if(health <= 60 && stage2 == 0)
         	{
         		Instantiate (bat, spawnLoc, Quaternion.identity);
         		Instantiate (bat, spawnLoc, Quaternion.identity);
@@ -87,4 +87,13 @@ function Update () {
 
 function Die () {
 	anim.SetBool("Alive", false); 
+	var bats : GameObject[];
+	bats = GameObject.FindGameObjectsWithTag("Enemy");
+	for(var i = 0; i < bats.length; i++)
+	{
+		if(bats[i].name != "Boss_Prefab")
+		{
+			Destroy(bats[i]);
+		}
+	}
 }

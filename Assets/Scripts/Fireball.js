@@ -91,6 +91,10 @@ function OnTriggerEnter(other : Collider)
 {
 	if(!other.gameObject.CompareTag("Enemy"))
 	{
+		if(other.gameObject.CompareTag("Player"))
+		{
+			other.gameObject.SendMessage("Damage",1);
+		}
    		Destroy(gameObject);
    	}
 
