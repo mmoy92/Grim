@@ -21,8 +21,8 @@ public class PlayerHealthBarScript : MonoBehaviour
 		float healthBar;
 		float keyProgress;
 		public float moralityBar;
-		float dashingTime;
-		float ultimateTime;
+		public float dashingTime;
+		public float ultimateTime;
 		Vector2 healthPosition;
 		Vector2 healthSize;
 		Vector2 keyPosition;

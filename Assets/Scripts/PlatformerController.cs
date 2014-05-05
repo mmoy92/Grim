@@ -4,6 +4,7 @@ using System.Collections;
 public class PlatformerController : MonoBehaviour
 {
 	PlatformerPhysics mPlayer;
+	PlayerHealthBarScript hpScript;
 	bool mHasControl;
 	public float dashingTime = 0f;
 
@@ -13,6 +14,9 @@ public class PlatformerController : MonoBehaviour
 		mPlayer = GetComponent<PlatformerPhysics>();
 		if (mPlayer == null)
 			Debug.LogError("This object also needs a PlatformerPhysics component attached for the controller to function properly");
+		hpScript = GetComponent<PlayerHealthBarScript> ();
+		if (hpScript == null)
+						Debug.Log ("CD won't function");
 	}
 
 	void Update () 
@@ -22,7 +26,7 @@ public class PlatformerController : MonoBehaviour
 		if (mPlayer && mHasControl)
 		{
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
-				if((PlayerPrefs.GetInt("goodDash") == 1) || (PlayerPrefs.GetInt("evilDash") == 1))
+				if(((PlayerPrefs.GetInt("goodDash") == 1) || (PlayerPrefs.GetInt("evilDash") == 1)) && (hpScript.dashingTime < 5))
 				{
 					if(dashingTime >= 5f){
 						dashingTime = 0;
